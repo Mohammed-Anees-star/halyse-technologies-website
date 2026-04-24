@@ -141,19 +141,19 @@ export default function HomePage() {
         </div>
 
         {/* Main hero content */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-0 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[calc(75vh-80px)]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-10 pb-0 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* LEFT */}
-            <div className="flex flex-col justify-center py-12">
+            <div className="flex flex-col justify-center py-10">
               <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6 border border-blue-500/30 w-fit">
                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse shrink-0" />
                 Enterprise AI &amp; Data Consulting
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.15] mb-6 tracking-tight">
-                Transform Your Business<br />
-                <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.2] mb-5 tracking-tight">
+                Transform Your Business
+                <span className="block bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent">
                   with AI, Data &amp; Intelligent Applications
                 </span>
               </h1>
@@ -190,7 +190,7 @@ export default function HomePage() {
             </div>
 
             {/* RIGHT — Analytics Dashboard Panel */}
-            <div className="hidden lg:flex items-center justify-center py-12">
+            <div className="hidden lg:flex items-center justify-center py-10">
               <div className="relative w-full max-w-md">
                 <div className="bg-white/5 border border-white/12 rounded-2xl p-6 backdrop-blur-sm shadow-2xl shadow-black/30">
                   {/* Window chrome */}
