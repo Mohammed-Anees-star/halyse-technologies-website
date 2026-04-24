@@ -74,12 +74,12 @@ export default function ContactForm() {
         const data = await res.json().catch(() => ({}));
         setError(
           data?.errors?.[0]?.message ||
-            "Something went wrong. Please try again or email us at info@halysetechnologies.com."
+            "Something went wrong. Please try again or email us at mohammed.anees@halyse.com."
         );
       }
     } catch {
       setError(
-        "Network error. Please check your connection and try again, or email us at info@halysetechnologies.com."
+        "Network error. Please check your connection and try again, or email us at mohammed.anees@halyse.com."
       );
     } finally {
       setLoading(false);

@@ -13,9 +13,9 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "info@halysetechnologies.com",
+    value: "mohammed.anees@halyse.com",
     sub: "We respond within 1 business day",
-    href: "mailto:info@halysetechnologies.com",
+    href: "mailto:mohammed.anees@halyse.com",
   },
   {
     icon: Phone,
