@@ -3,11 +3,8 @@
 import { useState } from "react";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 
-// ─── FORMSPREE SETUP ───────────────────────────────────────────────────────────
-// 1. Go to https://formspree.io → sign up (free) → create a new form
-// 2. Replace the placeholder below with your form endpoint:
-//    e.g. "https://formspree.io/f/xpwzabcd"
-const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "";
+// ─── FORMSPREE ENDPOINT ────────────────────────────────────────────────────────
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojyrvol";
 // ──────────────────────────────────────────────────────────────────────────────
 
 const services = [
@@ -55,41 +52,35 @@ export default function ContactForm() {
     setError("");
 
     try {
-      if (FORMSPREE_ENDPOINT) {
-        // ── Real Formspree submission ──
-        const res = await fetch(FORMSPREE_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: form.name,
-            email: form.email,
-            phone: form.phone || "Not provided",
-            company: form.company || "Not provided",
-            service: form.service || "Not specified",
-            message: form.message,
-          }),
-        });
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone || "Not provided",
+          company: form.company || "Not provided",
+          service: form.service || "Not specified",
+          message: form.message,
+        }),
+      });
 
-        if (res.ok) {
-          setSubmitted(true);
-        } else {
-          const data = await res.json();
-          setError(
-            data?.errors?.[0]?.message ||
-              "Something went wrong. Please try again or email us directly."
-          );
-        }
-      } else {
-        // ── Fallback: no endpoint configured yet ──
-        // Simulates success so the UI works during development
-        await new Promise((r) => setTimeout(r, 1000));
+      if (res.ok) {
         setSubmitted(true);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setError(
+          data?.errors?.[0]?.message ||
+            "Something went wrong. Please try again or email us at info@halysetechnologies.com."
+        );
       }
     } catch {
-      setError("Network error. Please check your connection and try again.");
+      setError(
+        "Network error. Please check your connection and try again, or email us at info@halysetechnologies.com."
+      );
     } finally {
       setLoading(false);
     }
