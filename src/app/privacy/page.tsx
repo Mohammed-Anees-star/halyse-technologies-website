@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-bold mt-8 mb-3">How We Use Your Information</h2>
           <p>We use the information we collect to respond to your enquiries, provide our consulting services, and improve our website and offerings. We do not sell your personal information to third parties.</p>
           <h2 className="text-xl font-bold mt-8 mb-3">Contact</h2>
-          <p>For privacy-related questions, please contact us at <a href="mailto:info@halyse.com" className="text-blue-700">info@halyse.com</a>.</p>
+          <p>For privacy-related questions, please contact us at <a href="mailto:info@halysetechnologies.com" className="text-blue-700">info@halysetechnologies.com</a>.</p>
         </div>
       </section>
     </>
