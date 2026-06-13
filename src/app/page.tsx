@@ -1,106 +1,161 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
+  ArrowUpRight,
   Zap,
   BarChart3,
-  Database,
   Layers,
+  GitMerge,
   Brain,
   Users,
-  GitMerge,
-  ShieldCheck,
-  TrendingUp,
-  Cpu,
-  Globe,
   ChevronRight,
+  CheckCircle2,
 } from "lucide-react";
 
-import SectionHeader from "@/components/SectionHeader";
-
-export const metadata: Metadata = {
-  title: "Halyse Technologies | AI & Data Solutions for Modern Businesses",
-  description:
-    "Transform your business with enterprise-grade AI, Data, and Automation solutions from Halyse Technologies.",
-};
-
-const solutionCards = [
-  {
-    icon: Zap,
-    title: "Business Process Automation",
-    desc: "Automate workflows and approval systems with Power Automate.",
-    href: "/solutions#automation",
-  },
-  {
-    icon: BarChart3,
-    title: "Data & Analytics Platforms",
-    desc: "Power BI dashboards, data modeling, and enterprise reporting.",
-    href: "/solutions#analytics",
-  },
-  {
-    icon: Layers,
-    title: "Custom Business Applications",
-    desc: "Tailored apps with Power Apps and Quickbase for your exact needs.",
-    href: "/solutions#apps",
-  },
-  {
-    icon: GitMerge,
-    title: "System Integration & APIs",
-    desc: "Connect all your systems with REST APIs and real-time data sync.",
-    href: "/solutions#integration",
-  },
-  {
-    icon: Brain,
-    title: "AI & Intelligent Solutions",
-    desc: "Predictive analytics and AI-driven insights for smarter decisions.",
-    href: "/solutions#ai",
-  },
-  {
-    icon: Users,
-    title: "CRM & ERP Solutions",
-    desc: "Dynamics 365 and Business Central implementation and optimization.",
-    href: "/solutions#crm",
-  },
-];
-
-const whyChooseUs = [
-  {
-    icon: ShieldCheck,
-    title: "Enterprise-Grade Architecture",
-    desc: "Solutions built to scale, secured by design, aligned with enterprise standards.",
-  },
-  {
-    icon: Cpu,
-    title: "Microsoft & Quickbase Expertise",
-    desc: "Deep technical proficiency across the full Microsoft and Quickbase platform stack.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Scalable & Secure Solutions",
-    desc: "Future-proof architectures that grow with your business and protect your data.",
-  },
-  {
-    icon: Layers,
-    title: "End-to-End Implementation",
-    desc: "From discovery through deployment and support — we own the full lifecycle.",
-  },
-  {
-    icon: Globe,
-    title: "Real Business Outcomes",
-    desc: "Focused on measurable ROI — reduced costs, faster processes, better decisions.",
-  },
-  {
-    icon: Users,
-    title: "Dedicated Partner Approach",
-    desc: "We become an extension of your team, committed to long-term success.",
-  },
-];
+// ─── DATA ──────────────────────────────────────────────────────────────────
 
 const stats = [
   { value: "50+", label: "Projects Delivered" },
   { value: "15+", label: "Industries Served" },
   { value: "98%", label: "Client Satisfaction" },
   { value: "24/7", label: "Post-Deployment Support" },
+];
+
+const services = [
+  {
+    id: "automation",
+    icon: Zap,
+    label: "Process Automation",
+    headline: "Eliminate manual work. Scale with confidence.",
+    body: "We transform fragmented, manual operations into seamless automated workflows — saving time, cutting errors, and freeing your teams for high-value work.",
+    points: [
+      "End-to-end workflow automation across departments",
+      "Multi-step approval and escalation systems",
+      "Power Automate flows for Microsoft 365",
+      "Document processing and routing automation",
+      "Event-driven triggers and real-time alerts",
+    ],
+    tech: ["Power Automate", "Power Platform", "SharePoint", "Logic Apps"],
+    href: "/solutions#automation",
+  },
+  {
+    id: "analytics",
+    icon: BarChart3,
+    label: "Data & Analytics",
+    headline: "Turn raw data into decisive action.",
+    body: "We design analytics platforms that consolidate your data and surface it through intuitive dashboards — giving every decision-maker the clarity to act with confidence.",
+    points: [
+      "Power BI dashboards and executive reporting",
+      "Data warehousing and lakehouse architecture",
+      "Enterprise data modeling and governance",
+      "KPI tracking and self-service analytics",
+      "Real-time and scheduled reporting pipelines",
+    ],
+    tech: ["Power BI", "Azure Data Factory", "Fabric", "SQL Server"],
+    href: "/solutions#analytics",
+  },
+  {
+    id: "apps",
+    icon: Layers,
+    label: "Custom Applications",
+    headline: "Software built around your exact process.",
+    body: "Off-the-shelf tools rarely fit. We build tailored applications using Power Apps and Quickbase that match your workflows, team structures, and data — without the overhead of large software projects.",
+    points: [
+      "Canvas and model-driven Power Apps",
+      "Quickbase relational database applications",
+      "Mobile-ready field and operations portals",
+      "Role-based access control and audit trails",
+      "Offline-capable low-code solutions",
+    ],
+    tech: ["Power Apps", "Quickbase", "Dataverse", "Azure SQL"],
+    href: "/solutions#apps",
+  },
+  {
+    id: "integration",
+    icon: GitMerge,
+    label: "System Integration",
+    headline: "Connect your ecosystem. Eliminate silos.",
+    body: "Most businesses run on 5–15 disconnected tools. We architect integration layers that connect your systems in real time — so data flows automatically, accurately, and reliably.",
+    points: [
+      "RESTful and SOAP API design and implementation",
+      "Third-party ERP, CRM, and HR integrations",
+      "Real-time and batch data synchronization",
+      "Legacy system modernization and bridging",
+      "Integration monitoring and error handling",
+    ],
+    tech: ["Azure API Management", "Logic Apps", "MuleSoft", "Zapier"],
+    href: "/solutions#integration",
+  },
+  {
+    id: "ai",
+    icon: Brain,
+    label: "AI & Intelligent Solutions",
+    headline: "Applied AI that moves the business needle.",
+    body: "We deploy AI and machine learning where it creates tangible outcomes — from predicting demand to automating complex decisions that previously required human judgment.",
+    points: [
+      "Predictive analytics and demand forecasting",
+      "AI-powered document understanding and extraction",
+      "Natural language processing applications",
+      "Azure OpenAI and Microsoft Copilot integrations",
+      "Anomaly detection and intelligent risk scoring",
+    ],
+    tech: ["Azure OpenAI", "Copilot Studio", "Azure ML", "Cognitive Services"],
+    href: "/solutions#ai",
+  },
+  {
+    id: "crm",
+    icon: Users,
+    label: "CRM & ERP",
+    headline: "Operational excellence from lead to ledger.",
+    body: "We implement and customize Dynamics 365 and Business Central to unify your sales, service, finance, and supply chain — giving every team a single source of truth.",
+    points: [
+      "Dynamics 365 Sales and Customer Service",
+      "Business Central finance and operations",
+      "Custom modules and entity extensions",
+      "CRM data migration and cleansing",
+      "User training and change management",
+    ],
+    tech: ["Dynamics 365", "Business Central", "Power Platform", "Azure DevOps"],
+    href: "/solutions#crm",
+  },
+];
+
+const industries = [
+  "Manufacturing",
+  "Healthcare & Life Sciences",
+  "Financial Services",
+  "Construction & Real Estate",
+  "Logistics & Supply Chain",
+  "Professional Services",
+  "Retail & Distribution",
+  "Government & Public Sector",
+];
+
+const insights = [
+  {
+    category: "Microsoft Power Platform",
+    title: "How Power Platform is Redefining Enterprise Automation in 2025",
+    summary:
+      "Microsoft's Power Platform has evolved from a low-code tool into a full enterprise automation backbone. We explore what this means for mid-market organizations.",
+    readTime: "5 min read",
+  },
+  {
+    category: "Azure AI",
+    title: "From Pilot to Production: Making Azure OpenAI Work at Enterprise Scale",
+    summary:
+      "Most AI pilots fail at scale. Here's the architecture, governance, and change management approach that gets enterprise AI into production — and keeps it there.",
+    readTime: "7 min read",
+  },
+  {
+    category: "Data Strategy",
+    title: "The Modern Data Stack for Mid-Market Enterprises: A Practical Guide",
+    summary:
+      "Enterprise analytics doesn't require a Fortune 500 budget. This guide outlines a practical, cost-effective data architecture built on Microsoft Fabric and Power BI.",
+    readTime: "6 min read",
+  },
 ];
 
 const techStack = [
@@ -114,232 +169,362 @@ const techStack = [
   "Azure",
   "Azure OpenAI",
   "SharePoint",
+  "Azure Data Factory",
+  "Copilot Studio",
 ];
+
+// ─── SERVICES TABS (client component) ─────────────────────────────────────
+
+function ServicesTabs() {
+  const [active, setActive] = useState(0);
+  const svc = services[active];
+  const Icon = svc.icon;
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-0 rounded-2xl overflow-hidden border border-gray-200 shadow-xl shadow-gray-100/80">
+      {/* Tab list */}
+      <div className="bg-gray-950 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible">
+        {services.map((s, i) => {
+          const TabIcon = s.icon;
+          return (
+            <button
+              key={s.id}
+              onClick={() => setActive(i)}
+              className={`flex items-center gap-3 px-6 py-4 text-left transition-all duration-200 whitespace-nowrap lg:whitespace-normal border-b border-white/5 last:border-0 group ${
+                active === i
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-400 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              <TabIcon
+                size={18}
+                className={`shrink-0 ${active === i ? "text-white" : "text-gray-500 group-hover:text-blue-400"}`}
+              />
+              <span className="text-sm font-medium">{s.label}</span>
+              {active === i && (
+                <ChevronRight size={14} className="ml-auto shrink-0 hidden lg:block" />
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Tab panel */}
+      <div className="bg-white p-8 lg:p-10">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-100 shrink-0">
+            <Icon size={22} className="text-white" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">
+              {svc.label}
+            </p>
+            <h3 className="text-xl lg:text-2xl font-bold text-gray-900 leading-snug">
+              {svc.headline}
+            </h3>
+          </div>
+        </div>
+
+        <p className="text-gray-600 leading-relaxed mb-7 text-[15px]">{svc.body}</p>
+
+        <ul className="space-y-2.5 mb-8">
+          {svc.points.map((pt) => (
+            <li key={pt} className="flex items-start gap-3">
+              <CheckCircle2 size={17} className="text-blue-600 mt-0.5 shrink-0" />
+              <span className="text-sm text-gray-700 leading-relaxed">{pt}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap gap-2 flex-1">
+            {svc.tech.map((t) => (
+              <span
+                key={t}
+                className="text-xs bg-blue-50 text-blue-700 border border-blue-100 px-3 py-1 rounded-full font-medium"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+          <Link
+            href={svc.href}
+            className="inline-flex items-center gap-1.5 text-sm text-blue-700 font-semibold hover:gap-2.5 transition-all group"
+          >
+            Learn more <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── PAGE ──────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   return (
     <>
-      {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 text-white overflow-hidden pt-16">
-        {/* Subtle grid background */}
+      {/* ════════════════════════════════════════════════════════
+          HERO
+      ════════════════════════════════════════════════════════ */}
+      <section className="relative bg-gray-950 text-white overflow-hidden min-h-[92vh] flex flex-col">
+        {/* Background texture */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/8 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-800/8 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
+          {/* Grid lines */}
           <div
-            className="absolute inset-0 opacity-[0.025]"
+            className="absolute inset-0 opacity-[0.035]"
             style={{
-              backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-              backgroundSize: "48px 48px",
+              backgroundImage:
+                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+              backgroundSize: "80px 80px",
             }}
           />
+          {/* Glow orbs */}
+          <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-blue-700/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
         </div>
 
-        {/* Main hero content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-0 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-            {/* LEFT */}
-            <div className="flex flex-col justify-center py-10">
-              <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6 border border-blue-500/30 w-fit">
-                <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse shrink-0" />
-                Enterprise AI &amp; Data Consulting
+        {/* Content */}
+        <div className="relative z-10 flex-1 flex flex-col">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 flex-1 flex flex-col justify-center">
+            <div className="max-w-4xl">
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2.5 mb-8">
+                <span className="w-8 h-px bg-blue-500" />
+                <span className="text-blue-400 text-xs font-bold tracking-[0.2em] uppercase">
+                  Enterprise AI & Data Consulting
+                </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.2] mb-5 tracking-tight">
-                Transform Your Business
-                <span className="block bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent">
-                  with AI, Data &amp; Intelligent Applications
+              {/* Headline */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-8">
+                Transform How
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300">
+                  Your Business
                 </span>
+                <br />
+                Operates.
               </h1>
 
-              <p className="text-base text-blue-100/80 leading-relaxed mb-8 max-w-lg">
-                We design and deliver enterprise-grade solutions using Microsoft, Quickbase, and modern
-                technologies — automating workflows, connecting systems, and unlocking actionable insights.
+              <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl">
+                Halyse Technologies delivers enterprise-grade AI, Data, and Automation solutions
+                built on Microsoft and Quickbase — helping organizations across the US, Australia,
+                and Middle East unlock measurable, lasting business value.
               </p>
 
-              <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex flex-wrap gap-4 mb-16">
                 <Link
-                  href="/solutions"
-                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-lg shadow-blue-900/50 group text-sm"
+                  href="/contact"
+                  className="inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-lg shadow-blue-900/50 group text-sm"
                 >
-                  Explore Solutions
+                  Book a Consultation
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/18 text-white font-semibold px-6 py-3 rounded-lg border border-white/25 hover:border-white/45 transition-all duration-200 text-sm"
+                  href="/solutions"
+                  className="inline-flex items-center gap-2.5 text-white/80 hover:text-white font-semibold px-7 py-3.5 rounded-lg border border-white/15 hover:border-white/35 transition-all duration-200 text-sm"
                 >
-                  Book a Consultation
+                  Explore Solutions
                 </Link>
               </div>
 
-              {/* Trust tags */}
-              <div className="flex flex-wrap gap-2">
-                {["Microsoft Partner", "Quickbase Expert", "Power Platform", "Azure"].map((b) => (
-                  <span key={b} className="text-xs text-blue-200/70 bg-white/5 border border-white/10 px-3 py-1.5 rounded-md">
-                    {b}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* RIGHT — Analytics Dashboard Panel */}
-            <div className="hidden lg:flex items-center justify-center py-10">
-              <div className="relative w-full max-w-md">
-                <div className="bg-white/5 border border-white/12 rounded-2xl p-6 backdrop-blur-sm shadow-2xl shadow-black/30">
-                  {/* Window chrome */}
-                  <div className="flex items-center gap-2 mb-5 pb-4 border-b border-white/10">
-                    <div className="w-3 h-3 rounded-full bg-red-400/60" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                    <div className="w-3 h-3 rounded-full bg-green-400/60" />
-                    <span className="ml-2 text-xs text-white/35 font-mono tracking-wide">Halyse Analytics Platform</span>
-                    <span className="ml-auto text-xs bg-green-500/20 text-green-400 border border-green-500/30 px-2 py-0.5 rounded-full">● Live</span>
-                  </div>
-
-                  {/* KPI grid */}
-                  <div className="grid grid-cols-2 gap-3 mb-5">
-                    {[
-                      { label: "Workflow Efficiency", value: "+83%", color: "text-green-400", bg: "bg-green-500/10 border-green-500/20" },
-                      { label: "Data Sources", value: "12 Live", color: "text-blue-300", bg: "bg-blue-500/10 border-blue-500/20" },
-                      { label: "Cost Reduction", value: "↓ 40%", color: "text-cyan-400", bg: "bg-cyan-500/10 border-cyan-500/20" },
-                      { label: "Hours Saved / Wk", value: "120 hrs", color: "text-purple-400", bg: "bg-purple-500/10 border-purple-500/20" },
-                    ].map((m) => (
-                      <div key={m.label} className={`rounded-xl p-4 border ${m.bg}`}>
-                        <p className="text-[11px] text-white/45 mb-1.5 leading-tight">{m.label}</p>
-                        <p className={`text-xl font-bold ${m.color}`}>{m.value}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Progress bars */}
-                  <div className="bg-white/4 rounded-xl p-4 border border-white/8">
-                    <p className="text-[11px] text-white/45 mb-3 font-medium uppercase tracking-wider">
-                      Process Automation Coverage
-                    </p>
-                    <div className="space-y-3">
-                      {[
-                        { name: "Finance & Accounting", pct: 92, color: "from-blue-500 to-blue-400" },
-                        { name: "Operations", pct: 78, color: "from-cyan-500 to-cyan-400" },
-                        { name: "HR & Administration", pct: 85, color: "from-purple-500 to-purple-400" },
-                        { name: "Customer Operations", pct: 65, color: "from-green-500 to-green-400" },
-                      ].map((bar) => (
-                        <div key={bar.name}>
-                          <div className="flex justify-between mb-1">
-                            <span className="text-[11px] text-white/50">{bar.name}</span>
-                            <span className="text-[11px] text-white/50 font-medium">{bar.pct}%</span>
-                          </div>
-                          <div className="h-1.5 bg-white/8 rounded-full overflow-hidden">
-                            <div
-                              className={`h-full bg-gradient-to-r ${bar.color} rounded-full`}
-                              style={{ width: `${bar.pct}%` }}
-                            />
-                          </div>
-                        </div>
-                      ))}
+              {/* Trust marks */}
+              <div className="flex flex-wrap gap-x-8 gap-y-3">
+                {["Microsoft Partner", "Quickbase Expert", "Power Platform Certified", "Azure Solutions"].map(
+                  (tag) => (
+                    <div key={tag} className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-blue-500" />
+                      <span className="text-xs text-gray-500 font-medium">{tag}</span>
                     </div>
-                  </div>
-                </div>
-
-                {/* Floating decorative element */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600/15 rounded-full blur-2xl" />
-                <div className="absolute -top-4 -left-4 w-20 h-20 bg-cyan-600/10 rounded-full blur-2xl" />
+                  )
+                )}
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Stats strip */}
-        <div className="border-t border-white/8 bg-black/15 backdrop-blur-sm mt-0">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-x divide-white/8">
-              {stats.map((stat, i) => (
-                <div key={stat.label} className={`text-center ${i > 0 ? "pl-6" : ""}`}>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-blue-300/70 mt-0.5 tracking-wide">{stat.label}</div>
-                </div>
-              ))}
+          {/* Stats bar */}
+          <div className="border-t border-white/8 bg-white/[0.03] backdrop-blur-sm">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                {stats.map((stat, i) => (
+                  <div key={stat.label} className={`${i > 0 ? "lg:border-l lg:border-white/10 lg:pl-6" : ""}`}>
+                    <div className="text-3xl font-extrabold text-white tracking-tight">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs text-gray-500 mt-1 font-medium">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── SOLUTIONS OVERVIEW ───────────────────────────────── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeader
-            badge="Our Solutions"
-            title="Comprehensive Enterprise Solutions"
-            subtitle="From automation and analytics to AI and ERP — end-to-end capabilities that power modern enterprises."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {solutionCards.map(({ icon: Icon, title, desc, href }) => (
-              <Link
-                key={title}
-                href={href}
-                className="group flex flex-col p-8 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-50 transition-all duration-300 bg-white"
-              >
-                <div className="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-600 transition-colors shadow-lg shadow-blue-100">
-                  <Icon size={22} className="text-white" />
-                </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2.5 group-hover:text-blue-700 transition-colors leading-snug">
-                  {title}
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed flex-1">{desc}</p>
-                <div className="flex items-center gap-1.5 mt-6 text-sm text-blue-600 font-semibold group-hover:gap-2.5 transition-all">
-                  Learn more <ChevronRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
-                </div>
-              </Link>
-            ))}
+      {/* ════════════════════════════════════════════════════════
+          SERVICES (tabbed)
+      ════════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.15em] uppercase mb-4">
+              Our Services
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
+              Comprehensive Enterprise Solutions
+            </h2>
+            <p className="text-gray-500 text-lg leading-relaxed">
+              From automation and analytics to AI and ERP — end-to-end capabilities
+              that power modern enterprises.
+            </p>
           </div>
-
-          <div className="flex justify-center mt-14">
+          <ServicesTabs />
+          <div className="mt-10 flex justify-end">
             <Link
               href="/solutions"
-              className="inline-flex items-center gap-2.5 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-blue-200/60 group text-sm"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group"
             >
-              View All Solutions
-              <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
+              View all solutions
+              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ─── WHY HALYSE / BUILT FOR ENTERPRISE ───────────────── */}
-      <section className="py-24 bg-gray-950 text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeader
-            badge="Why Halyse"
-            title="Built for Enterprise. Focused on Outcomes."
-            subtitle="We combine deep technical expertise with a business-first mindset to deliver solutions that actually move the needle."
-            light
-          />
+      {/* ════════════════════════════════════════════════════════
+          INDUSTRIES
+      ════════════════════════════════════════════════════════ */}
+      <section className="py-24 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
+            <div className="max-w-xl">
+              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.15em] uppercase mb-4">
+                Industries We Serve
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+                Deep Domain Expertise Across Sectors
+              </h2>
+            </div>
+            <p className="text-gray-500 leading-relaxed max-w-md lg:text-right">
+              We apply our technical capabilities within the specific context of your industry —
+              understanding its data, its processes, and its regulatory landscape.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-            {whyChooseUs.map(({ icon: Icon, title, desc }) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {industries.map((industry) => (
               <div
-                key={title}
-                className="flex flex-col p-7 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-300 group"
+                key={industry}
+                className="group bg-white rounded-xl px-6 py-5 border border-gray-200 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-50 transition-all duration-200 cursor-default"
               >
-                <div className="w-11 h-11 bg-blue-700/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600/40 transition-colors">
-                  <Icon size={20} className="text-blue-400" />
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-gray-800 group-hover:text-blue-700 transition-colors leading-snug">
+                    {industry}
+                  </span>
+                  <ArrowUpRight
+                    size={14}
+                    className="text-gray-300 group-hover:text-blue-500 transition-colors shrink-0 ml-2"
+                  />
                 </div>
-                <h3 className="text-sm font-bold text-white mb-2 leading-snug">{title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
 
+          <div className="mt-10">
+            <Link
+              href="/industries"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group"
+            >
+              See industry solutions
+              <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
+          WHY HALYSE
+      ════════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-gray-950 text-white overflow-hidden relative">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left */}
+            <div>
+              <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.15em] uppercase mb-5">
+                Why Halyse
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+                Built for Enterprise.
+                <br />
+                <span className="text-blue-400">Focused on Outcomes.</span>
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-10">
+                We combine deep technical expertise across the Microsoft ecosystem with a
+                business-first mindset — delivering solutions that move the needle, not just
+                go live.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm group"
+              >
+                About Halyse
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Right — differentiators */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  title: "Enterprise-Grade Architecture",
+                  desc: "Scalable, secure, and standards-aligned solutions built to last.",
+                },
+                {
+                  title: "Microsoft & Quickbase Depth",
+                  desc: "Specialists, not generalists — deep proficiency across the full stack.",
+                },
+                {
+                  title: "End-to-End Ownership",
+                  desc: "From discovery through deployment and beyond — we own the full lifecycle.",
+                },
+                {
+                  title: "Measurable Business ROI",
+                  desc: "Every engagement is anchored to real outcomes: cost, speed, and accuracy.",
+                },
+                {
+                  title: "Global Delivery",
+                  desc: "Serving clients in the US, Australia, UAE, and India with a follow-the-sun model.",
+                },
+                {
+                  title: "Dedicated Partnership",
+                  desc: "We integrate into your team and stay accountable beyond go-live.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-6 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-200"
+                >
+                  <div className="w-6 h-0.5 bg-blue-500 mb-4" />
+                  <h3 className="text-sm font-bold text-white mb-2 leading-snug">{item.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Tech strip */}
-          <div className="border-t border-white/8 pt-12">
-            <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest text-center mb-6">
-              Technologies &amp; Platforms We Specialise In
+          <div className="mt-20 pt-12 border-t border-white/8">
+            <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest text-center mb-7">
+              Platforms &amp; Technologies We Specialise In
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs text-blue-300/80 bg-blue-900/30 border border-blue-700/30 px-4 py-2 rounded-full font-medium hover:bg-blue-800/40 hover:border-blue-600/50 transition-colors cursor-default"
+                  className="text-xs text-blue-300/80 bg-blue-900/30 border border-blue-800/40 px-4 py-2 rounded-full font-medium hover:bg-blue-800/40 transition-colors cursor-default"
                 >
                   {tech}
                 </span>
@@ -349,32 +534,128 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── CTA ──────────────────────────────────────────────── */}
-      <section className="py-28 bg-gradient-to-br from-blue-700 via-blue-800 to-blue-950 text-white">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <span className="inline-block text-xs font-semibold text-blue-300 tracking-widest uppercase mb-5 bg-white/10 px-4 py-2 rounded-full border border-white/15">
-            Ready to Get Started?
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight">
-            Ready to Streamline Operations, Integrate Systems, and Unlock Real Business Insights?
-          </h2>
-          <p className="text-blue-100/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-            Let&apos;s discuss how Halyse Technologies can deliver measurable outcomes for your organization.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      {/* ════════════════════════════════════════════════════════
+          INSIGHTS
+      ════════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+            <div>
+              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.15em] uppercase mb-4">
+                Insights
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+                Perspectives &amp; Thinking
+              </h2>
+            </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-blue-800 font-bold px-10 py-4 rounded-xl hover:bg-blue-50 hover:scale-[1.02] transition-all duration-200 shadow-2xl shadow-blue-900/40 group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group whitespace-nowrap"
             >
-              Book a Consultation
-              <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
+              Subscribe to insights
+              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
-            <Link
-              href="/solutions"
-              className="inline-flex items-center justify-center gap-2 bg-white/12 hover:bg-white/20 text-white font-semibold px-10 py-4 rounded-xl border border-white/25 hover:border-white/45 transition-all duration-200"
-            >
-              View Solutions
-            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+            {insights.map((insight, i) => (
+              <article
+                key={insight.title}
+                className={`group rounded-2xl overflow-hidden border transition-all duration-300 hover:shadow-2xl hover:shadow-gray-100 hover:-translate-y-1 ${
+                  i === 0
+                    ? "border-blue-200 bg-gradient-to-br from-blue-700 to-blue-900 text-white"
+                    : "border-gray-200 bg-white"
+                }`}
+              >
+                <div className="p-8">
+                  <div className="mb-5">
+                    <span
+                      className={`text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full ${
+                        i === 0
+                          ? "bg-white/15 text-blue-200"
+                          : "bg-blue-50 text-blue-700"
+                      }`}
+                    >
+                      {insight.category}
+                    </span>
+                  </div>
+                  <h3
+                    className={`font-bold leading-snug mb-4 text-base ${
+                      i === 0 ? "text-white" : "text-gray-900 group-hover:text-blue-700"
+                    } transition-colors`}
+                  >
+                    {insight.title}
+                  </h3>
+                  <p
+                    className={`text-sm leading-relaxed mb-6 ${
+                      i === 0 ? "text-blue-100/80" : "text-gray-500"
+                    }`}
+                  >
+                    {insight.summary}
+                  </p>
+                  <div
+                    className={`flex items-center justify-between text-xs font-medium ${
+                      i === 0 ? "text-blue-300" : "text-gray-400"
+                    }`}
+                  >
+                    <span>{insight.readTime}</span>
+                    <ArrowUpRight
+                      size={15}
+                      className={`${
+                        i === 0 ? "text-blue-300" : "text-gray-400 group-hover:text-blue-600"
+                      } transition-colors`}
+                    />
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
+          CTA
+      ════════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gray-950 rounded-3xl overflow-hidden relative">
+            {/* Background glow */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-700/15 rounded-full blur-[80px]" />
+              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-900/15 rounded-full blur-[80px]" />
+            </div>
+
+            <div className="relative z-10 px-8 py-16 sm:px-16 sm:py-20 lg:px-20">
+              <div className="max-w-3xl">
+                <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.15em] uppercase mb-6">
+                  Ready to Start?
+                </span>
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+                  Let&apos;s Build Something
+                  <br />
+                  <span className="text-blue-400">That Lasts.</span>
+                </h2>
+                <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl">
+                  Tell us about your challenge. We&apos;ll come back with a clear perspective on the
+                  opportunity, a recommended approach, and an honest assessment of fit.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-900/50 group text-sm"
+                  >
+                    Book a Consultation
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    href="/solutions"
+                    className="inline-flex items-center justify-center gap-2.5 text-white font-semibold px-8 py-4 rounded-xl border border-white/15 hover:border-white/35 hover:bg-white/5 transition-all duration-200 text-sm"
+                  >
+                    Explore Solutions
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

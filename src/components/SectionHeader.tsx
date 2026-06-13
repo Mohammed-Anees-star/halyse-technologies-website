@@ -14,14 +14,18 @@ export default function SectionHeader({
   light = false,
 }: SectionHeaderProps) {
   return (
-    <div className={`mb-12 ${centered ? "text-center" : ""}`}>
+    <div className={`mb-14 ${centered ? "text-center" : ""}`}>
       {badge && (
-        <span className="inline-block bg-blue-50 text-blue-700 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full mb-4 border border-blue-100">
+        <span
+          className={`inline-block text-xs font-bold tracking-[0.15em] uppercase mb-4 ${
+            light ? "text-blue-400" : "text-blue-600"
+          }`}
+        >
           {badge}
         </span>
       )}
       <h2
-        className={`text-3xl lg:text-4xl font-bold leading-tight mb-4 ${
+        className={`text-4xl lg:text-5xl font-extrabold leading-tight mb-5 ${
           light ? "text-white" : "text-gray-900"
         }`}
       >
@@ -29,9 +33,9 @@ export default function SectionHeader({
       </h2>
       {subtitle && (
         <p
-          className={`text-lg max-w-3xl leading-relaxed ${
+          className={`text-lg leading-relaxed max-w-3xl ${
             centered ? "mx-auto" : ""
-          } ${light ? "text-blue-100" : "text-gray-600"}`}
+          } ${light ? "text-gray-400" : "text-gray-500"}`}
         >
           {subtitle}
         </p>
