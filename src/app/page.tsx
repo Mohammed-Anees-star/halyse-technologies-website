@@ -15,6 +15,7 @@ import {
   Globe,
   ChevronRight,
 } from "lucide-react";
+
 import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
@@ -22,13 +23,6 @@ export const metadata: Metadata = {
   description:
     "Transform your business with enterprise-grade AI, Data, and Automation solutions from Halyse Technologies.",
 };
-
-const problemSolutions = [
-  { problem: "Manual Processes", solution: "Automated Workflows", icon: Zap },
-  { problem: "Disconnected Systems", solution: "Integrated Platforms", icon: GitMerge },
-  { problem: "Scattered Data", solution: "Unified Analytics", icon: Database },
-  { problem: "Lack of Insights", solution: "Real-time Dashboards", icon: BarChart3 },
-];
 
 const solutionCards = [
   {
@@ -265,36 +259,6 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── WHAT WE SOLVE ────────────────────────────────────── */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeader
-            badge="What We Solve"
-            title="Turning Business Challenges into Competitive Advantage"
-            subtitle="We identify the root causes of operational friction and deliver solutions that create lasting, measurable impact."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {problemSolutions.map(({ problem, solution, icon: Icon }) => (
-              <div
-                key={problem}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-100/50 hover:border-blue-100 hover:-translate-y-1.5 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-50 transition-colors duration-300">
-                  <Icon size={22} className="text-red-400 group-hover:text-blue-600 transition-colors duration-300" />
-                </div>
-                <p className="text-sm text-gray-400 line-through mb-2 font-medium">{problem}</p>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="flex-1 h-px bg-gradient-to-r from-blue-300 to-blue-100" />
-                  <ArrowRight size={14} className="text-blue-500 shrink-0" />
-                </div>
-                <p className="text-base font-bold text-gray-900 leading-snug">{solution}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
