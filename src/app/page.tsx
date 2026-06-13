@@ -126,7 +126,7 @@ export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 text-white overflow-hidden pt-20">
+      <section className="relative bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 text-white overflow-hidden pt-16">
         {/* Subtle grid background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/8 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
@@ -141,7 +141,7 @@ export default function HomePage() {
         </div>
 
         {/* Main hero content */}
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-10 pb-0 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-0 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* LEFT */}

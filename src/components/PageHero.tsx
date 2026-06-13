@@ -6,7 +6,7 @@ interface PageHeroProps {
 
 export default function PageHero({ badge, title, subtitle }: PageHeroProps) {
   return (
-    <section className="pt-32 pb-16 bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 text-white relative overflow-hidden">
+    <section className="pt-28 pb-16 bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />

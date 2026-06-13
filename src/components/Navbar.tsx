@@ -38,8 +38,8 @@ export default function Navbar() {
           : "bg-white shadow-sm border-b border-gray-100"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
 
           {/* Logo — takes natural width */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
@@ -62,7 +62,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3.5 py-2 rounded-md text-sm font-medium transition-colors duration-150 whitespace-nowrap ${
+                className={`px-3 py-1.5 rounded-md text-[13px] font-medium transition-colors duration-150 whitespace-nowrap ${
                   pathname === link.href
                     ? "text-blue-700 bg-blue-50"
                     : "text-gray-600 hover:text-blue-700 hover:bg-blue-50/70"
