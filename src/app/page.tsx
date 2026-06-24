@@ -449,7 +449,7 @@ export default function HomePage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left */}
             <div>
@@ -538,7 +538,7 @@ export default function HomePage() {
           INSIGHTS
       ════════════════════════════════════════════════════════ */}
       <section className="py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
             <div>
               <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.15em] uppercase mb-4">
@@ -617,7 +617,7 @@ export default function HomePage() {
           CTA
       ════════════════════════════════════════════════════════ */}
       <section className="py-28 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-950 rounded-3xl overflow-hidden relative">
             {/* Background glow */}
             <div className="absolute inset-0 pointer-events-none">
