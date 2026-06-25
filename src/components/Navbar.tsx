@@ -8,7 +8,6 @@ import { Menu, X, ArrowRight } from "lucide-react";
 const navLinks = [
   { label: "Solutions", href: "/solutions" },
   { label: "Industries", href: "/industries" },
-  { label: "Our Approach", href: "/our-approach" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
@@ -40,31 +39,31 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
+        <div className="flex items-center justify-between h-18 lg:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1 shrink-0">
-            <span className={`text-lg font-black tracking-tight transition-colors ${transparent ? "text-white" : "text-gray-900"}`}>
+          <Link href="/" className="flex items-baseline gap-1.5 shrink-0">
+            <span className={`text-xl font-black tracking-tight transition-colors ${transparent ? "text-white" : "text-gray-900"}`}>
               Halyse
             </span>
-            <span className={`text-lg font-light tracking-tight transition-colors ${transparent ? "text-white/70" : "text-gray-500"}`}>
+            <span className={`text-sm font-light tracking-wide transition-colors hidden sm:inline ${transparent ? "text-white/60" : "text-gray-500"}`}>
               Technologies
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                className={`px-3.5 py-2 text-[13px] font-medium rounded-lg transition-all duration-200 ${
                   pathname === link.href
                     ? transparent
                       ? "text-white bg-white/15"
                       : "text-blue-700 bg-blue-50"
                     : transparent
-                    ? "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "text-white/75 hover:text-white hover:bg-white/10"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >
@@ -77,14 +76,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
-              className={`inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 group ${
+              className={`inline-flex items-center gap-2 text-[13px] font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 group shadow-sm ${
                 transparent
                   ? "bg-white text-blue-700 hover:bg-blue-50"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
+                  : "bg-blue-600 text-white hover:bg-blue-700 shadow-blue-200"
               }`}
             >
               Book a Consultation
-              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
 

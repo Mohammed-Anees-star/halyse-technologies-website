@@ -132,7 +132,7 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40 pb-20 flex-1 flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 lg:pt-44 pb-20 flex-1 flex flex-col justify-center">
             <div className="max-w-5xl">
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
@@ -180,11 +180,14 @@ export default function HomePage() {
           </div>
 
           {/* Tech marquee */}
-          <div className="relative border-y border-white/[0.06] bg-white/[0.02] backdrop-blur-sm py-5 overflow-hidden">
+          <div className="relative border-y border-white/[0.08] bg-gradient-to-r from-blue-950/40 via-blue-900/20 to-blue-950/40 backdrop-blur-sm py-5 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-950 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-950 to-transparent z-10 pointer-events-none" />
             <div className="flex animate-marquee whitespace-nowrap">
               {[...techMarquee, ...techMarquee].map((tech, i) => (
-                <span key={i} className="mx-8 text-sm font-medium text-gray-500 tracking-wide">
-                  {tech} <span className="text-blue-500 mx-2">·</span>
+                <span key={i} className="mx-8 text-sm font-semibold text-blue-100 tracking-wide flex items-center gap-4">
+                  {tech}
+                  <span className="text-cyan-400 text-lg">◆</span>
                 </span>
               ))}
             </div>
@@ -284,13 +287,15 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="mt-12 flex justify-end">
+          <div className="mt-16 flex justify-center">
             <Link
               href="/solutions"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group"
+              className="inline-flex items-center gap-3 bg-gray-950 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-gray-200 hover:shadow-blue-200 hover:scale-105 group"
             >
-              View all solutions
-              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              Browse all solutions
+              <span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+                <ArrowRight size={14} className="text-white group-hover:translate-x-0.5 transition-transform" />
+              </span>
             </Link>
           </div>
         </div>
@@ -369,15 +374,20 @@ export default function HomePage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="p-7 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.06] hover:border-blue-500/30 transition-all duration-200 group"
+                  className="p-7 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07] hover:border-blue-500/40 transition-all duration-300 group relative overflow-hidden"
                 >
-                  <div className="text-blue-400 text-xs font-bold tracking-widest mb-5">
+                  <div className="absolute top-0 right-0 font-serif text-6xl font-black text-white/[0.04] group-hover:text-blue-400/10 leading-none -translate-y-1 translate-x-1 pointer-events-none transition-colors">
                     {item.num}
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-white mb-3 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                  <div className="relative z-10">
+                    <div className="text-blue-400 text-[11px] font-bold tracking-[0.2em] mb-5">
+                      {item.num}
+                    </div>
+                    <h3 className="font-serif text-lg font-bold text-white mb-3 leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -410,31 +420,35 @@ export default function HomePage() {
             {industries.map((industry, i) => (
               <div
                 key={industry}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 cursor-default"
+                className="group relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 cursor-default overflow-hidden"
               >
-                <div className="text-blue-600/40 text-xs font-bold mb-4">
-                  0{i + 1}
+                <div className="absolute top-0 right-0 font-serif text-7xl font-black text-blue-50 group-hover:text-blue-100 leading-none -translate-y-2 translate-x-2 pointer-events-none transition-colors">
+                  {String(i + 1).padStart(2, "0")}
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors leading-snug">
-                    {industry}
-                  </span>
-                  <ArrowUpRight
-                    size={16}
-                    className="text-gray-300 group-hover:text-blue-600 transition-colors shrink-0 ml-2"
-                  />
+                <div className="relative z-10 pt-12">
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="text-base font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-snug">
+                      {industry}
+                    </span>
+                    <ArrowUpRight
+                      size={16}
+                      className="text-gray-300 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 mt-1"
+                    />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12">
+          <div className="mt-16 flex justify-center">
             <Link
               href="/industries"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group"
+              className="inline-flex items-center gap-3 bg-white hover:bg-blue-700 text-gray-900 hover:text-white text-sm font-semibold px-8 py-4 rounded-full border border-gray-200 hover:border-blue-700 transition-all duration-300 shadow-lg shadow-gray-200/50 hover:shadow-blue-200 hover:scale-105 group"
             >
               See industry solutions
-              <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+              <span className="w-7 h-7 rounded-full bg-blue-50 group-hover:bg-white/15 flex items-center justify-center transition-colors">
+                <ArrowRight size={14} className="text-blue-700 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+              </span>
             </Link>
           </div>
         </div>
@@ -517,6 +531,18 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-16 flex justify-center">
+            <Link
+              href="/insights"
+              className="inline-flex items-center gap-3 bg-gray-950 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-gray-200 hover:shadow-blue-200 hover:scale-105 group"
+            >
+              Read all insights
+              <span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+                <ArrowRight size={14} className="text-white group-hover:translate-x-0.5 transition-transform" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
