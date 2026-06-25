@@ -114,7 +114,8 @@ export default function OurApproachPage() {
     <>
       <PageHero
         badge="Our Approach"
-        title="A Methodology Built on Rigor and Partnership"
+        title="A methodology built on"
+        highlight="rigor and partnership."
         subtitle="We follow a structured, transparent process that eliminates ambiguity, manages risk, and consistently delivers solutions that work in the real world."
       />
 

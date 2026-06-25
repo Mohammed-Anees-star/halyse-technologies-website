@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 
@@ -18,17 +18,10 @@ const contactDetails = [
     href: "mailto:mohammed.anees@halyse.com",
   },
   {
-    icon: Phone,
-    label: "Call Us",
-    value: "+91 123 456 7890",
-    sub: "Mon–Fri, 9AM–6PM IST",
-    href: "tel:+911234567890",
-  },
-  {
     icon: MapPin,
     label: "Location",
-    value: "India",
-    sub: "Serving clients globally",
+    value: "India · Global Delivery",
+    sub: "Serving the US, Australia & Middle East",
     href: null,
   },
   {
@@ -38,6 +31,13 @@ const contactDetails = [
     sub: "For all business enquiries",
     href: null,
   },
+  {
+    icon: MessageSquare,
+    label: "Time Zone Coverage",
+    value: "US · AU · ME · IN",
+    sub: "Flexible engagement hours",
+    href: null,
+  },
 ];
 
 export default function ContactPage() {
@@ -45,7 +45,8 @@ export default function ContactPage() {
     <>
       <PageHero
         badge="Contact Us"
-        title="Let's Start a Conversation"
+        title="Let's start a"
+        highlight="conversation."
         subtitle="Tell us about your challenges and objectives. We'll come prepared with ideas, not just a pitch."
       />
 
@@ -96,7 +97,9 @@ export default function ContactPage() {
                   Follow us for insights on AI, automation, and enterprise technology.
                 </p>
                 <a
-                  href="#"
+                  href="https://linkedin.com/company/halyse-technologies"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block text-xs bg-white/20 hover:bg-white/30 text-white font-medium px-4 py-2 rounded-lg transition-colors"
                 >
                   Visit our LinkedIn Page →

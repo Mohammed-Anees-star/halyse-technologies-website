@@ -34,7 +34,7 @@ const solutions = [
       "Notifications, alerts, and event-driven triggers",
       "Robotic process automation (RPA) integrations",
     ],
-    technologies: ["Microsoft Power Automate", "Power Platform", "SharePoint", "Logic Apps"],
+    technologies: ["Power Automate", "Power Platform", "Azure Logic Apps", "SharePoint", "VBA Modernization"],
   },
   {
     id: "analytics",
@@ -50,7 +50,7 @@ const solutions = [
       "Self-service analytics platforms",
       "Scheduled and real-time reporting pipelines",
     ],
-    technologies: ["Microsoft Power BI", "Azure Data Factory", "SQL Server", "Fabric"],
+    technologies: ["Power BI", "Microsoft Fabric", "Azure Data Factory", "Azure SQL", "SQL Server"],
   },
   {
     id: "apps",
@@ -66,7 +66,7 @@ const solutions = [
       "Role-based access control and audit trails",
       "Offline and low-code solution delivery",
     ],
-    technologies: ["Microsoft Power Apps", "Quickbase", "Dataverse", "Azure SQL"],
+    technologies: ["Power Apps", "Quickbase", "ASP.NET Core", "Dataverse", "Azure SQL"],
   },
   {
     id: "integration",
@@ -82,7 +82,7 @@ const solutions = [
       "Legacy system bridging and modernization",
       "Integration monitoring and error handling",
     ],
-    technologies: ["Azure API Management", "Logic Apps", "MuleSoft", "Zapier"],
+    technologies: ["Azure API Management", "Logic Apps", "Azure Service Bus", "ASP.NET Core APIs", "REST & Webhooks"],
   },
   {
     id: "ai",
@@ -98,7 +98,7 @@ const solutions = [
       "Anomaly detection and risk scoring",
       "Azure OpenAI and Copilot integrations",
     ],
-    technologies: ["Azure OpenAI", "Azure ML", "Copilot Studio", "Cognitive Services"],
+    technologies: ["Azure OpenAI", "Azure ML", "Copilot Studio", "Azure AI Foundry", "Power Platform AI Builder"],
   },
   {
     id: "crm",
@@ -114,7 +114,7 @@ const solutions = [
       "Sales pipeline and forecasting setup",
       "User training and change management",
     ],
-    technologies: ["Dynamics 365", "Business Central", "Power Platform", "Azure DevOps"],
+    technologies: ["Dynamics 365", "Dataverse", "Business Central", "Power Platform", "Azure DevOps"],
   },
 ];
 
@@ -123,7 +123,8 @@ export default function SolutionsPage() {
     <>
       <PageHero
         badge="Our Solutions"
-        title="Enterprise Solutions Engineered for Impact"
+        title="Enterprise solutions engineered"
+        highlight="for impact."
         subtitle="We don't offer generic services. Every solution is designed around your business objectives, your data, and your team — then delivered with precision."
       />
 

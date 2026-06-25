@@ -80,7 +80,8 @@ export default function CaseStudiesPage() {
     <>
       <PageHero
         badge="Case Studies"
-        title="Real Solutions. Measurable Outcomes."
+        title="Real solutions."
+        highlight="Measurable outcomes."
         subtitle="Every engagement is different. These case studies demonstrate how we approach complex business challenges and deliver solutions that create lasting impact."
       />
 

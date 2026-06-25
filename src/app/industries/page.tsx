@@ -105,8 +105,9 @@ export default function IndustriesPage() {
     <>
       <PageHero
         badge="Industries"
-        title="Solutions Tailored to Your Industry"
-        subtitle="We understand that every sector has unique challenges, compliance requirements, and operational rhythms. Our solutions are built with that context in mind."
+        title="Solutions tailored to your"
+        highlight="industry."
+        subtitle="Every sector has unique challenges, compliance requirements, and operational rhythms. Our solutions are built with that context in mind."
       />
 
       <section className="py-20 bg-white">

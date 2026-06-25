@@ -72,8 +72,9 @@ export default function AboutPage() {
     <>
       <PageHero
         badge="About Us"
-        title="About Halyse Technologies"
-        subtitle="We are a specialized enterprise technology consulting firm, built to help ambitious organizations harness the power of AI, Data, and Automation."
+        title="Built for enterprise."
+        highlight="Focused on outcomes."
+        subtitle="A Microsoft-certified consulting firm helping ambitious organizations across the US, Australia, and the Middle East harness the power of Azure, Power Platform, Dynamics 365, and Quickbase."
       />
 
       {/* Company Overview */}
