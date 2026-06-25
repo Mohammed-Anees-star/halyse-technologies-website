@@ -19,7 +19,7 @@ import {
 
 const stats = [
   { value: "50+", label: "Projects Delivered" },
-  { value: "15+", label: "Industries Served" },
+  { value: "8+", label: "Years of Experience" },
   { value: "98%", label: "Client Satisfaction" },
   { value: "24/7", label: "Post-Deployment Support" },
 ];
@@ -163,13 +163,15 @@ const techStack = [
   "Power BI",
   "Power Apps",
   "Power Automate",
-  "Dynamics 365",
+  "Dynamics 365 & Dataverse",
   "Business Central",
   "Quickbase",
-  "Azure",
+  "Microsoft Azure",
+  "Azure Functions & Logic Apps",
+  "Azure SQL & SQL Server",
+  "ASP.NET Core",
   "Azure OpenAI",
   "SharePoint",
-  "Azure Data Factory",
   "Copilot Studio",
 ];
 
@@ -479,28 +481,28 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  title: "Enterprise-Grade Architecture",
-                  desc: "Scalable, secure, and standards-aligned solutions built to last.",
+                  title: "Microsoft Partner",
+                  desc: "Certified expertise across Azure, Power Platform, Dynamics 365 — trusted, not just trained.",
                 },
                 {
-                  title: "Microsoft & Quickbase Depth",
-                  desc: "Specialists, not generalists — deep proficiency across the full stack.",
+                  title: "Enterprise-Grade Architecture",
+                  desc: "Scalable, secure, and standards-aligned solutions built for long-term success.",
                 },
                 {
                   title: "End-to-End Ownership",
-                  desc: "From discovery through deployment and beyond — we own the full lifecycle.",
+                  desc: "From discovery and architecture through deployment and support — we own the full lifecycle.",
                 },
                 {
                   title: "Measurable Business ROI",
-                  desc: "Every engagement is anchored to real outcomes: cost, speed, and accuracy.",
+                  desc: "Every engagement is anchored to real outcomes: cost reduction, speed, and accuracy.",
                 },
                 {
-                  title: "Global Delivery",
-                  desc: "Serving clients in the US, Australia, UAE, and India with a follow-the-sun model.",
+                  title: "Global Time Zone Coverage",
+                  desc: "Serving clients across the US, Australia, UAE, and Middle East with flexible delivery models.",
                 },
                 {
-                  title: "Dedicated Partnership",
-                  desc: "We integrate into your team and stay accountable beyond go-live.",
+                  title: "8+ Years of Delivery",
+                  desc: "Deep hands-on experience across manufacturing, healthcare, finance, and construction.",
                 },
               ].map((item) => (
                 <div

@@ -25,14 +25,16 @@ const technologies = [
   "Power BI & Analytics",
   "Power Apps & Automate",
   "Quickbase",
-  "Dynamics 365",
+  "Dynamics 365 & Dataverse",
   "Business Central",
-  "Azure Services",
-  "Azure OpenAI",
+  "Microsoft Azure",
+  "Azure Functions & Logic Apps",
+  "Azure SQL & SQL Server",
+  "ASP.NET Core & Web APIs",
   "SharePoint Online",
-  "REST & GraphQL APIs",
-  "SQL & NoSQL Databases",
-  "Azure Data Factory",
+  "Azure OpenAI & Copilot",
+  "System Integrations & APIs",
+  "VBA & Legacy Modernization",
 ];
 
 const values = [
@@ -61,7 +63,7 @@ const values = [
 const stats = [
   { value: "50+", label: "Projects Completed" },
   { value: "15+", label: "Industries Served" },
-  { value: "7+", label: "Years of Experience" },
+  { value: "8+", label: "Years of Experience" },
   { value: "100%", label: "Client Retention Rate" },
 ];
 
@@ -87,22 +89,24 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Halyse Technologies Private Limited is an enterprise technology consulting firm
-                  specializing in AI, Data, Business Process Automation, and Custom Application
-                  development. We work with organizations across industries to design, build, and
-                  deploy solutions that solve real problems and create measurable business value.
+                  Halyse Technologies is a Microsoft-certified cloud and enterprise solutions
+                  consulting firm helping businesses across the United States, Australia, and the
+                  Middle East automate operations, modernize legacy systems, and build scalable
+                  digital solutions.
                 </p>
                 <p>
-                  Our team brings deep expertise in the Microsoft ecosystem — Power Platform, Dynamics
-                  365, Azure, and SharePoint — combined with strong Quickbase capability and a
-                  pragmatic approach to emerging AI technologies. We are not a generalist firm that
-                  dabbles in everything; we are specialists who go deep on what matters.
+                  We specialize in Microsoft Azure, Power Platform, Dynamics 365, Quickbase, and
+                  ASP.NET Core — delivering end-to-end solutions that eliminate manual processes,
+                  integrate disconnected systems, and unlock greater business value from technology
+                  investments. With 8+ years of hands-on enterprise delivery, we bring deep
+                  proficiency across the full Microsoft stack combined with strong Quickbase
+                  expertise.
                 </p>
                 <p>
                   Founded with the belief that great technology consulting should be rigorous,
                   transparent, and genuinely client-focused, Halyse Technologies operates with a
-                  partner mindset. We integrate into your team, respect your constraints, and stay
-                  accountable to outcomes — not just deliverables.
+                  partner mindset — integrating into your team, respecting your constraints, and
+                  staying accountable to outcomes, not just deliverables.
                 </p>
               </div>
             </div>
