@@ -309,8 +309,8 @@ export default function HomePage() {
 
               <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl">
                 Halyse Technologies delivers enterprise-grade AI, Data, and Automation solutions
-                built on Microsoft and Quickbase — helping organizations across the US, Australia,
-                and Middle East unlock measurable, lasting business value.
+                built on Microsoft Azure, Power Platform, Dynamics 365, and Quickbase — helping
+                organizations across the US, Australia, and Middle East unlock measurable, lasting business value.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
@@ -331,7 +331,7 @@ export default function HomePage() {
 
               {/* Trust marks */}
               <div className="flex flex-wrap gap-x-8 gap-y-3">
-                {["Microsoft Partner", "Quickbase Expert", "Power Platform Certified", "Azure Solutions"].map(
+                {["Microsoft Partner", "Quickbase Expert", "Power Platform Certified", "Azure Solutions", "8+ Years Experience"].map(
                   (tag) => (
                     <div key={tag} className="flex items-center gap-2">
                       <div className="w-1 h-1 rounded-full bg-blue-500" />
