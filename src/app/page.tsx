@@ -11,7 +11,6 @@ import {
   GitMerge,
   Brain,
   Users,
-  ChevronRight,
   CheckCircle2,
 } from "lucide-react";
 
@@ -29,96 +28,54 @@ const services = [
     id: "automation",
     icon: Zap,
     label: "Process Automation",
-    headline: "Eliminate manual work. Scale with confidence.",
-    body: "We transform fragmented, manual operations into seamless automated workflows — saving time, cutting errors, and freeing your teams for high-value work.",
-    points: [
-      "End-to-end workflow automation across departments",
-      "Multi-step approval and escalation systems",
-      "Power Automate flows for Microsoft 365",
-      "Document processing and routing automation",
-      "Event-driven triggers and real-time alerts",
-    ],
-    tech: ["Power Automate", "Power Platform", "SharePoint", "Logic Apps"],
+    headline: "Eliminate manual work.",
+    body: "Transform fragmented operations into seamless automated workflows — saving time, cutting errors, and freeing teams for high-value work.",
+    tech: ["Power Automate", "Logic Apps", "SharePoint"],
     href: "/solutions#automation",
   },
   {
     id: "analytics",
     icon: BarChart3,
     label: "Data & Analytics",
-    headline: "Turn raw data into decisive action.",
-    body: "We design analytics platforms that consolidate your data and surface it through intuitive dashboards — giving every decision-maker the clarity to act with confidence.",
-    points: [
-      "Power BI dashboards and executive reporting",
-      "Data warehousing and lakehouse architecture",
-      "Enterprise data modeling and governance",
-      "KPI tracking and self-service analytics",
-      "Real-time and scheduled reporting pipelines",
-    ],
-    tech: ["Power BI", "Azure Data Factory", "Fabric", "SQL Server"],
+    headline: "Turn data into action.",
+    body: "Analytics platforms that consolidate your data and surface it through intuitive dashboards — clarity for every decision-maker.",
+    tech: ["Power BI", "Fabric", "Azure Data Factory"],
     href: "/solutions#analytics",
   },
   {
     id: "apps",
     icon: Layers,
     label: "Custom Applications",
-    headline: "Software built around your exact process.",
-    body: "Off-the-shelf tools rarely fit. We build tailored applications using Power Apps and Quickbase that match your workflows, team structures, and data — without the overhead of large software projects.",
-    points: [
-      "Canvas and model-driven Power Apps",
-      "Quickbase relational database applications",
-      "Mobile-ready field and operations portals",
-      "Role-based access control and audit trails",
-      "Offline-capable low-code solutions",
-    ],
-    tech: ["Power Apps", "Quickbase", "Dataverse", "Azure SQL"],
+    headline: "Built for your process.",
+    body: "Tailored Power Apps and Quickbase solutions that match your workflows, team structures, and data — without large software overhead.",
+    tech: ["Power Apps", "Quickbase", "Dataverse"],
     href: "/solutions#apps",
   },
   {
     id: "integration",
     icon: GitMerge,
     label: "System Integration",
-    headline: "Connect your ecosystem. Eliminate silos.",
-    body: "Most businesses run on 5–15 disconnected tools. We architect integration layers that connect your systems in real time — so data flows automatically, accurately, and reliably.",
-    points: [
-      "RESTful and SOAP API design and implementation",
-      "Third-party ERP, CRM, and HR integrations",
-      "Real-time and batch data synchronization",
-      "Legacy system modernization and bridging",
-      "Integration monitoring and error handling",
-    ],
-    tech: ["Azure API Management", "Logic Apps", "MuleSoft", "Zapier"],
+    headline: "Connect your ecosystem.",
+    body: "Integration layers that connect your systems in real time — so data flows automatically, accurately, and reliably across the enterprise.",
+    tech: ["API Management", "Logic Apps", "ASP.NET Core"],
     href: "/solutions#integration",
   },
   {
     id: "ai",
     icon: Brain,
     label: "AI & Intelligent Solutions",
-    headline: "Applied AI that moves the business needle.",
-    body: "We deploy AI and machine learning where it creates tangible outcomes — from predicting demand to automating complex decisions that previously required human judgment.",
-    points: [
-      "Predictive analytics and demand forecasting",
-      "AI-powered document understanding and extraction",
-      "Natural language processing applications",
-      "Azure OpenAI and Microsoft Copilot integrations",
-      "Anomaly detection and intelligent risk scoring",
-    ],
-    tech: ["Azure OpenAI", "Copilot Studio", "Azure ML", "Cognitive Services"],
+    headline: "Applied AI that moves the needle.",
+    body: "Deploy AI and ML where it creates tangible outcomes — from predicting demand to automating complex decisions.",
+    tech: ["Azure OpenAI", "Copilot Studio", "Azure ML"],
     href: "/solutions#ai",
   },
   {
     id: "crm",
     icon: Users,
     label: "CRM & ERP",
-    headline: "Operational excellence from lead to ledger.",
-    body: "We implement and customize Dynamics 365 and Business Central to unify your sales, service, finance, and supply chain — giving every team a single source of truth.",
-    points: [
-      "Dynamics 365 Sales and Customer Service",
-      "Business Central finance and operations",
-      "Custom modules and entity extensions",
-      "CRM data migration and cleansing",
-      "User training and change management",
-    ],
-    tech: ["Dynamics 365", "Business Central", "Power Platform", "Azure DevOps"],
+    headline: "From lead to ledger.",
+    body: "Implement and customize Dynamics 365 and Business Central to unify sales, service, finance, and supply chain in one source of truth.",
+    tech: ["Dynamics 365", "Business Central", "Dataverse"],
     href: "/solutions#crm",
   },
 ];
@@ -136,130 +93,40 @@ const industries = [
 
 const insights = [
   {
-    category: "Microsoft Power Platform",
-    title: "How Power Platform is Redefining Enterprise Automation in 2025",
+    category: "Power Platform",
+    title: "How Power Platform is Redefining Enterprise Automation in 2026",
     summary:
-      "Microsoft's Power Platform has evolved from a low-code tool into a full enterprise automation backbone. We explore what this means for mid-market organizations.",
+      "Microsoft's Power Platform has evolved from a low-code tool into a full enterprise automation backbone. What this means for mid-market organizations.",
     readTime: "5 min read",
   },
   {
     category: "Azure AI",
-    title: "From Pilot to Production: Making Azure OpenAI Work at Enterprise Scale",
+    title: "From Pilot to Production: Making Azure OpenAI Work at Scale",
     summary:
-      "Most AI pilots fail at scale. Here's the architecture, governance, and change management approach that gets enterprise AI into production — and keeps it there.",
+      "Most AI pilots fail at scale. Here's the architecture, governance, and change management approach that gets enterprise AI into production.",
     readTime: "7 min read",
   },
   {
     category: "Data Strategy",
-    title: "The Modern Data Stack for Mid-Market Enterprises: A Practical Guide",
+    title: "The Modern Data Stack for Mid-Market Enterprises",
     summary:
-      "Enterprise analytics doesn't require a Fortune 500 budget. This guide outlines a practical, cost-effective data architecture built on Microsoft Fabric and Power BI.",
+      "Enterprise analytics doesn't require a Fortune 500 budget. A practical, cost-effective data architecture built on Microsoft Fabric and Power BI.",
     readTime: "6 min read",
   },
 ];
 
-const techStack = [
-  "Microsoft Power Platform",
-  "Power BI",
-  "Power Apps",
-  "Power Automate",
-  "Dynamics 365 & Dataverse",
-  "Business Central",
-  "Quickbase",
+const techMarquee = [
   "Microsoft Azure",
-  "Azure Functions & Logic Apps",
-  "Azure SQL & SQL Server",
+  "Power Platform",
+  "Dynamics 365",
+  "Quickbase",
   "ASP.NET Core",
+  "Power BI",
   "Azure OpenAI",
-  "SharePoint",
   "Copilot Studio",
+  "Azure Functions",
+  "Logic Apps",
 ];
-
-// ─── SERVICES TABS (client component) ─────────────────────────────────────
-
-function ServicesTabs() {
-  const [active, setActive] = useState(0);
-  const svc = services[active];
-  const Icon = svc.icon;
-
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-0 rounded-2xl overflow-hidden border border-gray-200 shadow-xl shadow-gray-100/80">
-      {/* Tab list */}
-      <div className="bg-gray-950 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible">
-        {services.map((s, i) => {
-          const TabIcon = s.icon;
-          return (
-            <button
-              key={s.id}
-              onClick={() => setActive(i)}
-              className={`flex items-center gap-3 px-6 py-4 text-left transition-all duration-200 whitespace-nowrap lg:whitespace-normal border-b border-white/5 last:border-0 group ${
-                active === i
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-400 hover:text-white hover:bg-white/5"
-              }`}
-            >
-              <TabIcon
-                size={18}
-                className={`shrink-0 ${active === i ? "text-white" : "text-gray-500 group-hover:text-blue-400"}`}
-              />
-              <span className="text-sm font-medium">{s.label}</span>
-              {active === i && (
-                <ChevronRight size={14} className="ml-auto shrink-0 hidden lg:block" />
-              )}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Tab panel */}
-      <div className="bg-white p-8 lg:p-10">
-        <div className="flex items-start gap-4 mb-6">
-          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-100 shrink-0">
-            <Icon size={22} className="text-white" />
-          </div>
-          <div>
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">
-              {svc.label}
-            </p>
-            <h3 className="text-xl lg:text-2xl font-bold text-gray-900 leading-snug">
-              {svc.headline}
-            </h3>
-          </div>
-        </div>
-
-        <p className="text-gray-600 leading-relaxed mb-7 text-[15px]">{svc.body}</p>
-
-        <ul className="space-y-2.5 mb-8">
-          {svc.points.map((pt) => (
-            <li key={pt} className="flex items-start gap-3">
-              <CheckCircle2 size={17} className="text-blue-600 mt-0.5 shrink-0" />
-              <span className="text-sm text-gray-700 leading-relaxed">{pt}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="flex flex-wrap gap-2 flex-1">
-            {svc.tech.map((t) => (
-              <span
-                key={t}
-                className="text-xs bg-blue-50 text-blue-700 border border-blue-100 px-3 py-1 rounded-full font-medium"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-          <Link
-            href={svc.href}
-            className="inline-flex items-center gap-1.5 text-sm text-blue-700 font-semibold hover:gap-2.5 transition-all group"
-          >
-            Learn more <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // ─── PAGE ──────────────────────────────────────────────────────────────────
 
@@ -267,94 +134,96 @@ export default function HomePage() {
   return (
     <>
       {/* ════════════════════════════════════════════════════════
-          HERO
+          HERO — Infosys-inspired cinematic
       ════════════════════════════════════════════════════════ */}
-      <section className="relative bg-gray-950 text-white overflow-hidden min-h-[92vh] flex flex-col">
-        {/* Background texture */}
+      <section className="relative bg-gray-950 text-white overflow-hidden min-h-screen flex flex-col">
+        {/* Animated gradient orbs */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Grid lines */}
           <div
-            className="absolute inset-0 opacity-[0.035]"
+            className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage:
                 "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-              backgroundSize: "80px 80px",
+              backgroundSize: "60px 60px",
             }}
           />
-          {/* Glow orbs */}
-          <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-blue-700/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
+          <div className="absolute top-[-15%] right-[-10%] w-[800px] h-[800px] bg-blue-600/25 rounded-full blur-[140px] animate-pulse-slow" />
+          <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-blue-900/30 rounded-full blur-[120px]" />
+          <div className="absolute top-[40%] left-[30%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 flex-1 flex flex-col justify-center">
-            <div className="max-w-4xl">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40 pb-20 flex-1 flex flex-col justify-center">
+            <div className="max-w-5xl">
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2.5 mb-8">
-                <span className="w-8 h-px bg-blue-500" />
-                <span className="text-blue-400 text-xs font-bold tracking-[0.2em] uppercase">
-                  Enterprise AI & Data Consulting
+              <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                <span className="text-blue-200 text-xs font-semibold tracking-wider uppercase">
+                  Enterprise AI &amp; Cloud Consulting
                 </span>
               </div>
 
-              {/* Headline */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-8">
-                Transform How
+              {/* Massive serif-style headline */}
+              <h1 className="font-serif text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.95] tracking-tight mb-10">
+                Transform
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300">
-                  Your Business
+                how your <br />
+                business{" "}
+                <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">
+                  operates.
                 </span>
-                <br />
-                Operates.
               </h1>
 
-              <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl">
-                Halyse Technologies delivers enterprise-grade AI, Data, and Automation solutions
-                built on Microsoft Azure, Power Platform, Dynamics 365, and Quickbase — helping
-                organizations across the US, Australia, and Middle East unlock measurable, lasting business value.
+              <p className="text-lg lg:text-xl text-gray-400 leading-relaxed mb-12 max-w-2xl font-light">
+                Halyse Technologies delivers enterprise-grade AI, Data, and Automation
+                solutions built on Microsoft Azure, Power Platform, Dynamics 365, and
+                Quickbase — unlocking measurable business value for organizations across
+                the US, Australia, and the Middle East.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-16">
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4 mb-20">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-lg shadow-blue-900/50 group text-sm"
+                  className="inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-2xl shadow-blue-900/50 group text-sm"
                 >
                   Book a Consultation
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center gap-2.5 text-white/80 hover:text-white font-semibold px-7 py-3.5 rounded-lg border border-white/15 hover:border-white/35 transition-all duration-200 text-sm"
+                  className="inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-lg border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-200 text-sm"
                 >
                   Explore Solutions
                 </Link>
               </div>
+            </div>
+          </div>
 
-              {/* Trust marks */}
-              <div className="flex flex-wrap gap-x-8 gap-y-3">
-                {["Microsoft Partner", "Quickbase Expert", "Power Platform Certified", "Azure Solutions", "8+ Years Experience"].map(
-                  (tag) => (
-                    <div key={tag} className="flex items-center gap-2">
-                      <div className="w-1 h-1 rounded-full bg-blue-500" />
-                      <span className="text-xs text-gray-500 font-medium">{tag}</span>
-                    </div>
-                  )
-                )}
-              </div>
+          {/* Tech marquee */}
+          <div className="relative border-y border-white/[0.06] bg-white/[0.02] backdrop-blur-sm py-5 overflow-hidden">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...techMarquee, ...techMarquee].map((tech, i) => (
+                <span key={i} className="mx-8 text-sm font-medium text-gray-500 tracking-wide">
+                  {tech} <span className="text-blue-500 mx-2">·</span>
+                </span>
+              ))}
             </div>
           </div>
 
           {/* Stats bar */}
-          <div className="border-t border-white/8 bg-white/[0.03] backdrop-blur-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="bg-white/[0.03] backdrop-blur-sm">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {stats.map((stat, i) => (
                   <div key={stat.label} className={`${i > 0 ? "lg:border-l lg:border-white/10 lg:pl-6" : ""}`}>
-                    <div className="text-3xl font-extrabold text-white tracking-tight">
+                    <div className="text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
                       {stat.value}
                     </div>
-                    <div className="text-xs text-gray-500 mt-1 font-medium">{stat.label}</div>
+                    <div className="text-xs lg:text-sm text-gray-500 mt-2 font-medium tracking-wide">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -364,24 +233,80 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          SERVICES (tabbed)
+          SERVICES — Card grid (Infosys-style)
       ════════════════════════════════════════════════════════ */}
       <section className="py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
-            <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.15em] uppercase mb-4">
-              Our Services
+          <div className="max-w-3xl mb-16">
+            <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-5">
+              What We Do
             </span>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
-              Comprehensive Enterprise Solutions
+            <h2 className="font-serif text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05] mb-6">
+              Comprehensive enterprise{" "}
+              <span className="italic font-light text-blue-600">solutions.</span>
             </h2>
-            <p className="text-gray-500 text-lg leading-relaxed">
+            <p className="text-gray-500 text-lg leading-relaxed max-w-2xl">
               From automation and analytics to AI and ERP — end-to-end capabilities
-              that power modern enterprises.
+              designed to power modern enterprises.
             </p>
           </div>
-          <ServicesTabs />
-          <div className="mt-10 flex justify-end">
+
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((svc) => {
+              const Icon = svc.icon;
+              return (
+                <Link
+                  key={svc.id}
+                  href={svc.href}
+                  className="group relative bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:shadow-blue-100/50 hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Background gradient on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/0 group-hover:from-blue-50/40 group-hover:to-transparent transition-all duration-500" />
+
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                      <Icon size={24} className="text-white" />
+                    </div>
+
+                    {/* Label */}
+                    <p className="text-[11px] font-bold text-blue-600 uppercase tracking-widest mb-2">
+                      {svc.label}
+                    </p>
+
+                    {/* Headline */}
+                    <h3 className="font-serif text-2xl font-bold text-gray-900 mb-3 leading-tight">
+                      {svc.headline}
+                    </h3>
+
+                    {/* Body */}
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{svc.body}</p>
+
+                    {/* Tech tags */}
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {svc.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="text-[11px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded-md font-medium"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* CTA */}
+                    <div className="flex items-center gap-1.5 text-sm font-semibold text-blue-700 group-hover:gap-2.5 transition-all">
+                      Learn more
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="mt-12 flex justify-end">
             <Link
               href="/solutions"
               className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group"
@@ -394,45 +319,138 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
+          WHY HALYSE — Dark section
+      ════════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-gray-950 text-white overflow-hidden relative">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-700/15 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left */}
+            <div className="lg:sticky lg:top-32">
+              <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.2em] uppercase mb-6">
+                Why Halyse
+              </span>
+              <h2 className="font-serif text-5xl lg:text-6xl font-bold leading-[1.05] mb-8">
+                Built for enterprise.<br />
+                Focused on{" "}
+                <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+                  outcomes.
+                </span>
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-md font-light">
+                We combine deep technical expertise across the Microsoft ecosystem with a
+                business-first mindset — delivering solutions that move the needle, not just
+                go live.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 text-sm shadow-lg shadow-blue-900/50 group"
+              >
+                About Halyse
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Right — differentiators */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  num: "01",
+                  title: "Microsoft Partner",
+                  desc: "Certified expertise across Azure, Power Platform & Dynamics 365.",
+                },
+                {
+                  num: "02",
+                  title: "Enterprise Architecture",
+                  desc: "Scalable, secure, standards-aligned solutions built to last.",
+                },
+                {
+                  num: "03",
+                  title: "End-to-End Ownership",
+                  desc: "Discovery through deployment and beyond — we own the lifecycle.",
+                },
+                {
+                  num: "04",
+                  title: "Measurable ROI",
+                  desc: "Every engagement anchored to outcomes — cost, speed, accuracy.",
+                },
+                {
+                  num: "05",
+                  title: "Global Coverage",
+                  desc: "US, Australia, UAE, Middle East — follow-the-sun delivery.",
+                },
+                {
+                  num: "06",
+                  title: "8+ Years Delivery",
+                  desc: "Deep experience across manufacturing, healthcare, finance, construction.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-7 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.06] hover:border-blue-500/30 transition-all duration-200 group"
+                >
+                  <div className="text-blue-400 text-xs font-bold tracking-widest mb-5">
+                    {item.num}
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-white mb-3 leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
           INDUSTRIES
       ════════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-gray-50 border-y border-gray-100">
+      <section className="py-28 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
-            <div className="max-w-xl">
-              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.15em] uppercase mb-4">
-                Industries We Serve
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+            <div className="max-w-2xl">
+              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-5">
+                Industries
               </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-                Deep Domain Expertise Across Sectors
+              <h2 className="font-serif text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05]">
+                Deep domain{" "}
+                <span className="italic font-light text-blue-600">expertise.</span>
               </h2>
             </div>
-            <p className="text-gray-500 leading-relaxed max-w-md lg:text-right">
-              We apply our technical capabilities within the specific context of your industry —
-              understanding its data, its processes, and its regulatory landscape.
+            <p className="text-gray-500 leading-relaxed max-w-md lg:text-right text-base">
+              We apply our technical capabilities within the specific context of your
+              industry — understanding its data, its processes, and its regulatory landscape.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {industries.map((industry) => (
+            {industries.map((industry, i) => (
               <div
                 key={industry}
-                className="group bg-white rounded-xl px-6 py-5 border border-gray-200 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-50 transition-all duration-200 cursor-default"
+                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 cursor-default"
               >
+                <div className="text-blue-600/40 text-xs font-bold mb-4">
+                  0{i + 1}
+                </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-gray-800 group-hover:text-blue-700 transition-colors leading-snug">
+                  <span className="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors leading-snug">
                     {industry}
                   </span>
                   <ArrowUpRight
-                    size={14}
-                    className="text-gray-300 group-hover:text-blue-500 transition-colors shrink-0 ml-2"
+                    size={16}
+                    className="text-gray-300 group-hover:text-blue-600 transition-colors shrink-0 ml-2"
                   />
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-10">
+          <div className="mt-12">
             <Link
               href="/industries"
               className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group"
@@ -445,109 +463,18 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          WHY HALYSE
-      ════════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-gray-950 text-white overflow-hidden relative">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
-        </div>
-        <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left */}
-            <div>
-              <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.15em] uppercase mb-5">
-                Why Halyse
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                Built for Enterprise.
-                <br />
-                <span className="text-blue-400">Focused on Outcomes.</span>
-              </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                We combine deep technical expertise across the Microsoft ecosystem with a
-                business-first mindset — delivering solutions that move the needle, not just
-                go live.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm group"
-              >
-                About Halyse
-                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-
-            {/* Right — differentiators */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  title: "Microsoft Partner",
-                  desc: "Certified expertise across Azure, Power Platform, Dynamics 365 — trusted, not just trained.",
-                },
-                {
-                  title: "Enterprise-Grade Architecture",
-                  desc: "Scalable, secure, and standards-aligned solutions built for long-term success.",
-                },
-                {
-                  title: "End-to-End Ownership",
-                  desc: "From discovery and architecture through deployment and support — we own the full lifecycle.",
-                },
-                {
-                  title: "Measurable Business ROI",
-                  desc: "Every engagement is anchored to real outcomes: cost reduction, speed, and accuracy.",
-                },
-                {
-                  title: "Global Time Zone Coverage",
-                  desc: "Serving clients across the US, Australia, UAE, and Middle East with flexible delivery models.",
-                },
-                {
-                  title: "8+ Years of Delivery",
-                  desc: "Deep hands-on experience across manufacturing, healthcare, finance, and construction.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="p-6 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-200"
-                >
-                  <div className="w-6 h-0.5 bg-blue-500 mb-4" />
-                  <h3 className="text-sm font-bold text-white mb-2 leading-snug">{item.title}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tech strip */}
-          <div className="mt-20 pt-12 border-t border-white/8">
-            <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest text-center mb-7">
-              Platforms &amp; Technologies We Specialise In
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs text-blue-300/80 bg-blue-900/30 border border-blue-800/40 px-4 py-2 rounded-full font-medium hover:bg-blue-800/40 transition-colors cursor-default"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════
           INSIGHTS
       ════════════════════════════════════════════════════════ */}
       <section className="py-28 bg-white">
-        <div className="max-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
-            <div>
-              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.15em] uppercase mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
+            <div className="max-w-2xl">
+              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-5">
                 Insights
               </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-                Perspectives &amp; Thinking
+              <h2 className="font-serif text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05]">
+                Perspectives &amp;{" "}
+                <span className="italic font-light text-blue-600">thinking.</span>
               </h2>
             </div>
             <Link
@@ -559,22 +486,22 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {insights.map((insight, i) => (
               <article
                 key={insight.title}
-                className={`group rounded-2xl overflow-hidden border transition-all duration-300 hover:shadow-2xl hover:shadow-gray-100 hover:-translate-y-1 ${
+                className={`group rounded-3xl overflow-hidden border transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
                   i === 0
-                    ? "border-blue-200 bg-gradient-to-br from-blue-700 to-blue-900 text-white"
-                    : "border-gray-200 bg-white"
+                    ? "border-transparent bg-gradient-to-br from-blue-700 via-blue-800 to-blue-950 text-white shadow-2xl shadow-blue-200"
+                    : "border-gray-200 bg-white hover:border-blue-200 hover:shadow-blue-100/50"
                 }`}
               >
-                <div className="p-8">
-                  <div className="mb-5">
+                <div className="p-8 lg:p-10">
+                  <div className="mb-6">
                     <span
-                      className={`text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full ${
+                      className={`text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full ${
                         i === 0
-                          ? "bg-white/15 text-blue-200"
+                          ? "bg-white/15 text-blue-100"
                           : "bg-blue-50 text-blue-700"
                       }`}
                     >
@@ -582,30 +509,30 @@ export default function HomePage() {
                     </span>
                   </div>
                   <h3
-                    className={`font-bold leading-snug mb-4 text-base ${
+                    className={`font-serif font-bold leading-snug mb-5 text-xl ${
                       i === 0 ? "text-white" : "text-gray-900 group-hover:text-blue-700"
                     } transition-colors`}
                   >
                     {insight.title}
                   </h3>
                   <p
-                    className={`text-sm leading-relaxed mb-6 ${
+                    className={`text-sm leading-relaxed mb-8 ${
                       i === 0 ? "text-blue-100/80" : "text-gray-500"
                     }`}
                   >
                     {insight.summary}
                   </p>
                   <div
-                    className={`flex items-center justify-between text-xs font-medium ${
-                      i === 0 ? "text-blue-300" : "text-gray-400"
+                    className={`flex items-center justify-between text-xs font-semibold pt-5 border-t ${
+                      i === 0 ? "border-white/15 text-blue-200" : "border-gray-100 text-gray-400"
                     }`}
                   >
                     <span>{insight.readTime}</span>
                     <ArrowUpRight
-                      size={15}
+                      size={16}
                       className={`${
-                        i === 0 ? "text-blue-300" : "text-gray-400 group-hover:text-blue-600"
-                      } transition-colors`}
+                        i === 0 ? "text-blue-200" : "text-gray-400 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      } transition-all`}
                     />
                   </div>
                 </div>
@@ -616,42 +543,50 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          CTA
+          CTA — Final
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-gray-50 border-t border-gray-100">
-        <div className="max-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-950 rounded-3xl overflow-hidden relative">
-            {/* Background glow */}
+      <section className="py-24 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gray-950 rounded-[2rem] overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-700/15 rounded-full blur-[80px]" />
-              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-900/15 rounded-full blur-[80px]" />
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[100px]" />
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[80px]" />
+              <div
+                className="absolute inset-0 opacity-[0.03]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+                  backgroundSize: "60px 60px",
+                }}
+              />
             </div>
 
-            <div className="relative z-10 px-8 py-16 sm:px-16 sm:py-20 lg:px-20">
+            <div className="relative z-10 px-8 py-20 sm:px-16 lg:px-24">
               <div className="max-w-3xl">
-                <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.15em] uppercase mb-6">
-                  Ready to Start?
+                <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.2em] uppercase mb-6">
+                  Ready to start?
                 </span>
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
-                  Let&apos;s Build Something
-                  <br />
-                  <span className="text-blue-400">That Lasts.</span>
+                <h2 className="font-serif text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-8">
+                  Let&apos;s build something{" "}
+                  <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+                    that lasts.
+                  </span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl">
+                <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl font-light">
                   Tell us about your challenge. We&apos;ll come back with a clear perspective on the
                   opportunity, a recommended approach, and an honest assessment of fit.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-900/50 group text-sm"
+                    className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 shadow-2xl shadow-blue-900/50 group text-sm"
                   >
                     Book a Consultation
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
                     href="/solutions"
-                    className="inline-flex items-center justify-center gap-2.5 text-white font-semibold px-8 py-4 rounded-xl border border-white/15 hover:border-white/35 hover:bg-white/5 transition-all duration-200 text-sm"
+                    className="inline-flex items-center justify-center gap-2.5 text-white font-semibold px-8 py-4 rounded-lg border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-200 text-sm"
                   >
                     Explore Solutions
                   </Link>

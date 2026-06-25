@@ -2,11 +2,12 @@ interface PageHeroProps {
   badge?: string;
   title: string;
   subtitle?: string;
+  highlight?: string;
 }
 
-export default function PageHero({ badge, title, subtitle }: PageHeroProps) {
+export default function PageHero({ badge, title, subtitle, highlight }: PageHeroProps) {
   return (
-    <section className="relative bg-gray-950 text-white overflow-hidden pt-28 pb-20">
+    <section className="relative bg-gray-950 text-white overflow-hidden pt-36 pb-24 lg:pt-44 lg:pb-32">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -14,27 +15,35 @@ export default function PageHero({ badge, title, subtitle }: PageHeroProps) {
           style={{
             backgroundImage:
               "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+            backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-700/15 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-blue-900/10 rounded-full blur-[80px]" />
+        <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] bg-blue-600/20 rounded-full blur-[140px]" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-blue-900/25 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {badge && (
-          <div className="inline-flex items-center gap-2.5 mb-6">
-            <span className="w-6 h-px bg-blue-500" />
-            <span className="text-blue-400 text-xs font-bold tracking-[0.2em] uppercase">
+          <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+            <span className="text-blue-200 text-xs font-semibold tracking-wider uppercase">
               {badge}
             </span>
           </div>
         )}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6 max-w-3xl">
+        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.98] tracking-tight mb-8 max-w-4xl">
           {title}
+          {highlight && (
+            <>
+              <br />
+              <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">
+                {highlight}
+              </span>
+            </>
+          )}
         </h1>
         {subtitle && (
-          <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">{subtitle}</p>
+          <p className="text-lg lg:text-xl text-gray-400 max-w-2xl leading-relaxed font-light">{subtitle}</p>
         )}
       </div>
     </section>
