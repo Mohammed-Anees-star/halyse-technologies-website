@@ -376,7 +376,7 @@ export default function HomePage() {
                   key={item.title}
                   className="p-7 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07] hover:border-blue-500/40 transition-all duration-300 group relative overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 font-serif text-6xl font-black text-white/[0.04] group-hover:text-blue-400/10 leading-none -translate-y-1 translate-x-1 pointer-events-none transition-colors">
+                  <div className="absolute top-3 right-4 font-serif text-5xl font-bold text-white/[0.08] group-hover:text-blue-400/20 leading-none pointer-events-none transition-colors italic">
                     {item.num}
                   </div>
                   <div className="relative z-10">
@@ -422,10 +422,10 @@ export default function HomePage() {
                 key={industry}
                 className="group relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 cursor-default overflow-hidden"
               >
-                <div className="absolute top-0 right-0 font-serif text-7xl font-black text-blue-50 group-hover:text-blue-100 leading-none -translate-y-2 translate-x-2 pointer-events-none transition-colors">
+                <div className="absolute top-1 right-3 font-serif text-6xl font-bold text-blue-100 group-hover:text-blue-200 leading-none pointer-events-none transition-colors italic">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <div className="relative z-10 pt-12">
+                <div className="relative z-10 pt-16">
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-base font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-snug">
                       {industry}
