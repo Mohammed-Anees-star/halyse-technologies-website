@@ -4,74 +4,130 @@ import {
   FileText,
   GitMerge,
   BarChart3,
-  TrendingUp,
-  Clock,
-  CheckCircle2,
+  Zap,
+  Brain,
+  Users,
   ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  Clock,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Explore Halyse Technologies case studies: real-world enterprise solutions that delivered measurable business outcomes.",
+    "Explore representative engagements from Halyse Technologies — enterprise solutions across Power Platform, Azure, Dynamics 365, and Quickbase that deliver measurable business outcomes.",
 };
 
-const caseStudies = [
+const engagements = [
   {
-    icon: FileText,
-    label: "Document Management",
+    icon: Zap,
+    label: "Process Automation",
     industry: "Professional Services",
-    title: "Enterprise Document Management System",
-    problem:
-      "A professional services firm was managing thousands of contracts, compliance documents, and internal policies across shared drives, email, and paper. Document retrieval took hours, version control was non-existent, and compliance audits were a quarterly crisis.",
-    solution:
-      "We designed and implemented a centralized document management platform on SharePoint with Power Automate-powered approval workflows, automatic metadata tagging, role-based access control, and real-time audit trails. Power Apps provided a clean interface for document submission, review, and retrieval.",
-    outcomes: [
-      "75% reduction in document retrieval time",
-      "100% digital audit trail — zero paper dependency",
-      "Automated compliance reporting cut audit prep from 3 weeks to 2 days",
-      "18% reduction in compliance-related risk events in the first year",
+    title: "End-to-End Approval Workflow Modernization",
+    challenge:
+      "A consulting firm was managing purchase requisitions, leave approvals, and vendor onboarding through scattered email chains and shared spreadsheets — leading to bottlenecks, missed approvals, and zero audit visibility.",
+    approach:
+      "We mapped the firm's twelve most critical workflows and rebuilt them using Power Automate, Dataverse, and Power Apps. A unified Power BI dashboard gave leadership real-time visibility into pending items, SLA breaches, and completion rates — with automated escalation rules.",
+    capabilities: [
+      "Workflow discovery and process mapping",
+      "Multi-step approval and escalation flows",
+      "Centralized dashboard with SLA tracking",
+      "Role-based notifications and routing",
     ],
-    technologies: ["SharePoint Online", "Power Automate", "Power Apps", "Azure AD"],
-    duration: "14 weeks",
-  },
-  {
-    icon: GitMerge,
-    label: "Workflow Automation",
-    industry: "Manufacturing",
-    title: "Multi-Department Workflow Automation System",
-    problem:
-      "A mid-sized manufacturing company relied on manual approval chains via email for purchase requisitions, leave requests, and vendor onboarding. Process delays were causing procurement bottlenecks and employee frustration, with requests regularly falling through the cracks.",
-    solution:
-      "We mapped 12 critical business workflows and automated them using Power Automate and Dataverse. A centralized dashboard gave management real-time visibility into pending items, SLA breaches, and completion rates. Role-based notifications ensured every stakeholder had the right information at the right time.",
-    outcomes: [
-      "83% faster average approval cycle time (from 4 days to 16 hours)",
-      "Zero missed approvals — automated escalation after 24 hours",
-      "Saved estimated 120 hours/month across departments",
-      "Employee satisfaction score for internal processes improved by 40%",
-    ],
-    technologies: ["Power Automate", "Dataverse", "Power BI", "Microsoft Teams"],
-    duration: "10 weeks",
+    technologies: ["Power Automate", "Power Apps", "Dataverse", "Power BI"],
+    duration: "8–12 weeks",
   },
   {
     icon: BarChart3,
-    label: "Analytics Platform",
-    industry: "Retail",
-    title: "Unified Business Intelligence Dashboard Suite",
-    problem:
-      "A retail organization with 6 regional operations had data spread across separate ERP, POS, HR, and logistics systems. Leadership had no single view of performance — reports were manually compiled every week in Excel and were often outdated or inaccurate before they reached the board.",
-    solution:
-      "We built a unified data platform using Azure Data Factory to consolidate data from all source systems into a centralized SQL data warehouse. Power BI dashboards were developed for each business unit — finance, operations, HR, and logistics — with a C-suite executive summary view refreshed hourly.",
-    outcomes: [
-      "Real-time visibility into $24M in annual revenue operations",
-      "Reduced weekly report preparation from 3 days to 0 (fully automated)",
-      "Identified $400K in annual savings through inventory optimization insights",
-      "Decision-making cycle for senior leadership reduced from weeks to hours",
+    label: "Data & Analytics",
+    industry: "Manufacturing",
+    title: "Unified Operational Intelligence Platform",
+    challenge:
+      "A manufacturer with multiple regional operations had data spread across ERP, MES, HR, and logistics systems. Leadership had no single source of truth — weekly reports were manually built in Excel and consistently outdated.",
+    approach:
+      "We architected a centralized data platform on Azure SQL and Microsoft Fabric, consolidating data from all source systems through Azure Data Factory pipelines. Power BI dashboards were tailored to each business unit, with hourly-refreshed executive views.",
+    capabilities: [
+      "Data warehouse and lakehouse architecture",
+      "ETL/ELT pipelines from disparate sources",
+      "Role-based KPI dashboards",
+      "Real-time and scheduled refresh strategies",
     ],
-    technologies: ["Power BI", "Azure Data Factory", "Azure SQL", "Power Automate"],
-    duration: "18 weeks",
+    technologies: ["Power BI", "Microsoft Fabric", "Azure Data Factory", "Azure SQL"],
+    duration: "12–18 weeks",
+  },
+  {
+    icon: Users,
+    label: "CRM & ERP",
+    industry: "Financial Services",
+    title: "Dynamics 365 Sales Implementation & Integration",
+    challenge:
+      "A financial services firm needed to migrate from a legacy CRM to Dynamics 365 Sales, with deep integration into their existing finance and document management systems — without disrupting active client workflows.",
+    approach:
+      "We delivered a phased Dynamics 365 implementation with custom Dataverse entities, sales pipeline configuration, and Power Automate flows connecting CRM to SharePoint and the firm's accounting platform. Plugins and custom workflows enforced business rules.",
+    capabilities: [
+      "Dynamics 365 Sales configuration & customization",
+      "Custom entities, plugins, and business rules",
+      "Data migration from legacy CRM",
+      "Cross-system integrations via REST APIs",
+    ],
+    technologies: ["Dynamics 365", "Dataverse", "Power Automate", "ASP.NET Core APIs"],
+    duration: "14–20 weeks",
+  },
+  {
+    icon: FileText,
+    label: "Custom Applications",
+    industry: "Construction",
+    title: "Quickbase Field Operations Platform",
+    challenge:
+      "A construction company needed a single platform to track project progress, manage subcontractor compliance, and capture safety inspections from the field — replacing a patchwork of spreadsheets and paper forms.",
+    approach:
+      "We designed and built a Quickbase application with mobile-ready interfaces for field teams, automated workflows for subcontractor onboarding, and integrated dashboards for project managers. Pipelines connected Quickbase with the company's accounting and document systems.",
+    capabilities: [
+      "Quickbase relational data model design",
+      "Mobile-first field forms with photo capture",
+      "Subcontractor onboarding automation",
+      "Pipelines for ERP & document integration",
+    ],
+    technologies: ["Quickbase", "Quickbase Pipelines", "REST APIs", "Power BI"],
+    duration: "10–14 weeks",
+  },
+  {
+    icon: GitMerge,
+    label: "System Integration",
+    industry: "Healthcare",
+    title: "Multi-System API Integration Layer",
+    challenge:
+      "A healthcare provider was running 8 disconnected systems — EMR, billing, scheduling, labs, HR — with manual data entry between them. Errors and delays were impacting both patient care and revenue cycle operations.",
+    approach:
+      "We built a centralized integration layer using Azure API Management, Azure Functions, and Logic Apps. Real-time and batch synchronization, with comprehensive error handling and monitoring through Application Insights. Sensitive data was secured with Azure Key Vault.",
+    capabilities: [
+      "API gateway architecture and design",
+      "Event-driven and scheduled integrations",
+      "Error handling, retry, and dead-letter patterns",
+      "Compliance-ready security & monitoring",
+    ],
+    technologies: ["Azure API Management", "Azure Functions", "Logic Apps", "Service Bus"],
+    duration: "12–16 weeks",
+  },
+  {
+    icon: Brain,
+    label: "AI & Intelligent Solutions",
+    industry: "Retail",
+    title: "AI-Powered Document Intelligence",
+    challenge:
+      "A retail organization was processing thousands of vendor invoices, purchase orders, and contracts manually — with high error rates and 5–7 day processing cycles slowing down accounts payable.",
+    approach:
+      "We deployed an Azure OpenAI–powered document understanding solution with Copilot Studio. The system extracts structured data from unstructured documents, validates against business rules, and routes exceptions to humans — with all activity logged in Dataverse.",
+    capabilities: [
+      "Document intake and OCR pipeline",
+      "AI-powered data extraction and validation",
+      "Human-in-the-loop exception handling",
+      "Full audit trail and reporting",
+    ],
+    technologies: ["Azure OpenAI", "Copilot Studio", "Power Automate", "Dataverse"],
+    duration: "10–14 weeks",
   },
 ];
 
@@ -80,101 +136,132 @@ export default function CaseStudiesPage() {
     <>
       <PageHero
         badge="Case Studies"
-        title="Real solutions."
-        highlight="Measurable outcomes."
-        subtitle="Every engagement is different. These case studies demonstrate how we approach complex business challenges and deliver solutions that create lasting impact."
+        title="Representative"
+        highlight="engagements."
+        subtitle="A look at the kinds of problems we solve, the approach we take, and the technologies we apply. Every engagement is shaped by the specific context of the client."
       />
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {caseStudies.map(({ icon: Icon, label, industry, title, problem, solution, outcomes, technologies, duration }, idx) => (
-            <article
-              key={title}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
-            >
-              {/* Header */}
-              <div className="bg-gradient-to-br from-blue-900 to-gray-950 p-8 text-white">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500/30">
-                    <Icon size={13} />
-                    {label}
-                  </span>
-                  <span className="bg-white/10 text-white/70 text-xs px-3 py-1 rounded-full">
-                    {industry}
-                  </span>
-                  <span className="bg-white/10 text-white/70 text-xs px-3 py-1 rounded-full flex items-center gap-1">
-                    <Clock size={12} />
-                    {duration}
-                  </span>
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Intro note */}
+          <div className="max-w-3xl mb-16 p-6 rounded-2xl bg-blue-50/60 border border-blue-100">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              <strong className="text-blue-700">A note on confidentiality:</strong> The engagements
+              below represent the types of problems we work on, the methodology we apply, and the
+              outcomes we design for. Specific client names, identifying details, and proprietary
+              metrics are omitted to protect client confidentiality. We&apos;re happy to discuss
+              relevant references privately under NDA.
+            </p>
+          </div>
+
+          {/* Engagement cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {engagements.map(({ icon: Icon, label, industry, title, challenge, approach, capabilities, technologies, duration }, i) => (
+              <article
+                key={title}
+                className="group bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-2xl hover:shadow-blue-100/50 hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
+              >
+                {/* Header */}
+                <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-gray-950 p-8 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+                  <div className="relative z-10">
+                    <div className="text-blue-300 text-xs font-bold tracking-widest mb-5">
+                      {String(i + 1).padStart(2, "0")} · {label.toUpperCase()}
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-5">
+                      <span className="bg-white/10 backdrop-blur-sm text-white/80 text-[11px] px-2.5 py-1 rounded-full">
+                        {industry}
+                      </span>
+                      <span className="bg-white/10 backdrop-blur-sm text-white/80 text-[11px] px-2.5 py-1 rounded-full flex items-center gap-1">
+                        <Clock size={11} />
+                        {duration}
+                      </span>
+                    </div>
+                    <h2 className="font-serif text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                      {title}
+                    </h2>
+                  </div>
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-bold">{title}</h2>
-              </div>
 
-              {/* Body */}
-              <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div>
-                  <h3 className="text-xs font-semibold text-red-500 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <span className="w-4 h-px bg-red-300" />
-                    The Problem
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{problem}</p>
-                </div>
+                {/* Body */}
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="mb-6">
+                    <h3 className="text-[10px] font-bold text-red-500 uppercase tracking-[0.2em] mb-3">
+                      The Challenge
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{challenge}</p>
+                  </div>
 
-                <div>
-                  <h3 className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <span className="w-4 h-px bg-blue-300" />
-                    Our Solution
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{solution}</p>
+                  <div className="mb-6">
+                    <h3 className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em] mb-3">
+                      Our Approach
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{approach}</p>
+                  </div>
 
-                  {/* Technologies */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {technologies.map((tech) => (
+                  <div className="mb-6">
+                    <h3 className="text-[10px] font-bold text-green-600 uppercase tracking-[0.2em] mb-3">
+                      Capabilities Applied
+                    </h3>
+                    <ul className="space-y-2">
+                      {capabilities.map((c) => (
+                        <li key={c} className="flex items-start gap-2.5">
+                          <CheckCircle2 size={15} className="text-green-500 mt-0.5 shrink-0" />
+                          <span className="text-sm text-gray-700 leading-snug">{c}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mt-auto pt-5 border-t border-gray-100">
+                    {technologies.map((t) => (
                       <span
-                        key={tech}
-                        className="text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md font-medium border border-blue-100"
+                        key={t}
+                        className="text-[11px] bg-gray-100 text-gray-700 px-2.5 py-1 rounded-md font-medium"
                       >
-                        {tech}
+                        {t}
                       </span>
                     ))}
                   </div>
                 </div>
-
-                <div>
-                  <h3 className="text-xs font-semibold text-green-600 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <span className="w-4 h-px bg-green-300" />
-                    Outcomes
-                  </h3>
-                  <ul className="space-y-3">
-                    {outcomes.map((outcome) => (
-                      <li key={outcome} className="flex items-start gap-2">
-                        <TrendingUp size={15} className="text-green-500 mt-0.5 shrink-0" />
-                        <span className="text-sm text-gray-700 font-medium leading-snug">{outcome}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-blue-700 to-blue-900 text-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Write Your Own Success Story?
-          </h2>
-          <p className="text-blue-100 mb-7">
-            Every project starts with a conversation. Let&apos;s understand your challenges and explore what&apos;s possible together.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-blue-800 font-bold px-8 py-3.5 rounded-lg hover:bg-blue-50 transition-colors shadow-xl shadow-blue-900/30 group"
-          >
-            Start a Conversation <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+      <section className="py-24 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gray-950 rounded-[2rem] overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/15 rounded-full blur-[100px]" />
+              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-900/20 rounded-full blur-[80px]" />
+            </div>
+            <div className="relative z-10 px-8 py-20 sm:px-16 text-center max-w-3xl mx-auto">
+              <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.2em] uppercase mb-6">
+                Have a similar challenge?
+              </span>
+              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white leading-[1.05] mb-6">
+                Let&apos;s discuss your{" "}
+                <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+                  project.
+                </span>
+              </h2>
+              <p className="text-gray-400 mb-10 max-w-xl mx-auto font-light">
+                Every project starts with a conversation. Tell us your context, your constraints,
+                and your goals — we&apos;ll come back with a clear perspective.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 shadow-2xl shadow-blue-900/50 text-sm group"
+              >
+                Start a Conversation
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

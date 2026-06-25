@@ -11,8 +11,8 @@ import {
   GitMerge,
   Brain,
   Users,
-  CheckCircle2,
 } from "lucide-react";
+import { insights as allInsights } from "@/data/insights";
 
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
@@ -91,29 +91,7 @@ const industries = [
   "Government & Public Sector",
 ];
 
-const insights = [
-  {
-    category: "Power Platform",
-    title: "How Power Platform is Redefining Enterprise Automation in 2026",
-    summary:
-      "Microsoft's Power Platform has evolved from a low-code tool into a full enterprise automation backbone. What this means for mid-market organizations.",
-    readTime: "5 min read",
-  },
-  {
-    category: "Azure AI",
-    title: "From Pilot to Production: Making Azure OpenAI Work at Scale",
-    summary:
-      "Most AI pilots fail at scale. Here's the architecture, governance, and change management approach that gets enterprise AI into production.",
-    readTime: "7 min read",
-  },
-  {
-    category: "Data Strategy",
-    title: "The Modern Data Stack for Mid-Market Enterprises",
-    summary:
-      "Enterprise analytics doesn't require a Fortune 500 budget. A practical, cost-effective data architecture built on Microsoft Fabric and Power BI.",
-    readTime: "6 min read",
-  },
-];
+const insights = allInsights.slice(0, 3);
 
 const techMarquee = [
   "Microsoft Azure",
@@ -478,19 +456,20 @@ export default function HomePage() {
               </h2>
             </div>
             <Link
-              href="/contact"
+              href="/insights"
               className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group whitespace-nowrap"
             >
-              Subscribe to insights
+              View all insights
               <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {insights.map((insight, i) => (
-              <article
-                key={insight.title}
-                className={`group rounded-3xl overflow-hidden border transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
+              <Link
+                key={insight.slug}
+                href={`/insights/${insight.slug}`}
+                className={`group rounded-3xl overflow-hidden border transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block ${
                   i === 0
                     ? "border-transparent bg-gradient-to-br from-blue-700 via-blue-800 to-blue-950 text-white shadow-2xl shadow-blue-200"
                     : "border-gray-200 bg-white hover:border-blue-200 hover:shadow-blue-100/50"
@@ -536,7 +515,7 @@ export default function HomePage() {
                     />
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

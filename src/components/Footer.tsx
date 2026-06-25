@@ -15,6 +15,7 @@ const company = [
   { label: "Our Approach", href: "/our-approach" },
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
 
