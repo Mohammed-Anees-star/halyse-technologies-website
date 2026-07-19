@@ -58,9 +58,9 @@ const serviceLines = [
   {
     id: "implementation",
     icon: Wrench,
-    title: "Implementation & Delivery",
-    tagline: "Build once. Build right.",
-    desc: "Our delivery teams design, build, and deploy production-grade solutions across Microsoft Cloud, Power Platform, Dynamics 365, Quickbase, and .NET — using proven engineering practices and a governance model that keeps enterprise stakeholders in control.",
+    title: "Integration, APIs & Automation",
+    tagline: "Connecting systems, automating processes, and enabling seamless data flow.",
+    desc: "Halyse helps organizations integrate applications, data, and business processes across modern technology environments. We design and implement API-led integration, workflow automation, and event-driven solutions that reduce manual effort, improve interoperability, and streamline operations. From enterprise system integration and business process automation to cloud-native integration services, we deliver secure, scalable solutions that enable greater agility, operational efficiency, and long-term business resilience.",
     deliverables: [
       "Power Platform & Dynamics 365 solution delivery",
       "Azure cloud architecture & DevOps setup",
@@ -76,9 +76,9 @@ const serviceLines = [
   {
     id: "managed-services",
     icon: ShieldCheck,
-    title: "Managed Services",
-    tagline: "We run it. You focus on the business.",
-    desc: "Halyse operates your Microsoft, Power Platform, Dynamics 365, and Quickbase workloads under defined SLAs — with proactive monitoring, security patching, cost governance, and continuous improvement built in.",
+    title: "Azure Cloud & Platform Engineering",
+    tagline: "Building secure, scalable cloud foundations for modern enterprise applications.",
+    desc: "Halyse helps organizations design, deploy, and optimize Azure-based cloud platforms that support business-critical applications, data, and integrations. We modernize cloud environments, migrate workloads, and implement Azure services that improve scalability, resilience, and operational efficiency. From application hosting and managed databases to storage, cloud integration, and platform optimization, we deliver secure, reliable solutions that provide a strong foundation for digital transformation and long-term growth.",
     deliverables: [
       "24×7 monitoring & incident response",
       "Environment & release management",
@@ -94,9 +94,9 @@ const serviceLines = [
   {
     id: "support-ams",
     icon: LifeBuoy,
-    title: "Application Support & AMS",
-    tagline: "L1 – L3 support, without the noise.",
-    desc: "Post go-live, our Application Managed Services (AMS) team keeps your solutions stable, secure, and evolving — with predictable response times, transparent ticketing, and enhancement capacity built into every contract.",
+    title: "Data Engineering, Analytics & AI",
+    tagline: "Turning enterprise data into insight, intelligence, and better decisions.",
+    desc: "Halyse helps organizations design, modernize, and optimize data platforms that improve reporting, analytics, and decision-making across the enterprise. We deliver modern data engineering, business intelligence, analytics, and AI solutions that unify data, strengthen governance, and create trusted foundations for insight and innovation. Our focus is on building scalable, secure, and well-governed data platforms that improve data accessibility, enable informed decision-making, and support long-term business growth.",
     deliverables: [
       "L1 / L2 / L3 tiered support",
       "Bug triage and hotfix delivery",
@@ -112,9 +112,9 @@ const serviceLines = [
   {
     id: "staff-augmentation",
     icon: UserPlus,
-    title: "Staff Augmentation",
-    tagline: "Elite talent, embedded in your team.",
-    desc: "When you need specialized skills fast, we place senior Microsoft, Power Platform, Dynamics, Azure, and Quickbase engineers directly into your delivery teams — vetted, onboarded, and productive from week one.",
+    title: "Business Applications & Low-Code Platforms",
+    tagline: "Delivering agile business applications on trusted enterprise platforms.",
+    desc: "Halyse helps organizations design, implement, and extend business applications using Microsoft Power Platform, Dynamics 365, and Quickbase. We help clients streamline business processes, improve user experience and adoption, and deliver solutions faster than traditional custom development while maintaining strong governance, scalability, and long-term maintainability. Our focus is on building practical, high-value applications that improve operational efficiency and evolve alongside changing business needs.",
     deliverables: [
       "Senior Power Platform architects & developers",
       "Dynamics 365 functional & technical consultants",
@@ -130,9 +130,9 @@ const serviceLines = [
   {
     id: "training",
     icon: GraduationCap,
-    title: "Training & Enablement",
-    tagline: "Adoption is a design decision.",
-    desc: "Technology only creates value when people use it. Our enablement programs equip your business users, admins, and developers to operate, extend, and evolve your platforms with confidence.",
+    title: "Managed Services & Application Support",
+    tagline: "Keeping enterprise applications secure, stable, and continuously improving.",
+    desc: "Halyse helps organizations support, maintain, and optimize business-critical applications and platforms after go-live. Our managed services include application and platform monitoring, incident resolution, performance optimization, proactive maintenance, and ongoing enhancements that help clients maintain reliability, improve user experience, and reduce operational risk. We provide structured, responsive support that keeps enterprise systems operating effectively while enabling continuous improvement and long-term business value.",
     deliverables: [
       "Executive & stakeholder workshops",
       "End-user training programs",
