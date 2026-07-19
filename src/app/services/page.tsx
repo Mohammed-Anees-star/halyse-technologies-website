@@ -40,9 +40,9 @@ const serviceLines = [
   {
     id: "consulting",
     icon: Compass,
-    title: "Strategic Consulting & Advisory",
-    tagline: "Clarity before code.",
-    desc: "We help leadership teams cut through complexity — assessing current-state architecture, identifying high-impact opportunities, and producing executive-ready roadmaps that turn ambition into a delivery plan.",
+    title: "Enterprise Applications & Modernization",
+    tagline: "Designing and modernizing business-critical applications for scale.",
+    desc: "Halyse helps organizations design, build, modernize, and extend enterprise applications that power critical business operations. We modernize legacy systems, develop custom business applications, and improve existing platforms to enhance performance, usability, security, and scalability. Through modern architecture and cloud-based technologies, we deliver reliable solutions that streamline operations, enable modernization, and create a strong foundation for future growth.",
     deliverables: [
       "Digital transformation strategy & business case",
       "Technology architecture assessment",
@@ -271,16 +271,15 @@ const faqs = [
   },
 ];
 
-// ─── PAGE ───────────────────────────────────────────────────────────────────
+// ─── PAGE ─────────────────────────────────────────────────s──────────────────
 
 export default function ServicesPage() {
   return (
     <>
       <PageHero
         badge="Our Services"
-        title="End-to-end services,"
-        highlight="delivered by seniors."
-        subtitle="From strategy to steady-state operations — Halyse partners with enterprise leaders to design, build, and run mission-critical technology on Microsoft Cloud, Power Platform, Dynamics 365, Azure, and Quickbase."
+        title="Senior-led technology consulting and delivery services"
+        subtitle="Halyse helps organizations plan, build, deliver, and run business-critical technology across Microsoft Cloud, Power Platform, Dynamics 365, Azure, and Quickbase. From early strategy through ongoing support, our teams work alongside enterprise leaders to modernize operations, reduce delivery risk, and create measurable business value."
       />
 
       {/* TRUST STRIP */}
@@ -317,11 +316,11 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badge="Service Lines"
-            title="Six services. One integrated partner."
-            subtitle="Whether you need a two-week advisory sprint or a five-year managed services partnership, our teams are structured to plug into your organization at any stage of the journey."
+            title="Enterprise applications, integrations, and automation engineered for scale."
+            subtitle="Halyse helps organizations design, build, modernize, integrate, and support business-critical technology solutions. Our expertise spans enterprise applications, custom software, system integrations, business process automation, Azure cloud solutions, data engineering, Microsoft Fabric, analytics, AI, and Microsoft business platforms including Power Platform, Dynamics 365, and Quickbase. We deliver secure, scalable, and connected solutions that modernize legacy environments, streamline operations, improve data accessibility, and enable long-term business growth."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {serviceLines.map((s) => {
               const Icon = s.icon;
               return (

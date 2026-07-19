@@ -31,7 +31,7 @@ export default function PageHero({ badge, title, subtitle, highlight }: PageHero
             </span>
           </div>
         )}
-        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.98] tracking-tight mb-8 max-w-4xl">
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[4] tracking-tight mb-8 max-w-8xl">
           {title}
           {highlight && (
             <>
@@ -43,7 +43,7 @@ export default function PageHero({ badge, title, subtitle, highlight }: PageHero
           )}
         </h1>
         {subtitle && (
-          <p className="text-lg lg:text-xl text-gray-400 max-w-2xl leading-relaxed font-light">{subtitle}</p>
+          <p className="text-lg lg:text-xl text-gray-400 max-w-8xl leading-[1.25] font-light">{subtitle}</p>
         )}
       </div>
     </section>
