@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Compass,
-  Wrench,
-  ShieldCheck,
-  LifeBuoy,
-  UserPlus,
-  GraduationCap,
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
@@ -23,129 +17,18 @@ import {
   HardHat,
   ShoppingBag,
   Truck,
+  ShieldCheck,
   ChevronDown,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
+import { services } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Halyse Technologies delivers end-to-end enterprise services — consulting, implementation, managed services, support, staff augmentation, and training — across Microsoft Cloud, Power Platform, Dynamics 365, Azure, and Quickbase.",
+    "Halyse Technologies delivers senior-led technology consulting and delivery services across enterprise applications, integration, Azure cloud, data & AI, low-code platforms, and managed services.",
 };
-
-// ─── SERVICE LINES ──────────────────────────────────────────────────────────
-
-const serviceLines = [
-  {
-    id: "consulting",
-    icon: Compass,
-    title: "Enterprise Applications & Modernization",
-    tagline: "Designing and modernizing business-critical applications for scale.",
-    desc: "Halyse helps organizations design, build, modernize, and extend enterprise applications that power critical business operations. We modernize legacy systems, develop custom business applications, and improve existing platforms to enhance performance, usability, security, and scalability. Through modern architecture and cloud-based technologies, we deliver reliable solutions that streamline operations, enable modernization, and create a strong foundation for future growth.",
-    deliverables: [
-      "Digital transformation strategy & business case",
-      "Technology architecture assessment",
-      "Microsoft Cloud & Power Platform readiness audit",
-      "Data maturity & AI opportunity assessment",
-      "ROI modeling and investment prioritization",
-      "12–24 month technology roadmap",
-    ],
-    engagement: "Fixed-scope engagements",
-    duration: "2 – 6 weeks",
-    idealFor: "CIOs, CTOs, and Heads of Digital planning enterprise investments.",
-  },
-  {
-    id: "implementation",
-    icon: Wrench,
-    title: "Integration, APIs & Automation",
-    tagline: "Connecting systems, automating processes, and enabling seamless data flow.",
-    desc: "Halyse helps organizations integrate applications, data, and business processes across modern technology environments. We design and implement API-led integration, workflow automation, and event-driven solutions that reduce manual effort, improve interoperability, and streamline operations. From enterprise system integration and business process automation to cloud-native integration services, we deliver secure, scalable solutions that enable greater agility, operational efficiency, and long-term business resilience.",
-    deliverables: [
-      "Power Platform & Dynamics 365 solution delivery",
-      "Azure cloud architecture & DevOps setup",
-      "Custom application development (ASP.NET Core, React)",
-      "Data platform build-outs (Fabric, Synapse, Power BI)",
-      "Integration & API layer engineering",
-      "Migration from legacy platforms",
-    ],
-    engagement: "Fixed-price or T&M",
-    duration: "6 – 20 weeks per phase",
-    idealFor: "Enterprises modernizing operations, launching new digital products, or replatforming legacy systems.",
-  },
-  {
-    id: "managed-services",
-    icon: ShieldCheck,
-    title: "Azure Cloud & Platform Engineering",
-    tagline: "Building secure, scalable cloud foundations for modern enterprise applications.",
-    desc: "Halyse helps organizations design, deploy, and optimize Azure-based cloud platforms that support business-critical applications, data, and integrations. We modernize cloud environments, migrate workloads, and implement Azure services that improve scalability, resilience, and operational efficiency. From application hosting and managed databases to storage, cloud integration, and platform optimization, we deliver secure, reliable solutions that provide a strong foundation for digital transformation and long-term growth.",
-    deliverables: [
-      "24×7 monitoring & incident response",
-      "Environment & release management",
-      "Security patching & compliance reporting",
-      "Cost optimization (FinOps) reviews",
-      "Backlog-driven continuous enhancement",
-      "Monthly service reviews with KPIs",
-    ],
-    engagement: "Retainer with SLAs",
-    duration: "12 – 36 month contracts",
-    idealFor: "Enterprises with production workloads requiring 99.9%+ availability.",
-  },
-  {
-    id: "support-ams",
-    icon: LifeBuoy,
-    title: "Data Engineering, Analytics & AI",
-    tagline: "Turning enterprise data into insight, intelligence, and better decisions.",
-    desc: "Halyse helps organizations design, modernize, and optimize data platforms that improve reporting, analytics, and decision-making across the enterprise. We deliver modern data engineering, business intelligence, analytics, and AI solutions that unify data, strengthen governance, and create trusted foundations for insight and innovation. Our focus is on building scalable, secure, and well-governed data platforms that improve data accessibility, enable informed decision-making, and support long-term business growth.",
-    deliverables: [
-      "L1 / L2 / L3 tiered support",
-      "Bug triage and hotfix delivery",
-      "Minor enhancement backlog capacity",
-      "User access & administration",
-      "Documentation & runbook maintenance",
-      "Quarterly health checks",
-    ],
-    engagement: "Fixed monthly capacity",
-    duration: "Rolling contracts",
-    idealFor: "Product owners needing predictable post-launch support without hiring internal teams.",
-  },
-  {
-    id: "staff-augmentation",
-    icon: UserPlus,
-    title: "Business Applications & Low-Code Platforms",
-    tagline: "Delivering agile business applications on trusted enterprise platforms.",
-    desc: "Halyse helps organizations design, implement, and extend business applications using Microsoft Power Platform, Dynamics 365, and Quickbase. We help clients streamline business processes, improve user experience and adoption, and deliver solutions faster than traditional custom development while maintaining strong governance, scalability, and long-term maintainability. Our focus is on building practical, high-value applications that improve operational efficiency and evolve alongside changing business needs.",
-    deliverables: [
-      "Senior Power Platform architects & developers",
-      "Dynamics 365 functional & technical consultants",
-      "Azure cloud & DevOps engineers",
-      "Data engineers & BI specialists",
-      "Full-stack .NET & React engineers",
-      "Solution architects & tech leads",
-    ],
-    engagement: "Time & materials",
-    duration: "3 – 24 month placements",
-    idealFor: "Enterprises facing capacity gaps or specialist skill shortages inside internal teams.",
-  },
-  {
-    id: "training",
-    icon: GraduationCap,
-    title: "Managed Services & Application Support",
-    tagline: "Keeping enterprise applications secure, stable, and continuously improving.",
-    desc: "Halyse helps organizations support, maintain, and optimize business-critical applications and platforms after go-live. Our managed services include application and platform monitoring, incident resolution, performance optimization, proactive maintenance, and ongoing enhancements that help clients maintain reliability, improve user experience, and reduce operational risk. We provide structured, responsive support that keeps enterprise systems operating effectively while enabling continuous improvement and long-term business value.",
-    deliverables: [
-      "Executive & stakeholder workshops",
-      "End-user training programs",
-      "Power Platform Center of Excellence enablement",
-      "Admin & developer certification prep",
-      "Change management & communications support",
-      "On-demand learning content & job aids",
-    ],
-    engagement: "Fixed-scope programs",
-    duration: "2 – 8 week programs",
-    idealFor: "Organizations rolling out new platforms or scaling internal capability.",
-  },
-];
 
 // ─── SIGNATURE OFFERINGS ────────────────────────────────────────────────────
 
@@ -271,14 +154,15 @@ const faqs = [
   },
 ];
 
-// ─── PAGE ─────────────────────────────────────────────────s──────────────────
+// ─── PAGE ───────────────────────────────────────────────────────────────────
 
 export default function ServicesPage() {
   return (
     <>
       <PageHero
         badge="Our Services"
-        title="Senior-led technology consulting and delivery services"
+        title="Senior-led technology consulting"
+        highlight="and delivery services."
         subtitle="Halyse helps organizations plan, build, deliver, and run business-critical technology across Microsoft Cloud, Power Platform, Dynamics 365, Azure, and Quickbase. From early strategy through ongoing support, our teams work alongside enterprise leaders to modernize operations, reduce delivery risk, and create measurable business value."
       />
 
@@ -311,23 +195,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SERVICE LINES OVERVIEW */}
+      {/* SERVICE LINES */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badge="Service Lines"
-            title="Enterprise applications, integrations, and automation engineered for scale."
-            subtitle="Halyse helps organizations design, build, modernize, integrate, and support business-critical technology solutions. Our expertise spans enterprise applications, custom software, system integrations, business process automation, Azure cloud solutions, data engineering, Microsoft Fabric, analytics, AI, and Microsoft business platforms including Power Platform, Dynamics 365, and Quickbase. We deliver secure, scalable, and connected solutions that modernize legacy environments, streamline operations, improve data accessibility, and enable long-term business growth."
+            title="Six services. One integrated partner."
+            subtitle="Halyse helps organizations design, build, modernize, integrate, and support business-critical technology solutions. Explore each service for a deeper view of capabilities, technologies, and business outcomes."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {serviceLines.map((s) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s) => {
               const Icon = s.icon;
               return (
-                <a
-                  key={s.id}
-                  href={`#${s.id}`}
-                  className="group bg-white rounded-2xl p-7 border border-gray-100 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/40 transition-all duration-300"
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  className="group bg-white rounded-2xl p-7 border border-gray-100 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/40 hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-5">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg shadow-blue-100 group-hover:scale-105 transition-transform">
@@ -335,84 +219,18 @@ export default function ServicesPage() {
                     </div>
                     <ArrowUpRight size={18} className="text-gray-300 group-hover:text-blue-600 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1.5">{s.title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">{s.title}</h3>
                   <p className="text-xs font-semibold text-blue-600 mb-3">{s.tagline}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{s.desc}</p>
-                </a>
+                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-4 mb-6 flex-1">{s.desc}</p>
+
+                  <span className="inline-flex items-center justify-center gap-2 bg-blue-700 group-hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm w-full">
+                    Learn More
+                    <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </Link>
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* DETAILED SERVICE LINES */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {serviceLines.map((s, idx) => {
-            const Icon = s.icon;
-            const isEven = idx % 2 === 0;
-            return (
-              <div
-                key={s.id}
-                id={s.id}
-                className="mb-20 pb-20 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0 scroll-mt-24"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                  {/* Content */}
-                  <div className={isEven ? "order-1" : "order-1 lg:order-2"}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-100">
-                        <Icon size={22} className="text-white" />
-                      </div>
-                      <span className="text-blue-600 text-sm font-semibold">{s.tagline}</span>
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">{s.title}</h2>
-                    <p className="text-gray-600 leading-relaxed mb-6">{s.desc}</p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-7">
-                      <div className="border-l-2 border-blue-600 pl-3">
-                        <div className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1">Engagement</div>
-                        <div className="text-sm font-semibold text-gray-900">{s.engagement}</div>
-                      </div>
-                      <div className="border-l-2 border-blue-600 pl-3">
-                        <div className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1">Duration</div>
-                        <div className="text-sm font-semibold text-gray-900">{s.duration}</div>
-                      </div>
-                      <div className="border-l-2 border-blue-600 pl-3">
-                        <div className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1">Ideal For</div>
-                        <div className="text-xs text-gray-700 leading-snug">{s.idealFor}</div>
-                      </div>
-                    </div>
-
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm group"
-                    >
-                      Discuss This Service
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-
-                  {/* Deliverables */}
-                  <div className={isEven ? "order-2" : "order-2 lg:order-1"}>
-                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-7 border border-gray-100 shadow-sm">
-                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-5">
-                        What&apos;s Included
-                      </h3>
-                      <ul className="space-y-3">
-                        {s.deliverables.map((d) => (
-                          <li key={d} className="flex items-start gap-3">
-                            <CheckCircle2 size={18} className="text-blue-600 mt-0.5 shrink-0" />
-                            <span className="text-sm text-gray-700 leading-relaxed">{d}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </section>
 
