@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
       { label: "Insights", href: "/insights" },
     ],
   },
-  { label: "Our Services", href: "/solutions" },
+  { label: "Our Services", href: "/services" },
   {
     label: "Our Locations",
     children: [
