@@ -5,12 +5,12 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  Zap,
-  BarChart3,
   Layers,
   GitMerge,
-  Brain,
-  Users,
+  Cloud,
+  Database,
+  AppWindow,
+  LifeBuoy,
 } from "lucide-react";
 import { insights as allInsights } from "@/data/insights";
 
@@ -23,60 +23,63 @@ const stats = [
   { value: "24/7", label: "Post-Deployment Support" },
 ];
 
+// Six approved services (source of truth: src/data/services.ts).
+// Homepage shows condensed cards with the approved tagline + a short teaser
+// that links to the dedicated service page.
 const services = [
   {
-    id: "automation",
-    icon: Zap,
-    label: "Process Automation",
-    headline: "Eliminate manual work.",
-    body: "Transform fragmented operations into seamless automated workflows — saving time, cutting errors, and freeing teams for high-value work.",
-    tech: ["Power Automate", "Logic Apps", "SharePoint"],
-    href: "/solutions#automation",
-  },
-  {
-    id: "analytics",
-    icon: BarChart3,
-    label: "Data & Analytics",
-    headline: "Turn data into action.",
-    body: "Analytics platforms that consolidate your data and surface it through intuitive dashboards — clarity for every decision-maker.",
-    tech: ["Power BI", "Fabric", "Azure Data Factory"],
-    href: "/solutions#analytics",
-  },
-  {
-    id: "apps",
+    id: "enterprise-applications-modernization",
     icon: Layers,
-    label: "Custom Applications",
-    headline: "Built for your process.",
-    body: "Tailored Power Apps and Quickbase solutions that match your workflows, team structures, and data — without large software overhead.",
-    tech: ["Power Apps", "Quickbase", "Dataverse"],
-    href: "/solutions#apps",
+    label: "Enterprise Applications & Modernization",
+    headline: "Designing and modernizing business-critical applications for scale.",
+    body: "We modernize legacy systems, develop custom business applications, and improve existing platforms — enhancing performance, usability, security, and scalability through modern architecture and cloud-based technologies.",
+    tech: ["ASP.NET Core", "Azure", "React", "Cloud-Native"],
+    href: "/services/enterprise-applications-modernization",
   },
   {
-    id: "integration",
+    id: "integration-apis-automation",
     icon: GitMerge,
-    label: "System Integration",
-    headline: "Connect your ecosystem.",
-    body: "Integration layers that connect your systems in real time — so data flows automatically, accurately, and reliably across the enterprise.",
-    tech: ["API Management", "Logic Apps", "ASP.NET Core"],
-    href: "/solutions#integration",
+    label: "Integration, APIs & Automation",
+    headline: "Connecting systems, automating processes, and enabling seamless data flow.",
+    body: "We design and implement API-led integration, workflow automation, and event-driven solutions — reducing manual effort, improving interoperability, and streamlining operations across enterprise environments.",
+    tech: ["Azure API Mgmt", "Logic Apps", "Power Automate", "Service Bus"],
+    href: "/services/integration-apis-automation",
   },
   {
-    id: "ai",
-    icon: Brain,
-    label: "AI & Intelligent Solutions",
-    headline: "Applied AI that moves the needle.",
-    body: "Deploy AI and ML where it creates tangible outcomes — from predicting demand to automating complex decisions.",
-    tech: ["Azure OpenAI", "Copilot Studio", "Azure ML"],
-    href: "/solutions#ai",
+    id: "azure-cloud-platform-engineering",
+    icon: Cloud,
+    label: "Azure Cloud & Platform Engineering",
+    headline: "Building secure, scalable cloud foundations for modern applications.",
+    body: "We design, deploy, and optimize Azure-based cloud platforms — modernizing environments, migrating workloads, and implementing Azure services that improve scalability, resilience, and operational efficiency.",
+    tech: ["Azure", "AKS", "App Service", "Well-Architected"],
+    href: "/services/azure-cloud-platform-engineering",
   },
   {
-    id: "crm",
-    icon: Users,
-    label: "CRM & ERP",
-    headline: "From lead to ledger.",
-    body: "Implement and customize Dynamics 365 and Business Central to unify sales, service, finance, and supply chain in one source of truth.",
-    tech: ["Dynamics 365", "Business Central", "Dataverse"],
-    href: "/solutions#crm",
+    id: "data-analytics-ai",
+    icon: Database,
+    label: "Data Engineering, Analytics & AI",
+    headline: "Turning enterprise data into insight, intelligence, and better decisions.",
+    body: "We deliver modern data engineering, business intelligence, analytics, and AI solutions that unify data, strengthen governance, and create trusted foundations for insight and innovation across the enterprise.",
+    tech: ["Microsoft Fabric", "Power BI", "Azure OpenAI", "Synapse"],
+    href: "/services/data-analytics-ai",
+  },
+  {
+    id: "business-applications-low-code-platforms",
+    icon: AppWindow,
+    label: "Business Applications & Low-Code Platforms",
+    headline: "Delivering agile business applications on trusted enterprise platforms.",
+    body: "We design, implement, and extend business applications on Microsoft Power Platform, Dynamics 365, and Quickbase — delivering faster than traditional custom development while maintaining enterprise governance.",
+    tech: ["Power Platform", "Dynamics 365", "Dataverse", "Quickbase"],
+    href: "/services/business-applications-low-code-platforms",
+  },
+  {
+    id: "managed-services-application-support",
+    icon: LifeBuoy,
+    label: "Managed Services & Application Support",
+    headline: "Keeping enterprise applications secure, stable, and continuously improving.",
+    body: "We support, maintain, and optimize business-critical applications post go-live — through monitoring, incident resolution, performance optimization, proactive maintenance, and ongoing enhancement.",
+    tech: ["24×7 Support", "SLAs", "AMS", "FinOps"],
+    href: "/services/managed-services-application-support",
   },
 ];
 
@@ -223,12 +226,12 @@ export default function HomePage() {
               What We Do
             </span>
             <h2 className="font-serif text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05] mb-6">
-              Comprehensive enterprise{" "}
-              <span className="italic font-light text-blue-600">solutions.</span>
+              Enterprise technology,{" "}
+              <span className="italic font-light text-blue-600">delivered end-to-end.</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl">
-              From automation and analytics to AI and ERP — end-to-end capabilities
-              designed to power modern enterprises.
+              Six integrated service lines that help organizations design, build, integrate,
+              modernize, and run business-critical technology across the Microsoft ecosystem.
             </p>
           </div>
 
@@ -289,10 +292,10 @@ export default function HomePage() {
 
           <div className="mt-16 flex justify-center">
             <Link
-              href="/solutions"
+              href="/services"
               className="inline-flex items-center gap-3 bg-gray-950 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-gray-200 hover:shadow-blue-200 hover:scale-105 group"
             >
-              Browse all solutions
+              Explore All Services
               <span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors">
                 <ArrowRight size={14} className="text-white group-hover:translate-x-0.5 transition-transform" />
               </span>
