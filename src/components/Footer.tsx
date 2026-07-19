@@ -28,12 +28,9 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
       {/* Main Grid */}
-      <div className="max-w-5xl mx-auto px-5 lg:px-6 pt-16 pb-14">
-        
-        <div className="max-w-4xl mx-auto lg:translate-x-25">
-         
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-12">
+      <div className="max-w-5xl mx-auto px-5 lg:translate-x-10 lg:px-12 pt-20 pb-16">
+      
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-18 gap-y-20">
           <div>
             <h3 className="text-gray-900 text-xs font-semibold uppercase tracking-[0.22em] mb-5">
               Solutions
@@ -113,7 +110,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      </div>
+  
       
       
 
