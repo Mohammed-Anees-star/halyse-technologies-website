@@ -243,15 +243,18 @@ export default function HomePage() {
                 <Link
                   key={svc.id}
                   href={svc.href}
-                  className="group relative bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:shadow-blue-100/50 hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                  className="group relative bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:shadow-blue-100/50 hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 >
                   {/* Background gradient on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/0 group-hover:from-blue-50/40 group-hover:to-transparent transition-all duration-500" />
 
                   <div className="relative z-10">
-                    {/* Icon */}
-                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                      <Icon size={24} className="text-white" />
+                    {/* Icon + corner arrow */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                        <Icon size={24} className="text-white" />
+                      </div>
+                      <ArrowUpRight size={22} className="text-gray-300 group-hover:text-blue-600 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300" />
                     </div>
 
                     {/* Label */}
@@ -265,10 +268,10 @@ export default function HomePage() {
                     </h3>
 
                     {/* Body */}
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{svc.body}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-5">{svc.body}</p>
 
                     {/* Tech tags */}
-                    <div className="flex flex-wrap gap-1.5 mb-6">
+                    <div className="flex flex-wrap gap-1.5">
                       {svc.tech.map((t) => (
                         <span
                           key={t}
@@ -277,12 +280,6 @@ export default function HomePage() {
                           {t}
                         </span>
                       ))}
-                    </div>
-
-                    {/* CTA */}
-                    <div className="flex items-center gap-1.5 text-sm font-semibold text-blue-700 group-hover:gap-2.5 transition-all">
-                      Learn more
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </Link>
