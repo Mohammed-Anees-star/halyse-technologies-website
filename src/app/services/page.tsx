@@ -181,7 +181,6 @@ export default function ServicesPage() {
           <SectionHeader
             badge="Service Lines"
             title="Enterprise applications, integrations, and automation engineered for scale."
-            subtitle="Halyse helps organizations design, build, modernize, integrate, and support the technology platforms that underpin critical business operations. Our service lines cover enterprise applications, custom software, integration and automation, Azure cloud and data platforms, analytics, AI, business applications, and managed services — enabling clients to modernize legacy environments, connect systems, streamline processes, and scale with confidence. We deliver secure, scalable, and connected solutions across the Microsoft ecosystem with a clear focus on operational performance, governance, and long-term business value."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
