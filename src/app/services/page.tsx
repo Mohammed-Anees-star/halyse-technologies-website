@@ -4,20 +4,10 @@ import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
-  Clock,
   Target,
   Sparkles,
   Award,
   TrendingUp,
-  Users,
-  Building2,
-  Factory,
-  HeartPulse,
-  Landmark,
-  HardHat,
-  ShoppingBag,
-  Truck,
-  ShieldCheck,
   ChevronDown,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
@@ -68,31 +58,6 @@ const signatureOfferings = [
   },
 ];
 
-// ─── DELIVERY PRINCIPLES ────────────────────────────────────────────────────
-
-const principles = [
-  {
-    icon: ShieldCheck,
-    title: "Enterprise-Grade Governance",
-    desc: "Every engagement runs on Azure DevOps with source control, code reviews, environment strategy, and traceable requirements from day one.",
-  },
-  {
-    icon: Users,
-    title: "Senior-Led Delivery",
-    desc: "You get senior architects and consultants — not junior teams learning on your project. Every workstream is led by a proven expert.",
-  },
-  {
-    icon: Award,
-    title: "Microsoft Partner Standards",
-    desc: "As a Microsoft Partner, we deliver against Microsoft's Well-Architected Framework and cloud adoption best practices — every time.",
-  },
-  {
-    icon: Clock,
-    title: "Predictable & Transparent",
-    desc: "Weekly status, burn-down tracking, and clear change-control. No surprises. No scope creep. No opaque timesheets.",
-  },
-];
-
 // ─── ENGAGEMENT MODELS ──────────────────────────────────────────────────────
 
 const engagementModels = [
@@ -101,28 +66,6 @@ const engagementModels = [
   { name: "Time & Materials", desc: "Flexible model for evolving scopes and iterative delivery." },
   { name: "Dedicated Team", desc: "A long-term, ring-fenced team scaled to your program." },
   { name: "Managed Services", desc: "Outcome-based retainers with SLAs, monitoring, and enhancement capacity." },
-];
-
-// ─── TECHNOLOGY STACK ───────────────────────────────────────────────────────
-
-const stack = [
-  { group: "Microsoft Cloud", items: ["Azure", "Microsoft 365", "Azure DevOps", "Azure OpenAI"] },
-  { group: "Business Applications", items: ["Dynamics 365", "Business Central", "Dataverse", "Power Platform"] },
-  { group: "Low-Code Platforms", items: ["Power Apps", "Power Automate", "Power Pages", "Quickbase"] },
-  { group: "Data & AI", items: ["Microsoft Fabric", "Power BI", "Azure ML", "Copilot Studio"] },
-  { group: "Custom Engineering", items: ["ASP.NET Core", "React", "TypeScript", "SQL Server"] },
-];
-
-// ─── INDUSTRIES ─────────────────────────────────────────────────────────────
-
-const industries = [
-  { icon: Factory, name: "Manufacturing" },
-  { icon: HeartPulse, name: "Healthcare" },
-  { icon: Landmark, name: "Financial Services" },
-  { icon: HardHat, name: "Construction" },
-  { icon: Building2, name: "Professional Services" },
-  { icon: ShoppingBag, name: "Retail" },
-  { icon: Truck, name: "Logistics" },
 ];
 
 // ─── FAQS ───────────────────────────────────────────────────────────────────
@@ -200,8 +143,8 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badge="Service Lines"
-            title="Six services. One integrated partner."
-            subtitle="Halyse helps organizations design, build, modernize, integrate, and support business-critical technology solutions. Explore each service for a deeper view of capabilities, technologies, and business outcomes."
+            title="Enterprise applications, integrations, and automation engineered for scale."
+            subtitle="Halyse helps organizations design, build, modernize, integrate, and support the technology platforms that underpin critical business operations. Our service lines cover enterprise applications, custom software, integration and automation, Azure cloud and data platforms, analytics, AI, business applications, and managed services — enabling clients to modernize legacy environments, connect systems, streamline processes, and scale with confidence. We deliver secure, scalable, and connected solutions across the Microsoft ecosystem with a clear focus on operational performance, governance, and long-term business value."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -283,32 +226,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* DELIVERY PRINCIPLES */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Why Halyse"
-            title="How enterprise-grade actually feels."
-            subtitle="Behind every service line is a delivery model built for scrutiny — the kind that satisfies procurement, security, and the board."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {principles.map((p) => {
-              const Icon = p.icon;
-              return (
-                <div key={p.title} className="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:border-blue-200 transition-colors">
-                  <div className="w-11 h-11 bg-white rounded-xl border border-blue-100 flex items-center justify-center mb-5 shadow-sm">
-                    <Icon size={20} className="text-blue-700" />
-                  </div>
-                  <h3 className="text-base font-bold text-gray-900 mb-2">{p.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* ENGAGEMENT MODELS */}
       <section className="py-20 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -326,73 +243,6 @@ export default function ServicesPage() {
                 <p className="text-xs text-gray-600 leading-relaxed">{m.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TECHNOLOGY STACK */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Technology Stack"
-            title="Deep in the Microsoft ecosystem."
-            subtitle="Our teams hold current, hands-on expertise across the platforms that matter most to modern enterprises."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {stack.map((s) => (
-              <div key={s.group} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                <div className="text-[10px] uppercase tracking-wider text-gray-500 font-bold mb-3">{s.group}</div>
-                <div className="flex flex-wrap gap-1.5">
-                  {s.items.map((item) => (
-                    <span
-                      key={item}
-                      className="text-xs bg-white text-gray-700 px-2.5 py-1 rounded-md border border-gray-200 font-medium"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* INDUSTRIES STRIP */}
-      <section className="py-20 bg-gray-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-10">
-            <div>
-              <span className="inline-block text-xs font-bold tracking-[0.15em] uppercase mb-3 text-blue-400">
-                Industries
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight">
-                Domain fluency across regulated & complex sectors.
-              </h2>
-            </div>
-            <Link
-              href="/industries"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-white transition-colors self-start lg:self-auto"
-            >
-              Explore industry expertise
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
-            {industries.map((i) => {
-              const Icon = i.icon;
-              return (
-                <div
-                  key={i.name}
-                  className="bg-white/5 border border-white/10 rounded-xl p-4 flex flex-col items-center gap-2 hover:bg-white/[0.08] hover:border-blue-400/30 transition-all"
-                >
-                  <Icon size={22} className="text-blue-300" />
-                  <span className="text-xs text-white/90 font-medium text-center">{i.name}</span>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
