@@ -9,6 +9,10 @@ import {
   Award,
   TrendingUp,
   ChevronDown,
+  Layers,
+  GitMerge,
+  Cloud,
+  AppWindow,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
@@ -24,36 +28,69 @@ export const metadata: Metadata = {
 
 const signatureOfferings = [
   {
-    icon: Sparkles,
-    tag: "Fixed Scope · 6 Weeks",
-    title: "AI Rapid Pilot",
-    desc: "From opportunity assessment to a live, production-ready AI pilot on Azure OpenAI — in six weeks. Includes use case selection, data readiness, prototype build, and business case for scale-out.",
+    icon: Layers,
+    duration: "3 – 4 Weeks",
+    title: "Application Modernization Blueprint",
+    tagline: "Modernize with confidence before investing at scale.",
     outcomes: [
-      "1 production-grade AI pilot",
-      "Executive scale-out business case",
-      "Reference architecture & governance",
+      "Assess a business-critical application, its technical constraints, and modernization risks.",
+      "Define a target architecture and phased modernization strategy.",
+      "Receive a practical roadmap for migration, refactoring, or platform modernization.",
     ],
   },
   {
-    icon: Target,
-    tag: "Fixed Scope · 4 Weeks",
-    title: "Power Platform Governance Kickstart",
-    desc: "Stand up an enterprise-grade Power Platform Center of Excellence — environments, DLP policies, monitoring, maker enablement, and governance operating model — in one month.",
+    icon: GitMerge,
+    duration: "2 – 4 Weeks",
+    title: "Integration & Automation Accelerator",
+    tagline: "Connect systems, streamline operations, and eliminate manual effort.",
     outcomes: [
-      "Full CoE toolkit deployment",
-      "DLP & environment strategy",
-      "Enablement + governance playbook",
+      "Map a high-priority business process across teams, systems, and workflows.",
+      "Design and implement secure integrations between key business applications.",
+      "Deliver a production-ready automation that improves efficiency and reduces operational delays.",
+    ],
+  },
+  {
+    icon: Cloud,
+    duration: "2 – 3 Weeks",
+    title: "Cloud Platform Readiness Assessment",
+    tagline: "Build a secure, scalable cloud foundation for future growth.",
+    outcomes: [
+      "Assess your cloud environment, governance model, and deployment practices.",
+      "Establish platform controls for security, reliability, scalability, and operational consistency.",
+      "Receive a prioritized roadmap to improve cloud readiness and support future initiatives.",
     ],
   },
   {
     icon: TrendingUp,
-    tag: "Fixed Scope · 3 Weeks",
-    title: "Data & Analytics Accelerator",
-    desc: "A structured sprint that assesses your data landscape, delivers a modern Fabric / Power BI reference architecture, and ships two working executive dashboards on real data.",
+    duration: "3 – 5 Weeks",
+    title: "Data & Executive Analytics Accelerator",
+    tagline: "Transform fragmented data into trusted business intelligence.",
     outcomes: [
-      "Data maturity assessment",
-      "Reference architecture (Fabric-ready)",
-      "2 live executive dashboards",
+      "Evaluate existing data sources, reporting gaps, and information flows.",
+      "Define executive and operational KPIs aligned with business objectives.",
+      "Deliver an executive-ready dashboard or reporting solution that supports informed decision-making.",
+    ],
+  },
+  {
+    icon: AppWindow,
+    duration: "4 Weeks",
+    title: "Power Platform CoE Kickstart",
+    tagline: "Establish an enterprise-grade foundation for low-code delivery.",
+    outcomes: [
+      "Deploy the Center of Excellence toolkit with environments, DLP policies, and monitoring.",
+      "Design a governance operating model and maker enablement pathway.",
+      "Enable safe, scalable Power Platform adoption across the organization.",
+    ],
+  },
+  {
+    icon: Sparkles,
+    duration: "4 – 6 Weeks",
+    title: "AI Rapid Pilot",
+    tagline: "Validate a high-value AI opportunity before scaling with confidence.",
+    outcomes: [
+      "Identify and prioritize a business-relevant AI use case with measurable success criteria.",
+      "Develop and validate a working pilot in a controlled business environment.",
+      "Receive recommendations for production adoption, governance, and enterprise-scale implementation.",
     ],
   },
 ];
@@ -187,32 +224,38 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeader
             badge="Signature Offerings"
-            title="Fixed-scope accelerators."
-            subtitle="For enterprises that need momentum fast — our productized engagements deliver executive-visible outcomes within weeks, not quarters."
+            title="Fixed-scope consulting engagements."
+            subtitle="Structured engagements designed to help organizations validate direction, reduce delivery risk, and accelerate business outcomes through disciplined execution — before committing to enterprise-scale investment."
             light
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {signatureOfferings.map((o) => {
               const Icon = o.icon;
               return (
                 <div
                   key={o.title}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-blue-400/30 transition-all"
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-blue-400/30 transition-all flex flex-col"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-white" />
+                  <div className="flex items-start justify-between mb-5">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                      <Icon size={22} className="text-white" />
+                    </div>
+                    <span className="text-[11px] font-semibold text-blue-200 bg-white/[0.06] border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                      {o.duration}
+                    </span>
                   </div>
-                  <div className="text-[11px] uppercase tracking-wider text-blue-300 font-semibold mb-2">
-                    {o.tag}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{o.title}</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed mb-5">{o.desc}</p>
-                  <div className="border-t border-white/10 pt-4">
-                    <div className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-2">Outcomes</div>
-                    <ul className="space-y-1.5">
+                  <h3 className="text-xl font-bold text-white mb-2 leading-snug">{o.title}</h3>
+                  <p className="text-sm italic text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400 mb-5 leading-relaxed">
+                    {o.tagline}
+                  </p>
+                  <div className="border-t border-white/10 pt-4 mt-auto">
+                    <div className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-3">
+                      What you&apos;ll achieve
+                    </div>
+                    <ul className="space-y-2">
                       {o.outcomes.map((out) => (
-                        <li key={out} className="flex items-start gap-2 text-xs text-gray-300">
+                        <li key={out} className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed">
                           <CheckCircle2 size={13} className="text-cyan-400 mt-0.5 shrink-0" />
                           {out}
                         </li>
@@ -289,23 +332,23 @@ export default function ServicesPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-5 leading-tight">
-            Ready to see what we can deliver together?
+            Ready to accelerate your next initiative?
           </h2>
           <p className="text-blue-100 text-lg mb-9 max-w-2xl mx-auto leading-relaxed">
-            Book a 30-minute discovery call. We&apos;ll listen to your priorities, share relevant experience, and follow up with a tailored proposal within 5 business days.
+            Whether you&apos;re modernizing applications, strengthening your cloud platform, improving data capabilities, or exploring AI — our structured consulting engagements provide a low-risk path from strategy to measurable results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-white text-blue-800 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors shadow-xl shadow-blue-900/30 text-sm"
             >
-              Book a Discovery Call <ArrowRight size={18} />
+              Schedule a Discovery Session <ArrowRight size={18} />
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-white/10 text-white font-bold px-8 py-4 rounded-lg hover:bg-white/15 border border-white/20 transition-colors text-sm"
             >
-              Request Capabilities Deck
+              Talk to Our Team
             </Link>
           </div>
         </div>
