@@ -3,16 +3,8 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  CheckCircle2,
-  Target,
-  Sparkles,
   Award,
-  TrendingUp,
   ChevronDown,
-  Layers,
-  GitMerge,
-  Cloud,
-  AppWindow,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
@@ -23,77 +15,6 @@ export const metadata: Metadata = {
   description:
     "Halyse Technologies delivers senior-led technology consulting and delivery services across enterprise applications, integration, Azure cloud, data & AI, low-code platforms, and managed services.",
 };
-
-// ─── SIGNATURE OFFERINGS ────────────────────────────────────────────────────
-
-const signatureOfferings = [
-  {
-    icon: Layers,
-    duration: "3 – 4 Weeks",
-    title: "Application Modernization Blueprint",
-    tagline: "Modernize with confidence before investing at scale.",
-    outcomes: [
-      "Assess a business-critical application, its technical constraints, and modernization risks.",
-      "Define a target architecture and phased modernization strategy.",
-      "Receive a practical roadmap for migration, refactoring, or platform modernization.",
-    ],
-  },
-  {
-    icon: GitMerge,
-    duration: "2 – 4 Weeks",
-    title: "Integration & Automation Accelerator",
-    tagline: "Connect systems, streamline operations, and eliminate manual effort.",
-    outcomes: [
-      "Map a high-priority business process across teams, systems, and workflows.",
-      "Design and implement secure integrations between key business applications.",
-      "Deliver a production-ready automation that improves efficiency and reduces operational delays.",
-    ],
-  },
-  {
-    icon: Cloud,
-    duration: "2 – 3 Weeks",
-    title: "Cloud Platform Readiness Assessment",
-    tagline: "Build a secure, scalable cloud foundation for future growth.",
-    outcomes: [
-      "Assess your cloud environment, governance model, and deployment practices.",
-      "Establish platform controls for security, reliability, scalability, and operational consistency.",
-      "Receive a prioritized roadmap to improve cloud readiness and support future initiatives.",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    duration: "3 – 5 Weeks",
-    title: "Data & Executive Analytics Accelerator",
-    tagline: "Transform fragmented data into trusted business intelligence.",
-    outcomes: [
-      "Evaluate existing data sources, reporting gaps, and information flows.",
-      "Define executive and operational KPIs aligned with business objectives.",
-      "Deliver an executive-ready dashboard or reporting solution that supports informed decision-making.",
-    ],
-  },
-  {
-    icon: AppWindow,
-    duration: "4 Weeks",
-    title: "Power Platform CoE Kickstart",
-    tagline: "Establish an enterprise-grade foundation for low-code delivery.",
-    outcomes: [
-      "Deploy the Center of Excellence toolkit with environments, DLP policies, and monitoring.",
-      "Design a governance operating model and maker enablement pathway.",
-      "Enable safe, scalable Power Platform adoption across the organization.",
-    ],
-  },
-  {
-    icon: Sparkles,
-    duration: "4 – 6 Weeks",
-    title: "AI Rapid Pilot",
-    tagline: "Validate a high-value AI opportunity before scaling with confidence.",
-    outcomes: [
-      "Identify and prioritize a business-relevant AI use case with measurable success criteria.",
-      "Develop and validate a working pilot in a controlled business environment.",
-      "Receive recommendations for production adoption, governance, and enterprise-scale implementation.",
-    ],
-  },
-];
 
 // ─── ENGAGEMENT MODELS ──────────────────────────────────────────────────────
 
@@ -202,61 +123,6 @@ export default function ServicesPage() {
                   <p className="text-xs font-semibold text-blue-600 mb-4">{s.tagline}</p>
                   <p className="text-sm text-gray-600 leading-relaxed line-clamp-4">{s.desc}</p>
                 </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* SIGNATURE OFFERINGS */}
-      <section className="py-24 bg-gradient-to-br from-gray-950 via-blue-950 to-gray-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px]" />
-          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionHeader
-            badge="Signature Offerings"
-            title="Fixed-scope consulting engagements."
-            subtitle="Structured engagements designed to help organizations validate direction, reduce delivery risk, and accelerate business outcomes through disciplined execution — before committing to enterprise-scale investment."
-            light
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {signatureOfferings.map((o) => {
-              const Icon = o.icon;
-              return (
-                <div
-                  key={o.title}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-blue-400/30 transition-all flex flex-col"
-                >
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                      <Icon size={22} className="text-white" />
-                    </div>
-                    <span className="text-[11px] font-semibold text-blue-200 bg-white/[0.06] border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                      {o.duration}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug">{o.title}</h3>
-                  <p className="text-sm italic text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400 mb-5 leading-relaxed">
-                    {o.tagline}
-                  </p>
-                  <div className="border-t border-white/10 pt-4 mt-auto">
-                    <div className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-3">
-                      What you&apos;ll achieve
-                    </div>
-                    <ul className="space-y-2">
-                      {o.outcomes.map((out) => (
-                        <li key={out} className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed">
-                          <CheckCircle2 size={13} className="text-cyan-400 mt-0.5 shrink-0" />
-                          {out}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
               );
             })}
           </div>
