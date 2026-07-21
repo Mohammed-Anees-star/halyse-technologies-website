@@ -12,8 +12,23 @@
   --foreground: #0f172a;
 }
 
+/*
+  Keep box-sizing globally, but let Tailwind's utilities own padding/margin.
+  A universal `padding: 0` reset here silently wins against Tailwind's
+  utility classes because the source order places this stylesheet after
+  the Tailwind layer.
+*/
 * {
   box-sizing: border-box;
+}
+
+/* Reset default element margins/padding without touching arbitrary elements. */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol, li,
+figure, blockquote,
+dl, dd {
   margin: 0;
   padding: 0;
 }

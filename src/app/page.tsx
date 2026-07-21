@@ -28,21 +28,21 @@ import { services as allServices } from "@/data/services";
 const outcomePillars = [
   {
     number: "01",
-    outcome: "Modernize",
-    headline: "Move critical applications off legacy foundations and onto cloud-native platforms.",
-    body: "Halyse re-architects the systems your business runs on — replacing brittle legacy platforms with secure, scalable, cloud-native applications that reduce risk and unlock faster delivery.",
+    label: "Modernize",
+    title: "Modernize critical platforms",
+    body: "Replace brittle legacy systems with secure, scalable cloud-native foundations.",
   },
   {
     number: "02",
-    outcome: "Integrate & Automate",
-    headline: "Connect systems, eliminate manual effort, and let data flow across the enterprise.",
-    body: "We design API-led integrations and event-driven automations that dissolve silos between ERP, CRM, and operational systems — turning fragmented processes into seamless business workflows.",
+    label: "Integrate & Automate",
+    title: "Integrate and automate operations",
+    body: "Connect systems, reduce manual work, and streamline enterprise workflows.",
   },
   {
     number: "03",
-    outcome: "Unlock Data & AI",
-    headline: "Turn scattered data into insight, and insight into competitive advantage.",
-    body: "From Microsoft Fabric platforms to Azure OpenAI pilots, we help enterprises consolidate their data, sharpen decisions, and put AI to work where it creates measurable business value.",
+    label: "Data & AI",
+    title: "Turn data into business advantage",
+    body: "Build the analytics and AI capability needed for faster, better decisions.",
   },
 ];
 
@@ -306,44 +306,51 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          3. OUTCOME PILLARS — What we help you achieve (not services)
-          Editorial storytelling format. Nothing on /services looks
-          remotely like this.
+          3. OUTCOME PILLARS — Three outcomes. One partner.
+          Refined typography, restrained numbers, stronger left rail.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 lg:py-32 bg-white">
+      <section className="py-28 lg:py-36 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-20">
-            <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-5">
-              How We Create Value
-            </span>
-            <h2 className="font-serif text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05]">
-              Three outcomes.{" "}
-              <span className="italic font-light text-blue-600">One partner.</span>
-            </h2>
+          {/* Section header — sits on the left rail so header + rows share a vertical axis */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 mb-16 lg:mb-20">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-semibold text-blue-600 tracking-[0.2em] uppercase">
+                How We Create Value
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <h2 className="font-serif text-[48px] sm:text-[56px] lg:text-[64px] font-semibold text-gray-900 leading-[1.02] tracking-tight max-w-3xl">
+                Three outcomes.{" "}
+                <span className="text-gray-400">One partner.</span>
+              </h2>
+            </div>
           </div>
 
-          <div className="space-y-16 lg:space-y-24">
+          {/* Outcome rows */}
+          <div className="divide-y divide-gray-100 border-t border-gray-100">
             {outcomePillars.map((p) => (
               <div
                 key={p.number}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 py-14 lg:py-20"
               >
-                {/* Left — number + outcome */}
+                {/* Left rail — number + label, tightly grouped */}
                 <div className="lg:col-span-4">
-                  <div className="font-serif text-8xl lg:text-9xl font-bold italic leading-none text-blue-100 mb-4">
-                    {p.number}
-                  </div>
-                  <div className="text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-3">
-                    {p.outcome}
+                  <div className="flex items-baseline gap-5">
+                    <span className="font-serif text-5xl lg:text-6xl font-light text-gray-300 leading-none tabular-nums">
+                      {p.number}
+                    </span>
+                    <span className="text-xs font-semibold text-gray-900 tracking-[0.2em] uppercase">
+                      {p.label}
+                    </span>
                   </div>
                 </div>
 
-                {/* Right — headline + body */}
-                <div className="lg:col-span-8 lg:pt-4">
-                  <h3 className="font-serif text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-5">
-                    {p.headline}
+                {/* Right — title + body */}
+                <div className="lg:col-span-8">
+                  <h3 className="font-serif text-[28px] lg:text-[36px] font-semibold text-gray-900 leading-[1.15] tracking-tight mb-5 max-w-2xl">
+                    {p.title}
                   </h3>
-                  <p className="text-gray-600 text-base lg:text-lg leading-relaxed max-w-2xl">
+                  <p className="text-gray-600 text-base lg:text-lg leading-[1.65] max-w-2xl">
                     {p.body}
                   </p>
                 </div>
