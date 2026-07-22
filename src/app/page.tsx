@@ -343,51 +343,55 @@ export default function HomePage() {
 
       {/* ════════════════════════════════════════════════════════
           2. CREDIBILITY RIBBON — Immediate trust signal
-          Compact horizontal strip. Distinct from /services trust strip
-          which uses vertical stat blocks.
+          Simplified: centered, no label prefix, no dot separators —
+          just four credentials in a clean rhythm. Less visual noise
+          before the story starts.
       ════════════════════════════════════════════════════════ */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-400 shrink-0">
-              Trusted by enterprise leaders
-            </p>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
-              <div className="flex items-center gap-2">
-                <Award size={16} className="text-blue-700" />
-                <span className="font-semibold text-gray-900">Microsoft Partner</span>
-              </div>
-              <span className="text-gray-300 hidden md:inline">·</span>
-              <div className="flex items-center gap-2">
-                <Clock size={16} className="text-blue-700" />
-                <span className="text-gray-700">
-                  <span className="font-bold text-gray-900">8+</span> years delivering
-                </span>
-              </div>
-              <span className="text-gray-300 hidden md:inline">·</span>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-blue-700" />
-                <span className="text-gray-700">
-                  <span className="font-bold text-gray-900">50+</span> enterprise projects
-                </span>
-              </div>
-              <span className="text-gray-300 hidden md:inline">·</span>
-              <div className="flex items-center gap-2">
-                <Globe2 size={16} className="text-blue-700" />
-                <span className="text-gray-700">US · Australia · Middle East</span>
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm">
+            <div className="flex items-center gap-2">
+              <Award size={15} className="text-blue-700" />
+              <span className="font-semibold text-gray-800">Microsoft Partner</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock size={15} className="text-blue-700" />
+              <span className="text-gray-600">
+                <span className="font-bold text-gray-900">8+</span> years delivering
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 size={15} className="text-blue-700" />
+              <span className="text-gray-600">
+                <span className="font-bold text-gray-900">50+</span> enterprise projects
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Globe2 size={15} className="text-blue-700" />
+              <span className="text-gray-600">US · Australia · Middle East</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          3. OUTCOME PILLARS — Three outcomes. One partner.
-          Refined typography, restrained numbers, stronger left rail.
+          3. OUTCOMES + CAPABILITIES — Unified section
+          One story, two parts:
+            Part A — Three outcomes we create
+            Bridge — one sentence naming capabilities as the answer
+            Part B — Six capabilities that make those outcomes possible
+
+          Kept on a single white background (no gray-50 break) so both
+          parts feel like chapters of one narrative, not stacked modules.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 lg:py-36 bg-white">
+      <section className="pt-28 pb-24 lg:pt-36 lg:pb-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section header — sits on the left rail so header + rows share a vertical axis */}
+
+          {/* ── PART A: OUTCOMES ─────────────────────────────── */}
+
+          {/* Section header — number/eyebrow lives on the left rail so
+              the header and every outcome row share a single vertical
+              axis. */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 mb-16 lg:mb-20">
             <div className="lg:col-span-4">
               <p className="text-xs font-semibold text-blue-600 tracking-[0.2em] uppercase">
@@ -395,7 +399,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="lg:col-span-8">
-              <h2 className="font-serif text-[48px] sm:text-[56px] lg:text-[64px] font-semibold text-gray-900 leading-[1.02] tracking-tight max-w-3xl">
+              <h2 className="font-serif text-[44px] sm:text-[52px] lg:text-[60px] font-semibold text-gray-900 leading-[1.04] tracking-tight max-w-3xl">
                 Three outcomes.{" "}
                 <span className="text-gray-400">One partner.</span>
               </h2>
@@ -407,15 +411,15 @@ export default function HomePage() {
             {outcomePillars.map((p) => (
               <div
                 key={p.number}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 py-14 lg:py-20"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 py-12 lg:py-16"
               >
-                {/* Left rail — number + label, tightly grouped */}
+                {/* Left rail — number + label share a baseline */}
                 <div className="lg:col-span-4">
                   <div className="flex items-baseline gap-5">
-                    <span className="font-serif text-5xl lg:text-6xl font-light text-gray-300 leading-none tabular-nums">
+                    <span className="font-serif text-5xl lg:text-[56px] font-light text-gray-300 leading-none tabular-nums">
                       {p.number}
                     </span>
-                    <span className="text-xs font-semibold text-gray-900 tracking-[0.2em] uppercase">
+                    <span className="text-[11px] font-semibold text-gray-900 tracking-[0.2em] uppercase">
                       {p.label}
                     </span>
                   </div>
@@ -423,7 +427,7 @@ export default function HomePage() {
 
                 {/* Right — title + body */}
                 <div className="lg:col-span-8">
-                  <h3 className="font-serif text-[28px] lg:text-[36px] font-semibold text-gray-900 leading-[1.15] tracking-tight mb-5 max-w-2xl">
+                  <h3 className="font-serif text-[26px] lg:text-[32px] font-semibold text-gray-900 leading-[1.2] tracking-tight mb-4 max-w-2xl">
                     {p.title}
                   </h3>
                   <p className="text-gray-600 text-base lg:text-lg leading-[1.65] max-w-2xl">
@@ -433,61 +437,73 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ════════════════════════════════════════════════════════
-          4. CAPABILITY PREVIEW — Six pillars, minimal teaser
-          Radically compact vs /services. Teaser only, no descriptions.
-          Fulfills requirement to keep six pillars, without duplication.
-      ════════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-            <div className="max-w-2xl">
-              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-4">
-                Capabilities
-              </span>
-              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.1]">
-                Six service pillars that power modern enterprises.
-              </h2>
+          {/* ── TRANSITION BRIDGE ────────────────────────────
+              A single editorial sentence that connects the outcomes
+              above (Part A) to the capabilities below (Part B).
+              Uses the same left-rail axis so it reads as part of
+              the same narrative, not a separate section header. */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 pt-16 lg:pt-20 border-t border-gray-100">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-semibold text-blue-600 tracking-[0.2em] uppercase">
+                What Makes Them Possible
+              </p>
             </div>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group whitespace-nowrap"
-            >
-              Explore all six services
-              <ArrowUpRight
-                size={15}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-              />
-            </Link>
+            <div className="lg:col-span-8">
+              <p className="font-serif text-[24px] lg:text-[30px] text-gray-900 leading-[1.3] tracking-tight max-w-3xl">
+                Six connected capabilities across the Microsoft ecosystem —
+                <span className="text-gray-400"> the foundation behind every outcome we deliver.</span>
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {allServices.map((s) => {
-              const Icon = s.icon;
-              return (
+          {/* ── PART B: CAPABILITIES ─────────────────────────
+              Compressed preview — no descriptions, minimal weight.
+              Grid is left-aligned to the same 8-column content column
+              used by the outcomes above, reinforcing the shared axis. */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 mt-10 lg:mt-14">
+            <div className="hidden lg:block lg:col-span-4">
+              {/* Empty left rail — preserves shared axis alignment */}
+            </div>
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {allServices.map((s) => {
+                  const Icon = s.icon;
+                  return (
+                    <Link
+                      key={s.slug}
+                      href={`/services/${s.slug}`}
+                      className="group flex items-center gap-3.5 py-3.5 px-4 rounded-lg border border-gray-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all duration-200"
+                    >
+                      <div className="w-8 h-8 shrink-0 bg-gray-900 rounded-md flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                        <Icon size={15} className="text-white" />
+                      </div>
+                      <span className="flex-1 min-w-0 text-[13px] font-semibold text-gray-900 leading-snug truncate">
+                        {s.title}
+                      </span>
+                      <ArrowUpRight
+                        size={14}
+                        className="text-gray-300 group-hover:text-blue-600 shrink-0 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                      />
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Handoff to Services page */}
+              <div className="mt-10">
                 <Link
-                  key={s.slug}
-                  href={`/services/${s.slug}`}
-                  className="group flex items-center gap-4 bg-white rounded-xl p-5 border border-gray-100 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/40 transition-all duration-300"
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group"
                 >
-                  <div className="w-10 h-10 shrink-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-md shadow-blue-100">
-                    <Icon size={18} className="text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-bold text-gray-900 leading-snug truncate group-hover:text-blue-700 transition-colors">
-                      {s.title}
-                    </h3>
-                  </div>
+                  Explore all six services in detail
                   <ArrowUpRight
-                    size={16}
-                    className="text-gray-300 group-hover:text-blue-600 shrink-0 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                    size={15}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                   />
                 </Link>
-              );
-            })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
