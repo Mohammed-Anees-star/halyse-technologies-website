@@ -183,10 +183,12 @@ export default function HomePage() {
     <>
       {/* ════════════════════════════════════════════════════════
           1. HERO — Outcome-driven positioning
-          Distinct from /services which uses PageHero component.
+          Two-column composition on desktop: content (7/12) + subtle
+          architectural anchor (5/12). Distinct from /services which
+          uses PageHero component.
       ════════════════════════════════════════════════════════ */}
-      <section className="relative bg-gray-950 text-white overflow-hidden min-h-screen flex flex-col">
-        {/* Animated gradient orbs */}
+      <section className="relative bg-gray-950 text-white overflow-hidden min-h-[85vh] lg:min-h-[88vh] flex flex-col">
+        {/* Ambient background — subtle grid + blurred orbs */}
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute inset-0 opacity-[0.04]"
@@ -201,11 +203,71 @@ export default function HomePage() {
           <div className="absolute top-[40%] left-[30%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]" />
         </div>
 
+        {/* Right-side architectural anchor — restrained enterprise motif.
+            Positioned absolutely so it doesn't compete with headline width.
+            Concentric rings + soft radial glow + fine SVG grid + node dots.
+            Hidden below lg. */}
+        <div
+          className="hidden lg:block absolute top-1/2 right-0 -translate-y-1/2 pointer-events-none z-[1]"
+          aria-hidden="true"
+        >
+          <div className="relative w-[560px] h-[560px] xl:w-[640px] xl:h-[640px] translate-x-[15%]">
+            {/* Radial glow */}
+            <div className="absolute inset-[12%] rounded-full bg-blue-500/[0.05] blur-3xl" />
+
+            {/* Concentric rings */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute w-full h-full rounded-full border border-white/[0.04]" />
+              <div className="absolute w-[80%] h-[80%] rounded-full border border-white/[0.05]" />
+              <div className="absolute w-[60%] h-[60%] rounded-full border border-white/[0.07]" />
+              <div className="absolute w-[40%] h-[40%] rounded-full border border-white/[0.09]" />
+              <div className="absolute w-[20%] h-[20%] rounded-full border border-blue-300/[0.18]" />
+            </div>
+
+            {/* Central node — soft cyan pulse */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-2.5 h-2.5 rounded-full bg-cyan-300/60 shadow-[0_0_20px_rgba(103,232,249,0.5)]" />
+            </div>
+
+            {/* Anchor node dots — subtle graph vertices */}
+            <div className="absolute top-[18%] left-[22%] w-1.5 h-1.5 rounded-full bg-blue-300/35" />
+            <div className="absolute top-[28%] right-[20%] w-1.5 h-1.5 rounded-full bg-blue-300/35" />
+            <div className="absolute bottom-[24%] left-[27%] w-1.5 h-1.5 rounded-full bg-blue-300/35" />
+            <div className="absolute bottom-[20%] right-[24%] w-1.5 h-1.5 rounded-full bg-blue-300/35" />
+            <div className="absolute top-[50%] left-[10%] w-1 h-1 rounded-full bg-blue-200/25" />
+            <div className="absolute top-[50%] right-[10%] w-1 h-1 rounded-full bg-blue-200/25" />
+
+            {/* Fine SVG grid with radial mask */}
+            <svg
+              className="absolute inset-0 w-full h-full opacity-[0.05]"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <pattern id="hero-grid" width="8" height="8" patternUnits="userSpaceOnUse">
+                  <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.12" />
+                </pattern>
+                <radialGradient id="hero-grid-fade" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="white" stopOpacity="1" />
+                  <stop offset="70%" stopColor="white" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                </radialGradient>
+                <mask id="hero-grid-mask">
+                  <rect width="100" height="100" fill="url(#hero-grid-fade)" />
+                </mask>
+              </defs>
+              <rect width="100" height="100" fill="url(#hero-grid)" mask="url(#hero-grid-mask)" />
+            </svg>
+          </div>
+        </div>
+
         <div className="relative z-10 flex-1 flex flex-col">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 lg:pt-44 pb-16 flex-1 flex flex-col justify-center">
-            <div className="max-w-6xl">
+          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 lg:pt-32 pb-16 flex-1 flex flex-col justify-center">
+            {/* Content spans wider than before so the 2-line headline can breathe.
+                Anchor sits behind and to the right (see absolute block above). */}
+            <div className="max-w-[1080px]">
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-3 mb-9 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
                 <span className="text-blue-200 text-xs font-semibold tracking-wider uppercase">
                   Enterprise Technology Consulting
@@ -213,25 +275,25 @@ export default function HomePage() {
               </div>
 
               {/*
-                Outcome-first headline — enforced 3-line layout on desktop:
-                  Line 1: We help enterprises
-                  Line 2: turn technology into
-                  Line 3: measurable business outcomes.  ← kept together
+                2-line headline (preferred):
+                  Line 1: We help enterprises turn technology into
+                  Line 2: measurable business outcomes.
 
-                Explicit <br /> tags at lg: breakpoint via block-level spans;
-                on smaller viewports the natural wrap takes over. The gradient
-                phrase uses `whitespace-nowrap` (desktop) to guarantee it never
-                splits across lines.
+                Line 1 in Playfair 60px needs ~1090px to fit on one line.
+                Content max-width is 1080px so at lg/xl it hits the target;
+                on very narrow desktops (~1024–1150px) it may wrap to 3
+                lines, which is the acceptable fallback the user specified.
+                Line 2 uses `lg:whitespace-nowrap` so "outcomes." is never
+                orphaned as its own line.
               */}
-              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight mb-10">
-                We help enterprises{" "}
-                <span className="lg:block">turn technology into</span>{" "}
+              <h1 className="font-serif text-[42px] sm:text-5xl lg:text-[52px] xl:text-[60px] font-semibold leading-[1.06] tracking-tight mb-8 max-w-[1080px]">
+                We help enterprises turn technology into{" "}
                 <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400 lg:whitespace-nowrap">
                   measurable business outcomes.
                 </span>
               </h1>
 
-              <p className="text-lg lg:text-xl text-gray-400 leading-relaxed mb-12 max-w-3xl font-light">
+              <p className="text-base lg:text-lg text-gray-400 leading-[1.7] mb-14 max-w-2xl font-light">
                 Halyse Technologies partners with enterprise leaders to modernize
                 applications, integrate systems, harness data and AI, and run
                 mission-critical workloads on Microsoft Azure, Power Platform, Dynamics
@@ -245,7 +307,10 @@ export default function HomePage() {
                   className="inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-2xl shadow-blue-900/50 group text-sm"
                 >
                   Schedule a Discovery Session
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </Link>
                 <Link
                   href="/services"
