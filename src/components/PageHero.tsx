@@ -7,7 +7,7 @@ interface PageHeroProps {
 
 export default function PageHero({ badge, title, subtitle, highlight }: PageHeroProps) {
   return (
-    <section className="relative bg-gray-950 text-white overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20">
+    <section className="relative bg-gray-950 text-white overflow-hidden pt-36 pb-20 lg:pt-40 lg:pb-24">
       {/* Ambient background — restrained */}
       <div className="absolute inset-0 pointer-events-none">
         <div
