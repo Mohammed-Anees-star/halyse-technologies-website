@@ -837,13 +837,19 @@ export default function HomePage() {
 
       {/* ════════════════════════════════════════════════════════
           9. FINAL CTA — Outcome-focused close
+          Two-column composition inside the rounded card so the right
+          side is intentionally filled (not empty). Left = message +
+          CTAs. Right = supporting trust signals that answer 'what
+          happens if I click?' — a technique used by top enterprise
+          consultancies (Deloitte, McKinsey, Accenture).
       ════════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-gray-50 border-t border-gray-100">
+      <section className="py-24 lg:py-28 bg-gray-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-gray-950 rounded-[2rem] overflow-hidden">
+            {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[100px]" />
-              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[80px]" />
+              <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[120px]" />
+              <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
               <div
                 className="absolute inset-0 opacity-[0.03]"
                 style={{
@@ -854,40 +860,99 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="relative z-10 px-8 py-20 sm:px-16 lg:px-24">
-              <div className="max-w-3xl">
-                <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.2em] uppercase mb-6">
-                  Let&apos;s Talk
-                </span>
-                <h2 className="font-serif text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-8">
-                  Let&apos;s turn your next initiative into{" "}
-                  <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
-                    measurable business impact.
+            {/* Content — increased internal padding on all sides */}
+            <div className="relative z-10 px-8 py-24 sm:px-14 sm:py-28 lg:px-20 lg:py-32 xl:px-24">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+                {/* ── LEFT — Message + CTAs (col 7/12) ────────── */}
+                <div className="lg:col-span-7">
+                  <span className="inline-block text-xs font-semibold text-blue-400 tracking-[0.2em] uppercase mb-6">
+                    Let&apos;s Talk
                   </span>
-                </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-2xl font-light">
-                  Whether you&apos;re modernizing applications, strengthening your cloud
-                  platform, unlocking data, or piloting AI — our structured consulting
-                  engagements provide a low-risk path from strategy to measurable results.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 shadow-2xl shadow-blue-900/50 group text-sm"
-                  >
-                    Schedule a Discovery Session
-                    <ArrowRight
-                      size={16}
-                      className="group-hover:translate-x-1 transition-transform"
-                    />
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2.5 text-white font-semibold px-8 py-4 rounded-lg border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-200 text-sm"
-                  >
-                    Talk to Our Team
-                  </Link>
+                  <h2 className="font-serif text-[42px] sm:text-5xl lg:text-[56px] font-semibold text-white leading-[1.05] tracking-tight mb-7">
+                    Let&apos;s turn your next initiative into{" "}
+                    <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+                      measurable business impact.
+                    </span>
+                  </h2>
+                  <p className="text-gray-400 text-base lg:text-lg leading-[1.7] mb-10 max-w-xl font-light">
+                    Whether you&apos;re modernizing applications, strengthening your cloud
+                    platform, unlocking data, or piloting AI — our structured consulting
+                    engagements provide a low-risk path from strategy to measurable results.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-7 py-4 rounded-lg transition-all duration-200 shadow-2xl shadow-blue-900/50 group text-sm"
+                    >
+                      Schedule a Discovery Session
+                      <ArrowRight
+                        size={16}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2.5 text-white font-semibold px-7 py-4 rounded-lg border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-200 text-sm"
+                    >
+                      Talk to Our Team
+                    </Link>
+                  </div>
                 </div>
+
+                {/* ── RIGHT — Supporting trust signals (col 5/12) ─
+                    Answers "what happens if I click?" — no fluff,
+                    just three concrete commitments that lower the
+                    barrier to conversion. */}
+                <div className="lg:col-span-5">
+                  <div className="lg:border-l lg:border-white/10 lg:pl-12">
+                    <p className="text-[11px] font-semibold text-blue-400 tracking-[0.2em] uppercase mb-8">
+                      What to expect
+                    </p>
+                    <ul className="space-y-6">
+                      <li className="flex items-start gap-4">
+                        <div className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                          <Clock size={14} className="text-blue-300" strokeWidth={1.75} />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-white leading-snug mb-1">
+                            30-minute discovery call
+                          </p>
+                          <p className="text-[13px] text-gray-500 leading-relaxed">
+                            A focused conversation about your priorities and constraints.
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4">
+                        <div className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                          <CheckCircle2 size={14} className="text-blue-300" strokeWidth={1.75} />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-white leading-snug mb-1">
+                            Response within 1 business day
+                          </p>
+                          <p className="text-[13px] text-gray-500 leading-relaxed">
+                            You&apos;ll hear back from a senior consultant, not a form-filler.
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4">
+                        <div className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                          <Award size={14} className="text-blue-300" strokeWidth={1.75} />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-white leading-snug mb-1">
+                            No obligation, no sales pressure
+                          </p>
+                          <p className="text-[13px] text-gray-500 leading-relaxed">
+                            If we&apos;re not the right fit, we&apos;ll say so.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
