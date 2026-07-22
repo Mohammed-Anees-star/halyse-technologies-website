@@ -203,7 +203,7 @@ export default function HomePage() {
 
         <div className="relative z-10 flex-1 flex flex-col">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 lg:pt-44 pb-16 flex-1 flex flex-col justify-center">
-            <div className="max-w-5xl">
+            <div className="max-w-6xl">
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
@@ -212,10 +212,21 @@ export default function HomePage() {
                 </span>
               </div>
 
-              {/* Outcome-first headline */}
-              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.98] tracking-tight mb-10">
-                We help enterprises turn technology into{" "}
-                <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">
+              {/*
+                Outcome-first headline — enforced 3-line layout on desktop:
+                  Line 1: We help enterprises
+                  Line 2: turn technology into
+                  Line 3: measurable business outcomes.  ← kept together
+
+                Explicit <br /> tags at lg: breakpoint via block-level spans;
+                on smaller viewports the natural wrap takes over. The gradient
+                phrase uses `whitespace-nowrap` (desktop) to guarantee it never
+                splits across lines.
+              */}
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight mb-10">
+                We help enterprises{" "}
+                <span className="lg:block">turn technology into</span>{" "}
+                <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400 lg:whitespace-nowrap">
                   measurable business outcomes.
                 </span>
               </h1>
