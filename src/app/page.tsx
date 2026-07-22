@@ -860,9 +860,10 @@ export default function HomePage() {
               />
             </div>
 
-            {/* Content — increased internal padding, especially bottom */}
-            <div className="relative z-10 px-8 pt-24 pb-28 sm:px-14 sm:pt-28 sm:pb-32 lg:px-20 lg:pt-32 lg:pb-36 xl:px-24">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Content — generous, symmetric padding; extra bottom
+                margin below the CTAs so buttons never feel cramped. */}
+            <div className="relative z-10 px-8 pt-24 pb-32 sm:px-14 sm:pt-28 sm:pb-36 lg:px-20 lg:pt-32 lg:pb-40 xl:px-24">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                 {/* ── LEFT — Message + CTAs (col 7/12) ────────── */}
                 <div className="lg:col-span-7">
@@ -905,7 +906,7 @@ export default function HomePage() {
                     just three concrete commitments that lower the
                     barrier to conversion. */}
                 <div className="lg:col-span-5">
-                  <div className="lg:border-l lg:border-white/10 lg:pl-14 lg:pt-2">
+                  <div className="lg:border-l lg:border-white/10 lg:pl-14">
                     <p className="text-[11px] font-semibold text-blue-400 tracking-[0.2em] uppercase mb-9">
                       What to expect
                     </p>
