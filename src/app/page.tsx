@@ -860,9 +860,9 @@ export default function HomePage() {
               />
             </div>
 
-            {/* Content — increased internal padding on all sides */}
-            <div className="relative z-10 px-8 py-24 sm:px-14 sm:py-28 lg:px-20 lg:py-32 xl:px-24">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Content — increased internal padding, especially bottom */}
+            <div className="relative z-10 px-8 pt-24 pb-28 sm:px-14 sm:pt-28 sm:pb-32 lg:px-20 lg:pt-32 lg:pb-36 xl:px-24">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
                 {/* ── LEFT — Message + CTAs (col 7/12) ────────── */}
                 <div className="lg:col-span-7">
@@ -875,7 +875,7 @@ export default function HomePage() {
                       measurable business impact.
                     </span>
                   </h2>
-                  <p className="text-gray-400 text-base lg:text-lg leading-[1.7] mb-10 max-w-xl font-light">
+                  <p className="text-gray-300 text-base lg:text-lg leading-[1.7] mb-10 max-w-xl">
                     Whether you&apos;re modernizing applications, strengthening your cloud
                     platform, unlocking data, or piloting AI — our structured consulting
                     engagements provide a low-risk path from strategy to measurable results.
@@ -905,46 +905,46 @@ export default function HomePage() {
                     just three concrete commitments that lower the
                     barrier to conversion. */}
                 <div className="lg:col-span-5">
-                  <div className="lg:border-l lg:border-white/10 lg:pl-12">
-                    <p className="text-[11px] font-semibold text-blue-400 tracking-[0.2em] uppercase mb-8">
+                  <div className="lg:border-l lg:border-white/10 lg:pl-14 lg:pt-2">
+                    <p className="text-[11px] font-semibold text-blue-400 tracking-[0.2em] uppercase mb-9">
                       What to expect
                     </p>
-                    <ul className="space-y-6">
+                    <ul className="space-y-7">
                       <li className="flex items-start gap-4">
-                        <div className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                          <Clock size={14} className="text-blue-300" strokeWidth={1.75} />
+                        <div className="shrink-0 w-9 h-9 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center mt-0.5">
+                          <Clock size={15} className="text-blue-300" strokeWidth={1.75} />
                         </div>
-                        <div>
-                          <p className="text-sm font-semibold text-white leading-snug mb-1">
+                        <div className="flex-1 pt-0.5">
+                          <p className="text-sm font-semibold text-white leading-snug mb-1.5">
                             30-minute discovery call
                           </p>
-                          <p className="text-[13px] text-gray-500 leading-relaxed">
+                          <p className="text-[13px] text-gray-400 leading-[1.6]">
                             A focused conversation about your priorities and constraints.
                           </p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
-                        <div className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                          <CheckCircle2 size={14} className="text-blue-300" strokeWidth={1.75} />
+                        <div className="shrink-0 w-9 h-9 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center mt-0.5">
+                          <CheckCircle2 size={15} className="text-blue-300" strokeWidth={1.75} />
                         </div>
-                        <div>
-                          <p className="text-sm font-semibold text-white leading-snug mb-1">
+                        <div className="flex-1 pt-0.5">
+                          <p className="text-sm font-semibold text-white leading-snug mb-1.5">
                             Response within 1 business day
                           </p>
-                          <p className="text-[13px] text-gray-500 leading-relaxed">
+                          <p className="text-[13px] text-gray-400 leading-[1.6]">
                             You&apos;ll hear back from a senior consultant, not a form-filler.
                           </p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
-                        <div className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                          <Award size={14} className="text-blue-300" strokeWidth={1.75} />
+                        <div className="shrink-0 w-9 h-9 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center mt-0.5">
+                          <Award size={15} className="text-blue-300" strokeWidth={1.75} />
                         </div>
-                        <div>
-                          <p className="text-sm font-semibold text-white leading-snug mb-1">
+                        <div className="flex-1 pt-0.5">
+                          <p className="text-sm font-semibold text-white leading-snug mb-1.5">
                             No obligation, no sales pressure
                           </p>
-                          <p className="text-[13px] text-gray-500 leading-relaxed">
+                          <p className="text-[13px] text-gray-400 leading-[1.6]">
                             If we&apos;re not the right fit, we&apos;ll say so.
                           </p>
                         </div>
