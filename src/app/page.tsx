@@ -348,27 +348,27 @@ export default function HomePage() {
           before the story starts.
       ════════════════════════════════════════════════════════ */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm">
-            <div className="flex items-center gap-2">
-              <Award size={15} className="text-blue-700" />
-              <span className="font-semibold text-gray-800">Microsoft Partner</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-2.5 text-[13px]">
+            <div className="flex items-center gap-2 text-gray-600">
+              <Award size={14} className="text-gray-400" strokeWidth={1.75} />
+              <span>Microsoft Partner</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock size={15} className="text-blue-700" />
-              <span className="text-gray-600">
-                <span className="font-bold text-gray-900">8+</span> years delivering
+            <div className="flex items-center gap-2 text-gray-600">
+              <Clock size={14} className="text-gray-400" strokeWidth={1.75} />
+              <span>
+                <span className="font-semibold text-gray-800">8+</span> years delivering
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={15} className="text-blue-700" />
-              <span className="text-gray-600">
-                <span className="font-bold text-gray-900">50+</span> enterprise projects
+            <div className="flex items-center gap-2 text-gray-600">
+              <CheckCircle2 size={14} className="text-gray-400" strokeWidth={1.75} />
+              <span>
+                <span className="font-semibold text-gray-800">50+</span> enterprise projects
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <Globe2 size={15} className="text-blue-700" />
-              <span className="text-gray-600">US · Australia · Middle East</span>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Globe2 size={14} className="text-gray-400" strokeWidth={1.75} />
+              <span>US · Australia · Middle East</span>
             </div>
           </div>
         </div>
@@ -392,7 +392,7 @@ export default function HomePage() {
           {/* Section header — number/eyebrow lives on the left rail so
               the header and every outcome row share a single vertical
               axis. */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 mb-16 lg:mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 mb-20 lg:mb-28">
             <div className="lg:col-span-4">
               <p className="text-xs font-semibold text-blue-600 tracking-[0.2em] uppercase">
                 How We Create Value
@@ -413,8 +413,10 @@ export default function HomePage() {
                 key={p.number}
                 className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 py-12 lg:py-16"
               >
-                {/* Left rail — number + label share a baseline */}
-                <div className="lg:col-span-4">
+                {/* Left rail — number + label share a baseline; the
+                    lg:pt-1.5 optically seats the light gray number against
+                    the h3 title's cap-height on the right column. */}
+                <div className="lg:col-span-4 lg:pt-1.5">
                   <div className="flex items-baseline gap-5">
                     <span className="font-serif text-5xl lg:text-[56px] font-light text-gray-300 leading-none tabular-nums">
                       {p.number}
@@ -450,9 +452,9 @@ export default function HomePage() {
               </p>
             </div>
             <div className="lg:col-span-8">
-              <p className="font-serif text-[24px] lg:text-[30px] text-gray-900 leading-[1.3] tracking-tight max-w-3xl">
-                Six connected capabilities across the Microsoft ecosystem —
-                <span className="text-gray-400"> the foundation behind every outcome we deliver.</span>
+              <p className="font-serif text-[24px] lg:text-[30px] text-gray-900 leading-[1.25] tracking-tight max-w-3xl">
+                Six capabilities across the Microsoft ecosystem —
+                <span className="text-gray-400"> the foundation behind every outcome.</span>
               </p>
             </div>
           </div>
