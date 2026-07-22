@@ -348,7 +348,7 @@ export default function HomePage() {
           before the story starts.
       ════════════════════════════════════════════════════════ */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-6">
           <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-2.5 text-[13px]">
             <div className="flex items-center gap-2 text-gray-600">
               <Award size={14} className="text-gray-400" strokeWidth={1.75} />
@@ -385,7 +385,7 @@ export default function HomePage() {
           parts feel like chapters of one narrative, not stacked modules.
       ════════════════════════════════════════════════════════ */}
       <section className="pt-28 pb-24 lg:pt-36 lg:pb-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
 
           {/* ── PART A: OUTCOMES ─────────────────────────────── */}
 
@@ -524,7 +524,7 @@ export default function HomePage() {
           <div className="absolute bottom-[-25%] left-[-15%] w-[500px] h-[500px] bg-cyan-100/25 rounded-full blur-[120px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
           <div className="max-w-3xl mb-14">
             <span className="inline-block text-xs font-semibold text-blue-700 tracking-[0.2em] uppercase mb-5">
               Signature Offerings
@@ -605,20 +605,20 @@ export default function HomePage() {
           Magazine-style editorial layout. Nothing like this on /services.
       ════════════════════════════════════════════════════════ */}
       <section className="py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-16">
             <div className="max-w-2xl">
-              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-5">
+              <span className="inline-block text-xs font-semibold text-blue-600 tracking-[0.2em] uppercase mb-5">
                 Proof
               </span>
-              <h2 className="font-serif text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05]">
-                Real outcomes. Real{" "}
-                <span className="italic font-light text-blue-600">engagements.</span>
+              <h2 className="font-serif text-[40px] sm:text-5xl lg:text-[56px] font-semibold text-gray-900 leading-[1.05] tracking-tight">
+                Real outcomes.{" "}
+                <span className="text-gray-400">Real engagements.</span>
               </h2>
             </div>
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group whitespace-nowrap"
+              className="inline-flex items-center gap-2.5 self-start md:self-auto px-6 py-3 rounded-full border border-gray-200 bg-white hover:bg-blue-700 hover:border-blue-700 hover:text-white text-sm font-semibold text-gray-900 transition-all duration-200 group whitespace-nowrap shadow-sm hover:shadow-md hover:shadow-blue-200"
             >
               View all case studies
               <ArrowUpRight
@@ -714,12 +714,12 @@ export default function HomePage() {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[100px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
           <div className="max-w-3xl mb-16">
-            <span className="inline-block text-xs font-bold text-blue-400 tracking-[0.2em] uppercase mb-5">
+            <span className="inline-block text-xs font-semibold text-blue-400 tracking-[0.2em] uppercase mb-5">
               Why Halyse
             </span>
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-[1.1]">
+            <h2 className="font-serif text-[40px] sm:text-5xl lg:text-[56px] font-semibold text-white leading-[1.05] tracking-tight">
               What enterprise leaders get{" "}
               <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
                 working with us.
@@ -768,7 +768,7 @@ export default function HomePage() {
           gutters, prominent 'View all insights' pill CTA.
       ════════════════════════════════════════════════════════ */}
       <section className="py-28 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Header row */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-16">
             <div className="max-w-2xl">
@@ -844,7 +844,7 @@ export default function HomePage() {
           consultancies (Deloitte, McKinsey, Accenture).
       ════════════════════════════════════════════════════════ */}
       <section className="py-24 lg:py-28 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="relative bg-gray-950 rounded-[2rem] overflow-hidden">
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none">
