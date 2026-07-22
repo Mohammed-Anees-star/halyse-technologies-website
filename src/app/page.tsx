@@ -512,52 +512,56 @@ export default function HomePage() {
 
       {/* ════════════════════════════════════════════════════════
           5. SIGNATURE OFFERINGS — Home-only conversion mechanism
-          Fixed-scope, low-risk entry points. Removed from /services.
+          Light treatment (moved off dark) so the page has fewer
+          dark breaks. Uses a subtle blue-tint gradient background +
+          strong card shadows to signal 'premium conversion moment'
+          without going dark like Hero/Why Halyse/Final CTA.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-gradient-to-br from-gray-950 via-blue-950 to-gray-950 text-white relative overflow-hidden">
+      <section className="py-28 lg:py-32 bg-gradient-to-b from-blue-50/40 via-white to-white relative overflow-hidden border-t border-b border-gray-100">
+        {/* Very soft ambient tint — restrained on light background */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[-10%] right-[-10%] w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
-          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]" />
+          <div className="absolute top-[-20%] right-[-15%] w-[700px] h-[700px] bg-blue-200/20 rounded-full blur-[140px]" />
+          <div className="absolute bottom-[-25%] left-[-15%] w-[500px] h-[500px] bg-cyan-100/25 rounded-full blur-[120px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-14">
-            <span className="inline-block text-xs font-bold text-blue-300 tracking-[0.2em] uppercase mb-5">
+            <span className="inline-block text-xs font-semibold text-blue-700 tracking-[0.2em] uppercase mb-5">
               Signature Offerings
             </span>
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-[1.1] mb-6">
+            <h2 className="font-serif text-[40px] sm:text-5xl lg:text-[56px] font-semibold text-gray-900 leading-[1.05] tracking-tight mb-6">
               Fixed-scope engagements to{" "}
-              <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+              <span className="italic font-light text-blue-700">
                 start with confidence.
               </span>
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-2xl font-light">
+            <p className="text-gray-600 text-base lg:text-lg leading-[1.65] max-w-2xl font-light">
               Structured consulting sprints designed to validate direction, reduce delivery risk,
               and accelerate outcomes — before committing to enterprise-scale investment.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {signatureOfferings.map((o) => {
               const Icon = o.icon;
               return (
                 <div
                   key={o.title}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] hover:border-blue-400/30 transition-all flex flex-col"
+                  className="group bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-blue-100/60 hover:-translate-y-1 hover:border-blue-200 transition-all duration-300 flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-md shadow-blue-100 group-hover:scale-105 transition-transform">
                       <Icon size={22} className="text-white" />
                     </div>
-                    <span className="text-[11px] font-semibold text-blue-200 bg-white/[0.06] border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    <span className="text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
                       {o.duration}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug">{o.title}</h3>
-                  <p className="text-sm italic text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400 mb-5 leading-relaxed">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">{o.title}</h3>
+                  <p className="text-sm italic text-blue-700 mb-5 leading-relaxed font-light">
                     {o.tagline}
                   </p>
-                  <div className="border-t border-white/10 pt-4 mt-auto">
+                  <div className="border-t border-gray-100 pt-4 mt-auto">
                     <div className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-3">
                       What you&apos;ll achieve
                     </div>
@@ -565,11 +569,11 @@ export default function HomePage() {
                       {o.outcomes.map((out) => (
                         <li
                           key={out}
-                          className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed"
+                          className="flex items-start gap-2 text-xs text-gray-600 leading-relaxed"
                         >
                           <CheckCircle2
                             size={13}
-                            className="text-cyan-400 mt-0.5 shrink-0"
+                            className="text-blue-600 mt-0.5 shrink-0"
                           />
                           {out}
                         </li>
@@ -584,7 +588,7 @@ export default function HomePage() {
           <div className="mt-14 flex justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-white text-blue-800 hover:bg-blue-50 text-sm font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-2xl shadow-blue-900/50 group"
+              className="inline-flex items-center gap-2.5 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-xl shadow-blue-200 group"
             >
               Talk to us about your priorities
               <ArrowRight
