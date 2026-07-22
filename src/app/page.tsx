@@ -762,23 +762,29 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          8. INSIGHTS — Editorial credibility (kept, lightly refined)
+          8. INSIGHTS — Editorial credibility
+          Three visually consistent cards (no mixed dark/light).
+          Uniform card treatment, generous internal padding, wider
+          gutters, prominent 'View all insights' pill CTA.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-white">
+      <section className="py-28 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
+          {/* Header row */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-16">
             <div className="max-w-2xl">
-              <span className="inline-block text-xs font-bold text-blue-600 tracking-[0.2em] uppercase mb-5">
+              <span className="inline-block text-xs font-semibold text-blue-600 tracking-[0.2em] uppercase mb-5">
                 Insights
               </span>
-              <h2 className="font-serif text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05]">
+              <h2 className="font-serif text-[40px] sm:text-5xl lg:text-[56px] font-semibold text-gray-900 leading-[1.05] tracking-tight">
                 Perspectives &amp;{" "}
-                <span className="italic font-light text-blue-600">thinking.</span>
+                <span className="text-gray-400">thinking.</span>
               </h2>
             </div>
+
+            {/* Pill CTA — more visually prominent than the previous text link */}
             <Link
               href="/insights"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 group whitespace-nowrap"
+              className="inline-flex items-center gap-2.5 self-start md:self-auto px-6 py-3 rounded-full border border-gray-200 bg-white hover:bg-blue-700 hover:border-blue-700 hover:text-white text-sm font-semibold text-gray-900 transition-all duration-200 group whitespace-nowrap shadow-sm hover:shadow-md hover:shadow-blue-200"
             >
               View all insights
               <ArrowUpRight
@@ -788,58 +794,38 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {insights.map((insight, i) => (
+          {/* Uniform 3-card grid — same treatment, no mixed dark/light */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {insights.map((insight) => (
               <Link
                 key={insight.slug}
                 href={`/insights/${insight.slug}`}
-                className={`group rounded-3xl overflow-hidden border transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 block ${
-                  i === 0
-                    ? "border-transparent bg-gradient-to-br from-blue-700 via-blue-800 to-blue-950 text-white shadow-2xl shadow-blue-200"
-                    : "border-gray-200 bg-white hover:border-blue-200 hover:shadow-blue-100/50"
-                }`}
+                className="group flex flex-col rounded-2xl overflow-hidden border border-gray-200 bg-white transition-all duration-300 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-100/50 hover:-translate-y-1"
               >
-                <div className="p-8 lg:p-10">
-                  <div className="mb-6">
-                    <span
-                      className={`text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full ${
-                        i === 0 ? "bg-white/15 text-blue-100" : "bg-blue-50 text-blue-700"
-                      }`}
-                    >
+                <div className="p-8 lg:p-10 flex-1 flex flex-col">
+                  {/* Category chip */}
+                  <div className="mb-7">
+                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full bg-blue-50 text-blue-700">
                       {insight.category}
                     </span>
                   </div>
-                  <h3
-                    className={`font-serif font-bold leading-snug mb-5 text-xl ${
-                      i === 0
-                        ? "text-white"
-                        : "text-gray-900 group-hover:text-blue-700"
-                    } transition-colors`}
-                  >
+
+                  {/* Title */}
+                  <h3 className="font-serif text-xl lg:text-[22px] font-semibold leading-[1.3] tracking-tight text-gray-900 group-hover:text-blue-700 transition-colors mb-4">
                     {insight.title}
                   </h3>
-                  <p
-                    className={`text-sm leading-relaxed mb-8 ${
-                      i === 0 ? "text-blue-100/80" : "text-gray-500"
-                    }`}
-                  >
+
+                  {/* Summary */}
+                  <p className="text-sm text-gray-600 leading-[1.65] mb-8 flex-1">
                     {insight.summary}
                   </p>
-                  <div
-                    className={`flex items-center justify-between text-xs font-semibold pt-5 border-t ${
-                      i === 0
-                        ? "border-white/15 text-blue-200"
-                        : "border-gray-100 text-gray-400"
-                    }`}
-                  >
-                    <span>{insight.readTime}</span>
+
+                  {/* Footer meta row */}
+                  <div className="flex items-center justify-between text-xs font-medium pt-5 border-t border-gray-100 text-gray-500 mt-auto">
+                    <span className="tracking-wide">{insight.readTime}</span>
                     <ArrowUpRight
                       size={16}
-                      className={`${
-                        i === 0
-                          ? "text-blue-200"
-                          : "text-gray-400 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      } transition-all`}
+                      className="text-gray-300 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                     />
                   </div>
                 </div>
