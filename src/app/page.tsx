@@ -187,7 +187,7 @@ export default function HomePage() {
           architectural anchor (5/12). Distinct from /services which
           uses PageHero component.
       ════════════════════════════════════════════════════════ */}
-      <section className="relative bg-gray-950 text-white overflow-hidden min-h-[85vh] lg:min-h-[88vh] flex flex-col">
+      <section className="relative bg-gray-950 text-white overflow-hidden flex flex-col">
         {/* Ambient background — subtle grid + blurred orbs */}
         <div className="absolute inset-0 pointer-events-none">
           <div
@@ -262,12 +262,17 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 flex-1 flex flex-col">
-          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 lg:pt-32 pb-16 flex-1 flex flex-col justify-center">
+          {/* Content is intentionally top-anchored — Fortune-500 enterprise
+              sites (Accenture, Deloitte, McKinsey) anchor hero content to
+              the top with tight, deliberate spacing to the nav. No forced
+              min-height, so the section is exactly as tall as its content
+              needs — no floaty dead air above the tech strip below. */}
+          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-32 lg:pt-36 pb-20 lg:pb-24">
             {/* Content spans wider than before so the 2-line headline can breathe.
                 Anchor sits behind and to the right (see absolute block above). */}
             <div className="max-w-[1080px]">
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-3 mb-9 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-3 mb-7 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
                 <span className="text-blue-200 text-xs font-semibold tracking-wider uppercase">
                   Enterprise Technology Consulting
@@ -286,14 +291,14 @@ export default function HomePage() {
                 Line 2 uses `lg:whitespace-nowrap` so "outcomes." is never
                 orphaned as its own line.
               */}
-              <h1 className="font-serif text-[42px] sm:text-5xl lg:text-[52px] xl:text-[60px] font-semibold leading-[1.06] tracking-tight mb-8 max-w-[1080px]">
+              <h1 className="font-serif text-[42px] sm:text-5xl lg:text-[52px] xl:text-[60px] font-semibold leading-[1.06] tracking-tight mb-7 max-w-[1080px]">
                 We help enterprises turn technology into{" "}
                 <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400 lg:whitespace-nowrap">
                   measurable business outcomes.
                 </span>
               </h1>
 
-              <p className="text-base lg:text-lg text-gray-400 leading-[1.7] mb-14 max-w-2xl font-light">
+              <p className="text-base lg:text-lg text-gray-400 leading-[1.7] mb-10 max-w-2xl font-light">
                 Halyse Technologies partners with enterprise leaders to modernize
                 applications, integrate systems, harness data and AI, and run
                 mission-critical workloads on Microsoft Azure, Power Platform, Dynamics
@@ -322,7 +327,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Tech marquee */}
+          {/* Tech marquee — sits directly below the hero content with
+              intentional spacing, not pinned to a forced section height */}
           <div className="relative border-y border-white/[0.08] bg-gradient-to-r from-blue-950/40 via-blue-900/20 to-blue-950/40 backdrop-blur-sm py-5 overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-950 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-950 to-transparent z-10 pointer-events-none" />
