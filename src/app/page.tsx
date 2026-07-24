@@ -21,6 +21,35 @@ import {
 import { insights as allInsights } from "@/data/insights";
 import { services as allServices } from "@/data/services";
 
+// ═══════════════════════════════════════════════════════════════════════════
+//  HOMEPAGE SPACING SYSTEM — read before editing any section
+// ═══════════════════════════════════════════════════════════════════════════
+//
+//  Every content section on this page must follow these tokens so the
+//  page has one disciplined vertical rhythm and horizontal axis.
+//
+//  Section vertical padding:
+//    py-24 lg:py-28              (96px → 112px)
+//    Applies to: Outcomes/Capabilities, Signature Offerings, Proof,
+//                Why Halyse, Insights, Final CTA
+//
+//  Section outer container:
+//    max-w-6xl mx-auto            (1152px, gives ~140px left margin at 1440px)
+//    px-4 sm:px-6 lg:px-8 xl:px-12
+//
+//  Section header → content gap:
+//    mb-14 lg:mb-16               (56px → 64px)
+//
+//  Exceptions (intentional):
+//    • Hero — top-anchored with its own pt-32/pt-36 pb-20/pb-24 rhythm
+//    • Trust ribbon — py-6, no header block (a strip, not a section)
+//    • Final CTA — uses max-w-6xl but wraps a nested dark card, so its
+//                  inner card has its own richer padding for depth
+//
+//  DO NOT introduce py-28 or py-32 or lg:py-32 for content sections.
+//  DO NOT use max-w-7xl for content sections (only Hero + Trust).
+// ═══════════════════════════════════════════════════════════════════════════
+
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
 // Outcome-driven positioning — NOT service categories.
@@ -390,8 +419,8 @@ export default function HomePage() {
           Kept on a single white background (no gray-50 break) so both
           parts feel like chapters of one narrative, not stacked modules.
       ════════════════════════════════════════════════════════ */}
-      <section className="pt-28 pb-24 lg:pt-36 lg:pb-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <section className="py-24 lg:py-28 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
 
           {/* ── PART A: OUTCOMES ─────────────────────────────── */}
 
@@ -523,7 +552,7 @@ export default function HomePage() {
           strong card shadows to signal 'premium conversion moment'
           without going dark like Hero/Why Halyse/Final CTA.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 lg:py-32 bg-gradient-to-b from-blue-50/40 via-white to-white relative overflow-hidden border-t border-b border-gray-100">
+      <section className="py-24 lg:py-28 bg-gradient-to-b from-blue-50/40 via-white to-white relative overflow-hidden border-t border-b border-gray-100">
         {/* Very soft ambient tint — restrained on light background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[-20%] right-[-15%] w-[700px] h-[700px] bg-blue-200/20 rounded-full blur-[140px]" />
@@ -610,7 +639,7 @@ export default function HomePage() {
           6. PROOF — Featured case studies with metrics
           Magazine-style editorial layout. Nothing like this on /services.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-white">
+      <section className="py-24 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-16">
             <div className="max-w-2xl">
@@ -714,7 +743,7 @@ export default function HomePage() {
           7. WHY HALYSE — Compressed to 3 editorial statements
           Horizontal editorial layout, NOT cards. Distinct DNA.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-gray-950 text-white overflow-hidden relative">
+      <section className="py-24 lg:py-28 bg-gray-950 text-white overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-700/15 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[100px]" />
@@ -773,7 +802,7 @@ export default function HomePage() {
           Uniform card treatment, generous internal padding, wider
           gutters, prominent 'View all insights' pill CTA.
       ════════════════════════════════════════════════════════ */}
-      <section className="py-28 lg:py-32 bg-white">
+      <section className="py-24 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Header row */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-16">
